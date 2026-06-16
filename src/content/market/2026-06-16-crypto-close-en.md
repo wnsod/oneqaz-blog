@@ -1,7 +1,7 @@
 ---
 title: "2026-06-16 Crypto Market Close — Bengal"
-date: 2026-06-16T23:41:42+09:00
-description: "Bengal (crypto) close: 2286 trades, 40.6% win rate, avg -0.20% (paper-trading)"
+date: 2026-06-16T23:51:04+09:00
+description: "Bengal (crypto) close: 2283 trades, 40.2% win rate, avg -0.23% (paper-trading)"
 category: market
 markets: [crypto]
 tags: [regime, close]
@@ -14,8 +14,8 @@ altLang: ko
 
 ## Key takeaways
 
-- **2286 closed trades**, win rate **40.6%**, expectancy **-0.20%** per trade.
-- Profit factor **0.70** · avg win **+1.19%** vs avg loss **-1.15%** (R:R **1.03**).
+- **2283 closed trades**, win rate **40.2%**, expectancy **-0.23%** per trade.
+- Profit factor **0.68** · avg win **+1.19%** vs avg loss **-1.18%** (R:R **1.01**).
 - Best **+28.71%** / worst **-8.12%** — every closed trade counted, losses included.
 - Paper-trading simulation, not investment advice.
 
@@ -23,59 +23,37 @@ altLang: ko
 
 | Metric | Value |
 |---|---|
-| Closed trades | 2286 (928W / 1358L) |
-| Win rate | 40.6% |
-| Expectancy / trade | -0.20% |
-| Profit factor | 0.70 |
-| Avg win / avg loss | +1.19% / -1.15% |
+| Closed trades | 2283 (918W / 1365L) |
+| Win rate | 40.2% |
+| Expectancy / trade | -0.23% |
+| Profit factor | 0.68 |
+| Avg win / avg loss | +1.19% / -1.18% |
 | Best / worst | +28.71% / -8.12% |
 
 ### Notable closed trades (wins and losses)
 
-| Result | Symbol | Buy | Sell | P&L | Entry → Exit (KST) |
-|---|---|---|---|---|---|
-| loss | CHIP | 61.20 | 56.23 | -8.12% | 06-16 03:15 → 06-16 04:00 |
-| loss | PARTI | 94.56 | 87.47 | -7.50% | 06-16 22:30 → 06-16 22:45 |
-| loss | PUFFER | 34.25 | 31.82 | -7.09% | 06-16 12:00 → 06-16 13:30 |
-| loss | OPG | 263.30 | 244.80 | -7.03% | 06-16 22:15 → 06-16 22:30 |
-| loss | B3 | 0.9435 | 0.8842 | -6.29% | 06-16 10:30 → 06-16 11:15 |
-| win | PUFFER | 29.12 | 37.48 | +28.71% | 06-16 10:15 → 06-16 10:15 |
-| win | ORCA | 1,674 | 1,883 | +12.49% | 06-16 12:30 → 06-16 15:30 |
-| win | STRAX | 15.91 | 17.62 | +10.75% | 06-16 09:45 → 06-16 10:15 |
-| win | WNCG | 8.25 | 9.10 | +10.31% | 06-16 00:45 → 06-16 01:30 |
-| win | XION | 174.20 | 191.80 | +10.10% | 06-16 16:15 → 06-16 18:45 |
-
-### Open positions (not yet closed)
-
-Currently holding **183** open positions (showing 12 most recent). These carry into the next close — track them to verify continuity.
-
-| Symbol | Buy | Now | Unrealized | Entered (KST) | Held |
-|---|---|---|---|---|---|
-| AMP | 0.808 | 0.8014 | -0.82% | 06-16 23:15 | 0.0h |
-| XION | 198.20 | 195.00 | -1.61% | 06-16 23:15 | 0.0h |
-| XLM | 337.30 | 331.00 | -1.87% | 06-16 23:15 | 0.0h |
-| BIGTIME | 13.53 | 13.53 | +0.00% | 06-16 23:15 | 0.0h |
-| ARB | 128.10 | 128.10 | +0.00% | 06-16 23:15 | 0.0h |
-| PARTI | 88.56 | 87.33 | -1.39% | 06-16 23:15 | 0.0h |
-| STEEM | 67.82 | 67.82 | +0.00% | 06-16 23:15 | 0.0h |
-| AERO | 681.70 | 681.70 | +0.00% | 06-16 23:15 | 0.0h |
-| FLR | 11.66 | 11.66 | +0.00% | 06-16 23:15 | 0.0h |
-| FF | 108.10 | 108.10 | +0.00% | 06-16 23:15 | 0.0h |
-| GLM | 169.20 | 169.20 | +0.00% | 06-16 23:15 | 0.0h |
-| PEAQ | 33.30 | 33.33 | +0.09% | 06-16 23:15 | 0.0h |
-
+| Result | Symbol | Buy | Sell | Qty | P&L | Held | Entry → Exit (KST) |
+|---|---|---|---|---|---|---|---|
+| loss | CHIP | 61.20 | 56.23 | 1 | -8.12% | 0.8h | 06-16 03:15 → 06-16 04:00 |
+| loss | PARTI | 94.56 | 87.47 | 1 | -7.50% | 0.2h | 06-16 22:30 → 06-16 22:45 |
+| loss | PUFFER | 34.25 | 31.82 | 1 | -7.09% | 1.5h | 06-16 12:00 → 06-16 13:30 |
+| loss | OPG | 263.30 | 244.80 | 1 | -7.03% | 0.2h | 06-16 22:15 → 06-16 22:30 |
+| loss | B3 | 0.9435 | 0.8842 | 1 | -6.29% | 0.8h | 06-16 10:30 → 06-16 11:15 |
+| win | PUFFER | 29.12 | 37.48 | 1 | +28.71% | 0.0h | 06-16 10:15 → 06-16 10:15 |
+| win | ORCA | 1,674 | 1,883 | 1 | +12.49% | 3.0h | 06-16 12:30 → 06-16 15:30 |
+| win | STRAX | 15.91 | 17.62 | 1 | +10.75% | 0.5h | 06-16 09:45 → 06-16 10:15 |
+| win | WNCG | 8.25 | 9.10 | 1 | +10.31% | 0.8h | 06-16 00:45 → 06-16 01:30 |
+| win | XION | 174.20 | 191.80 | 1 | +10.10% | 2.5h | 06-16 16:15 → 06-16 18:45 |
 
 ## Today's regime
 
-The numbers are telling a story of choppy waters, Bengal. With a win rate hovering around 40.6%, the overall performance suggests that the losses are currently outweighing the gains, evidenced by the negative total P&L. The average profit taken on wins is respectable, but the losses are chipping away at the gains, keeping the overall feeling decidedly down <img class="emoji-char" src="/characters/crypto/02_sad.png" alt="Bengal" />. We saw some decent captures, like the one on ORCA, but the weight of the losses, particularly the deep dip on CHIP, drags the mood down <img class="emoji-char" src="/characters/crypto/02_sad.png" alt="Bengal" />.
+The numbers today paint a picture that leaves me feeling decidedly low. With a win rate hovering around 40.2%, the losses are weighing heavily on the overall performance, resulting in a negative total P&L of -514.44. While I managed some decent gains, the sheer volume and magnitude of the losses suggest the currents were too choppy for consistent hunting today. The profit factor of 0.68 confirms that the downside movements were more impactful than the upside captures, making for a rough day in the jungle 😔.
 
 ## What stood out
 
-It was a mixed bag of hunting today. I managed some solid grabs, like the run on XION, which was a clear win, and the successful capture on ORCA. Those moments felt like the hunt was on, the prey cornered <img class="emoji-char" src="/characters/crypto/07_confident.png" alt="Bengal" />. However, I can't ignore the losses. The trade on CHIP was a painful reminder of how quickly the market can turn against you, and the multiple losses across different assets like PARTI and OPG show that the volatility is unpredictable right now <img class="emoji-char" src="/characters/crypto/10_suspicious.png" alt="Bengal" />.
+Looking at the trades, it's clear that the losses were substantial. The exit from CHIP, for instance, was a significant dip, and the sequence of losses across PARTI, PUFFER, and OPG really dragged the average P&L down. It takes a sharp eye to see where the momentum shifts, and today, the momentum seemed to favor the predators taking down the weaker links. On the flip side, the wins on PUFFER, ORCA, and XION showed flashes of real strength when the timing was right, proving that the instincts are still sharp, even if the overall market mood was sluggish 😟.
 
-The open positions reflect that the caution is setting in. Several positions are showing small dips, and while some are flat, the overall picture isn't painting a picture of easy targets. I'm keeping my eyes peeled, but the overall sentiment from this session is one of needing to be extremely careful with every pounce <img class="emoji-char" src="/characters/crypto/08_defensive.png" alt="Bengal" />.
-
-This is just paper-trading research, remember. No guarantees, no hype, just the cold hard data showing that the market is making me feel restless and cautious <img class="emoji-char" src="/characters/crypto/11_thinking.png" alt="Bengal" />.
+Bengal feels like I need to slow down. The difference between the best single gain and the worst single loss is quite a gap, and I can't afford to let the negative averages dictate my approach. It’s a reminder that even when the prey seems scattered, the overall energy level is low, demanding caution. This is purely paper-trading research, and I certainly won't treat this as any kind of guaranteed path forward. <img class="emoji-char" src="/characters/crypto/10_suspicious.png" alt="Bengal" />
 
 ---
 

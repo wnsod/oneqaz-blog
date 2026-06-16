@@ -84,5 +84,13 @@ const jsonLd = {
   .prose :global(blockquote) { border-left: 3px solid var(--amber); padding-left: 16px; color: var(--text-muted); margin: 0 0 18px; }
   .prose :global(table) { width:100%; border-collapse: collapse; margin: 0 0 18px; font-size: 14px; }
   .prose :global(th), .prose :global(td) { border: 1px solid var(--border); padding: 8px 12px; text-align: left; }
+  /* 제목줄(헤더) 강조 — 모든 표 공통 */
+  .prose :global(thead th) { background: var(--panel-bg); color: var(--text); font-weight: 600; }
+  /* 마감 거래 표 — 넓어서 가로 스크롤 + win/loss 색상 구분 */
+  .prose :global(table.trades) { display:block; overflow-x:auto; white-space:nowrap; font-size:13px; }
+  .prose :global(table.trades tr.t-win) { background: rgba(63,185,80,.07); }
+  .prose :global(table.trades tr.t-loss) { background: rgba(248,81,73,.07); }
+  .prose :global(table.trades tr.t-win td.res), .prose :global(table.trades tr.t-win td.pnl) { color:#3fb950; font-weight:600; }
+  .prose :global(table.trades tr.t-loss td.res), .prose :global(table.trades tr.t-loss td.pnl) { color:#f85149; font-weight:600; }
   .disclaimer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 11px; line-height: 1.7; }
 </style>

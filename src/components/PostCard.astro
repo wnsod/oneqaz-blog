@@ -1,0 +1,31 @@
+---
+import TagList from './TagList.astro';
+export interface Props {
+  href: string;
+  title: string;
+  description: string;
+  date: Date;
+  category: string;
+  markets?: string[];
+  tags?: string[];
+}
+const { href, title, description, date, category, markets = [], tags = [] } = Astro.props;
+const dateLabel = date.toISOString().slice(0, 10);
+---
+<a class="card" href={href}>
+  <div class="top">
+    <span class="cat eyebrow">{category}</span>
+    <time class="muted" datetime={date.toISOString()}>{dateLabel}</time>
+  </div>
+  <h2>{title}</h2>
+  <p class="desc muted">{description}</p>
+  <TagList markets={markets} tags={tags} />
+</a>
+
+<style>
+  .card { display:block; padding: 22px 22px 20px; background: var(--panel-bg); border: 1px solid var(--border); border-radius: var(--radius-2xl); transition: transform .25s, box-shadow .3s, border-color .3s; }
+  .card:hover { transform: translateY(-3px); border-color: rgba(212,168,83,0.4); box-shadow: 0 0 20px rgba(212,168,83,0.12); }
+  .top { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:10px; font-size:11px; }
+  .card h2 { font-size: 18px; font-weight: 600; line-height: 1.35; color: var(--text); margin-bottom: 8px; }
+  .desc { font-size: 13px; line-height: 1.7; margin-bottom: 12px; }
+</style>

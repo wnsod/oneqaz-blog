@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+
+export async function getStaticPaths() {
+  const COLLECTIONS = ['track-record', 'market', 'journal'] as const;
+  const all = [];
+  for (const c of COLLECTIONS) {
+    const entries = await getCollection(c, ({ data }) => !data.draft);
+    all.push(...entries.map((e) => ({ ...e, _collection: c })));
+  }
+  // a "tag" is any market id OR any free tag
+  const tagMap = new Map();
+  for (const p of all) {
+    const keys = [...(p.data.markets ?? []), ...(p.data.tags ?? [])];
+    for (const k of keys) {
+      if (!tagMap.has(k)) tagMap.set(k, []);
+      tagMap.get(k).push(p);
+    }
+  }
+  return [...tagMap.entries()].map(([tag, posts]) => ({
+    params: { tag },
+    props: { tag, posts: posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()) },
+  }));
+}
+
+const { tag, posts } = Astro.props;
+---
+<BaseLayout title={`#${tag} — OneQAZ`} description={`OneQAZ posts tagged ${tag}.`}>
+  <section class="head container-wide">
+    <p class="eyebrow">Tag</p>
+    <h1>#{tag}</h1>
+  </section>
+  <section class="feed container-wide">
+    <div class="grid">
+      {posts.map((p) => (
+        <PostCard href={`/${p._collection}/${p.slug}`} title={p.data.title} description={p.data.description} date={p.data.date} category={p._collection} markets={p.data.markets} tags={p.data.tags} />
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+<style>
+  .head { padding: 56px 24px 20px; }
+  .head h1 { font-size: clamp(28px,4vw,40px); font-weight:700; margin:10px 0; color:var(--text); }
+  .feed { padding: 12px 24px 24px; }
+  .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap:16px; }
+</style>

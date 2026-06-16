@@ -1,0 +1,73 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import TagList from '../components/TagList.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  category: 'track-record' | 'market' | 'journal';
+  markets?: string[];
+  tags?: string[];
+  lang?: 'ko' | 'en';
+  ogImage?: string;
+}
+
+const { title, description, date, category, markets = [], tags = [], lang = 'ko', ogImage } = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const iso = date.toISOString();
+const dateLabel = date.toISOString().slice(0, 10);
+
+// JSON-LD in initial HTML — what AI crawlers actually read.
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  datePublished: iso,
+  inLanguage: lang,
+  url: canonical,
+  author: { '@type': 'Organization', name: 'OneQAZ', url: 'https://oneqaz.com' },
+  publisher: { '@type': 'Organization', name: 'OneQAZ', url: 'https://oneqaz.com' },
+  keywords: [category, ...markets, ...tags].join(', '),
+};
+---
+<BaseLayout title={`${title} — OneQAZ`} description={description} lang={lang} ogImage={ogImage}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+
+  <article class="container post">
+    <a href={`/${category}`} class="eyebrow back">&larr; {category}</a>
+    <h1>{title}</h1>
+    <div class="meta">
+      <time datetime={iso}>{dateLabel}</time>
+      <TagList markets={markets} tags={tags} />
+    </div>
+    <div class="prose">
+      <slot />
+    </div>
+    <p class="disclaimer muted">
+      Information only, not investment advice. OneQAZ outputs are paper-trading research signals.
+      Past simulated performance does not predict future real-money returns.
+    </p>
+  </article>
+</BaseLayout>
+
+<style>
+  .post { padding: 56px 24px 80px; }
+  .back { display:inline-block; margin-bottom: 20px; opacity:.8; }
+  h1 { font-size: clamp(26px, 4vw, 38px); font-weight: 700; line-height: 1.25; color: var(--text); margin-bottom: 14px; }
+  .meta { display:flex; align-items:center; gap:14px; flex-wrap:wrap; font-size:13px; color: var(--text-muted); margin-bottom: 36px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+  .prose :global(p) { margin: 0 0 18px; }
+  .prose :global(h2) { font-size: 22px; font-weight: 600; margin: 36px 0 14px; color: var(--text); }
+  .prose :global(h3) { font-size: 18px; font-weight: 600; margin: 28px 0 12px; }
+  .prose :global(ul), .prose :global(ol) { margin: 0 0 18px 22px; }
+  .prose :global(li) { margin: 6px 0; }
+  .prose :global(code) { font-family: var(--font-mono); font-size: .92em; background: var(--panel-bg); padding: 2px 6px; border-radius: 4px; }
+  .prose :global(pre) { background: var(--panel-bg); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 14px; overflow-x: auto; margin: 0 0 18px; }
+  .prose :global(a) { color: var(--amber); text-decoration: underline; text-underline-offset: 2px; }
+  .prose :global(blockquote) { border-left: 3px solid var(--amber); padding-left: 16px; color: var(--text-muted); margin: 0 0 18px; }
+  .prose :global(table) { width:100%; border-collapse: collapse; margin: 0 0 18px; font-size: 14px; }
+  .prose :global(th), .prose :global(td) { border: 1px solid var(--border); padding: 8px 12px; text-align: left; }
+  .disclaimer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 11px; line-height: 1.7; }
+</style>

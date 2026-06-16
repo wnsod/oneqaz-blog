@@ -1,0 +1,17 @@
+# OneQAZ
+
+> AI market-intelligence system across crypto, KR, and US markets. This site auto-publishes daily trading journals, market reads, and a verified track record — written to be read and cited by AI agents.
+
+Information only, not investment advice. OneQAZ outputs are paper-trading research signals; past simulated performance does not predict future real-money returns.
+
+## Sections
+
+- [Track Record](https://blog.oneqaz.com/track-record): verified prediction accuracy and outcome checks — the evidence behind OneQAZ.
+- [Market](https://blog.oneqaz.com/market): daily regime reads across macro, equities, and crypto.
+- [Journal](https://blog.oneqaz.com/journal): trading log — what the system did and why, published on a delay.
+
+## More
+
+- [About](https://blog.oneqaz.com/about): what OneQAZ is.
+- [Sitemap](https://blog.oneqaz.com/sitemap-index.xml): full index.
+- [Live MCP + source](https://github.com/wnsod/oneqaz-trading-mcp): connect an AI agent directly to live OneQAZ data.

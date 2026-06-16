@@ -1,0 +1,22 @@
+---
+const year = 2026;
+---
+<footer>
+  <div class="container-wide inner">
+    <div class="links">
+      <a href="https://oneqaz.com">oneqaz.com</a>
+      <a href="https://github.com/wnsod/oneqaz-trading-mcp">GitHub</a>
+      <a href="/about">About</a>
+    </div>
+    <p class="copy muted">&copy; {year} OneQAZ. Research information only — not investment advice.</p>
+  </div>
+</footer>
+
+<style>
+  footer { border-top: 1px solid var(--border); margin-top: 64px; }
+  .inner { padding: 36px 24px 48px; text-align:center; }
+  .links { display:flex; justify-content:center; gap:24px; flex-wrap:wrap; margin-bottom:16px; font-size:12px; letter-spacing:1px; }
+  .links a { color: var(--text-muted); transition: color .2s; }
+  .links a:hover { color: var(--amber); }
+  .copy { font-size: 11px; }
+</style>

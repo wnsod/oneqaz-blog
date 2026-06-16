@@ -1,0 +1,22 @@
+---
+export interface Props {
+  markets?: string[];
+  tags?: string[];
+}
+const { markets = [], tags = [] } = Astro.props;
+const marketLabels: Record<string, string> = { kr: 'KR', us: 'US', crypto: 'Crypto' };
+---
+{(markets.length > 0 || tags.length > 0) && (
+  <span class="tags">
+    {markets.map((m) => (
+      <a href={`/tags/${m}`} class="tag">{marketLabels[m] ?? m}</a>
+    ))}
+    {tags.map((t) => (
+      <a href={`/tags/${t}`} class="tag">#{t}</a>
+    ))}
+  </span>
+)}
+
+<style>
+  .tags { display:inline-flex; gap:6px; flex-wrap:wrap; }
+</style>

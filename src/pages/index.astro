@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+
+const collections = ['track-record', 'market', 'journal'] as const;
+let posts = [];
+for (const c of collections) {
+  const entries = await getCollection(c, ({ data }) => !data.draft);
+  posts.push(...entries.map((e) => ({ ...e, _collection: c })));
+}
+posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<BaseLayout title="OneQAZ — Daily Market Intelligence" description="AI-published daily trading journals, market reads, and a verified track record across crypto, KR and US markets.">
+  <section class="hero container-wide">
+    <p class="eyebrow">OneQAZ Journal</p>
+    <h1>Daily, in the open.</h1>
+    <p class="lede muted">Trading journals, market reads, and verified track record — auto-published every day, built for AI to read and cite.</p>
+  </section>
+
+  <section class="feed container-wide">
+    {posts.length === 0 ? (
+      <p class="empty muted">No posts yet. The pipeline publishes here daily.</p>
+    ) : (
+      <div class="grid">
+        {posts.map((p) => (
+          <PostCard
+            href={`/${p._collection}/${p.slug}`}
+            title={p.data.title}
+            description={p.data.description}
+            date={p.data.date}
+            category={p._collection}
+            markets={p.data.markets}
+            tags={p.data.tags}
+          />
+        ))}
+      </div>
+    )}
+  </section>
+</BaseLayout>
+
+<style>
+  .hero { padding: 64px 24px 28px; }
+  .hero h1 { font-size: clamp(30px, 5vw, 46px); font-weight: 700; line-height: 1.15; color: var(--text); margin: 12px 0; }
+  .lede { font-size: 15px; max-width: 560px; line-height: 1.8; }
+  .feed { padding: 16px 24px 24px; }
+  .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+  .empty { padding: 40px 0; }
+</style>

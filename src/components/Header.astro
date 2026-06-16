@@ -1,0 +1,33 @@
+---
+const cats = [
+  { href: '/track-record', label: 'Track Record' },
+  { href: '/market', label: 'Market' },
+  { href: '/journal', label: 'Journal' },
+];
+const path = Astro.url.pathname;
+---
+<header>
+  <div class="container-wide bar">
+    <a href="/" class="brand">
+      <img src="/logo.png" alt="OneQAZ" width="26" height="26" />
+      <span>OneQAZ</span>
+    </a>
+    <nav>
+      {cats.map((c) => (
+        <a href={c.href} class={path.startsWith(c.href) ? 'active' : ''}>{c.label}</a>
+      ))}
+      <a href="https://oneqaz.com" class="home">oneqaz.com &#8599;</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  header { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+  .bar { display:flex; align-items:center; justify-content:space-between; gap:16px; padding-top:12px; padding-bottom:12px; }
+  .brand { display:flex; align-items:center; gap:9px; font-weight:600; letter-spacing:3px; text-transform:uppercase; font-size:14px; color: var(--amber); }
+  nav { display:flex; align-items:center; gap:18px; font-size:12px; letter-spacing:1.2px; text-transform:uppercase; font-weight:500; }
+  nav a { color: var(--text-muted); transition: color .2s; }
+  nav a:hover, nav a.active { color: var(--amber); }
+  nav a.home { color: var(--text-muted); opacity:.7; }
+  @media (max-width:560px){ nav { gap:11px; font-size:10px; } .brand span { display:none; } }
+</style>

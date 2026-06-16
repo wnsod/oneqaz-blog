@@ -72,6 +72,8 @@ const jsonLd = {
   .lang-toggle { margin-left:auto; border:1px solid var(--border); border-radius: 999px; padding: 3px 11px; font-size:12px; letter-spacing:.5px; color: var(--text-muted); transition: color .2s, border-color .2s; }
   .lang-toggle:hover { color: var(--amber); border-color: var(--amber); }
   .prose :global(p) { margin: 0 0 18px; }
+  /* inline character emoticons — emoji-sized, scattered through the body */
+  .prose :global(img.emoji-char) { height: 1.7em; width: auto; display: inline-block; vertical-align: -0.45em; margin: 0 0.12em; }
   .prose :global(h2) { font-size: 22px; font-weight: 600; margin: 36px 0 14px; color: var(--text); }
   .prose :global(h3) { font-size: 18px; font-weight: 600; margin: 28px 0 12px; }
   .prose :global(ul), .prose :global(ol) { margin: 0 0 18px 22px; }

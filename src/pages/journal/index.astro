@@ -7,7 +7,7 @@ const COLLECTION = 'journal';
 const TITLE = 'Journal';
 const DESC = 'Trading log — what the system did and why, published on a delay.';
 
-const posts = (await getCollection(COLLECTION, ({ data }) => !data.draft))
+const posts = (await getCollection(COLLECTION, ({ data }) => !data.draft && data.lang !== 'en'))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 <BaseLayout title={`${TITLE} — OneQAZ`} description={DESC}>

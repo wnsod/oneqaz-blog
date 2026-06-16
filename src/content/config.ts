@@ -14,6 +14,9 @@ const postSchema = z.object({
   lang: z.enum(['ko', 'en']).default('ko'),
   draft: z.boolean().default(false),
   ogImage: z.string().optional(),
+  // hreflang pairing — the alternate-language version of this same post
+  altUrl: z.string().optional(),
+  altLang: z.enum(['ko', 'en']).optional(),
 });
 
 const trackRecord = defineCollection({ type: 'content', schema: postSchema });

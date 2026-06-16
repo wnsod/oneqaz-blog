@@ -6,7 +6,8 @@ import PostCard from '../components/PostCard.astro';
 const collections = ['track-record', 'market', 'journal'] as const;
 let posts = [];
 for (const c of collections) {
-  const entries = await getCollection(c, ({ data }) => !data.draft);
+  // KO is the primary human feed; EN alternates stay crawlable (sitemap/hreflang/toggle).
+  const entries = await getCollection(c, ({ data }) => !data.draft && data.lang !== 'en');
   posts.push(...entries.map((e) => ({ ...e, _collection: c })));
 }
 posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());

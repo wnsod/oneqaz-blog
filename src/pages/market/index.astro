@@ -7,7 +7,7 @@ const COLLECTION = 'market';
 const TITLE = 'Market';
 const DESC = 'Daily regime reads across macro, equities, and crypto.';
 
-const posts = (await getCollection(COLLECTION, ({ data }) => !data.draft))
+const posts = (await getCollection(COLLECTION, ({ data }) => !data.draft && data.lang !== 'en'))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 <BaseLayout title={`${TITLE} — OneQAZ`} description={DESC}>

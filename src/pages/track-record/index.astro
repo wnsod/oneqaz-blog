@@ -7,7 +7,7 @@ const COLLECTION = 'track-record';
 const TITLE = 'Track Record';
 const DESC = 'Verified prediction accuracy and outcome checks — the evidence behind OneQAZ.';
 
-const posts = (await getCollection(COLLECTION, ({ data }) => !data.draft))
+const posts = (await getCollection(COLLECTION, ({ data }) => !data.draft && data.lang !== 'en'))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 <BaseLayout title={`${TITLE} — OneQAZ`} description={DESC}>

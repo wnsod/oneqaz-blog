@@ -11,13 +11,20 @@ export interface Props {
   tags?: string[];
   lang?: 'ko' | 'en';
   ogImage?: string;
+  altUrl?: string;
+  altLang?: 'ko' | 'en';
 }
 
-const { title, description, date, category, markets = [], tags = [], lang = 'ko', ogImage } = Astro.props;
+const { title, description, date, category, markets = [], tags = [], lang = 'ko', ogImage, altUrl, altLang } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const iso = date.toISOString();
 const dateLabel = date.toISOString().slice(0, 10);
+
+// hreflang pairing — let AI/search engines see the KO↔EN versions of this post.
+const altHref = altUrl ? new URL(altUrl, Astro.site).href : null;
+const xDefault = lang === 'ko' ? canonical : altHref; // KO is the default language
+const toggleLabel = altLang === 'en' ? 'EN' : '한국어';
 
 // JSON-LD in initial HTML — what AI crawlers actually read.
 const jsonLd = {
@@ -35,6 +42,9 @@ const jsonLd = {
 ---
 <BaseLayout title={`${title} — OneQAZ`} description={description} lang={lang} ogImage={ogImage}>
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+  {altHref && <link rel="alternate" hreflang={lang} href={canonical} slot="head" />}
+  {altHref && <link rel="alternate" hreflang={altLang} href={altHref} slot="head" />}
+  {altHref && xDefault && <link rel="alternate" hreflang="x-default" href={xDefault} slot="head" />}
 
   <article class="container post">
     <a href={`/${category}`} class="eyebrow back">&larr; {category}</a>
@@ -42,6 +52,7 @@ const jsonLd = {
     <div class="meta">
       <time datetime={iso}>{dateLabel}</time>
       <TagList markets={markets} tags={tags} />
+      {altHref && <a class="lang-toggle" href={altUrl} hreflang={altLang}>{toggleLabel}</a>}
     </div>
     <div class="prose">
       <slot />
@@ -58,6 +69,8 @@ const jsonLd = {
   .back { display:inline-block; margin-bottom: 20px; opacity:.8; }
   h1 { font-size: clamp(26px, 4vw, 38px); font-weight: 700; line-height: 1.25; color: var(--text); margin-bottom: 14px; }
   .meta { display:flex; align-items:center; gap:14px; flex-wrap:wrap; font-size:13px; color: var(--text-muted); margin-bottom: 36px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+  .lang-toggle { margin-left:auto; border:1px solid var(--border); border-radius: 999px; padding: 3px 11px; font-size:12px; letter-spacing:.5px; color: var(--text-muted); transition: color .2s, border-color .2s; }
+  .lang-toggle:hover { color: var(--amber); border-color: var(--amber); }
   .prose :global(p) { margin: 0 0 18px; }
   .prose :global(h2) { font-size: 22px; font-weight: 600; margin: 36px 0 14px; color: var(--text); }
   .prose :global(h3) { font-size: 18px; font-weight: 600; margin: 28px 0 12px; }

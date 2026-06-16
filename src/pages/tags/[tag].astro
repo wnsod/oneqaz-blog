@@ -7,7 +7,7 @@ export async function getStaticPaths() {
   const COLLECTIONS = ['track-record', 'market', 'journal'] as const;
   const all = [];
   for (const c of COLLECTIONS) {
-    const entries = await getCollection(c, ({ data }) => !data.draft);
+    const entries = await getCollection(c, ({ data }) => !data.draft && data.lang !== 'en');
     all.push(...entries.map((e) => ({ ...e, _collection: c })));
   }
   // a "tag" is any market id OR any free tag

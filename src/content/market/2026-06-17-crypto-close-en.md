@@ -1,13 +1,13 @@
 ---
 title: "2026-06-17 Crypto Market Read — Bengal"
-date: 2026-06-17T13:03:18+09:00
+date: 2026-06-17T13:41:57+09:00
 description: "Crypto market read: neutral regime · macro backdrop & cross-market (OneQAZ research)"
 category: market
 markets: [crypto]
 tags: [regime, close]
 lang: en
 draft: false
-ogImage: /characters/crypto/05_anxious.png
+ogImage: /characters/crypto/06_neutral.png
 altUrl: /market/2026-06-17-crypto-close
 altLang: ko
 ---
@@ -16,8 +16,8 @@ altLang: ko
 
 | Area | Regime | Bull | Bear | Trend |
 |---|---|---|---|---|
-| Crypto | neutral | 6.4% | 2.0% | deteriorating |
-| Korea | neutral | 14.5% | 1.2% | deteriorating |
+| Crypto | neutral | 6.4% | 2.0% | stable |
+| Korea | neutral | 14.5% | 1.2% | stable |
 | US | neutral | 33.2% | 3.6% | improving |
 | Volatility | neutral | 0.0% | 25.0% | stable |
 | Bonds | bullish | 62.5% | 37.5% | stable |
@@ -28,19 +28,18 @@ altLang: ko
 | Inflation | sideways_bullish | 50.0% | 25.0% | stable |
 
 ## Macro backdrop
-The bond market exhibits a clear bullish leaning, suggesting underlying support in fixed income pricing. Currency markets are currently in a neutral state, showing a slight tilt towards bearish sentiment. Commodity pricing remains balanced, leaning slightly more towards bearish territory. !QAZ notes that overall volatility is maintaining a stable, neutral posture.
+The VIX remains in a neutral state, suggesting no immediate directional consensus on volatility. Bond markets exhibit a clear bullish leaning, while credit conditions show a complete bullish consensus, indicating underlying stability in counterparty risk. Currency movements are balanced, with a slight leaning towards bearish sentiment, and liquidity remains neutral. Commodity trends are also mixed, showing a slight bearish bias, while inflation settles into a sideways-bullish pattern.
 
-## Crypto
-The cryptocurrency space is showing signs of deteriorating trend momentum, despite a modest bullish bias.
+## crypto
+The cryptocurrency market displays a neutral trend, with a slight bullish tilt observed in the recent activity.
 
 ## Cross-market
-The broader equity picture shows the US market trend improving, while the Korean market's trend is deteriorating. Credit conditions are registering a fully bullish reading, contrasting with the more mixed signals observed in FX and commodities.
+The broader market indicators present a mixed picture: while credit and bonds show bullish stability, the overall sentiment across FX and commodities is more balanced or slightly cautious. The US equity market is noted as improving, contrasting with the neutral readings in other major indices.
 
 ## In the news
-Key developments include reports on high-interest rates affecting consumer credit services, and discussions around securing global technology leadership through intellectual property in the offshore wind sector. Furthermore, attention is focused on upcoming Federal Reserve meetings amid inflation readings approaching the 4% mark.
+Regarding macro developments, reports indicate that central banks globally are expected to continue accumulating gold holdings, as per the World Gold Council survey. Furthermore, domestic corporate governance issues, such as the dispute over the audit committee's oversight function, remain a point of focus in corporate reporting.
 
-## !QAZ's take
-The macro landscape presents a divergence where fixed income and credit show distinct strength, while volatility remains contained. The differing directional signals across asset classes—from improving US equity trends to deteriorating crypto momentum—suggests that market participants are digesting varied signals regarding inflation and monetary policy expectations.
+!QAZ's take: The macro backdrop suggests underlying structural resilience, particularly in credit and bonds, despite mixed signals across commodities and FX. The market is digesting ongoing geopolitical and central bank positioning, leading to a cautious, yet fundamentally stable, operational environment across asset classes.
 
 ---
 

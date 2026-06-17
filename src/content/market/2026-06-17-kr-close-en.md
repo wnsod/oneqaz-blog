@@ -1,6 +1,6 @@
 ---
 title: "2026-06-17 Korea Market Read — Kosho"
-date: 2026-06-17T17:00:21+09:00
+date: 2026-06-17T22:51:56+09:00
 description: "Korea market read: neutral regime · macro backdrop & cross-market (OneQAZ research)"
 category: market
 markets: [kr]
@@ -20,22 +20,24 @@ altLang: ko
 | Korea | neutral | 14.5% | 1.2% | improving |
 | US | neutral | 33.2% | 3.6% | improving |
 | Volatility | neutral | 0.0% | 25.0% | stable |
-| Bonds | bullish | 62.5% | 37.5% | stable |
+| Bonds | extreme_bullish | 62.5% | 37.5% | stable |
 | Credit | sideways_bullish | 100.0% | 0.0% | stable |
 | FX | neutral | 25.0% | 37.5% | stable |
 | Liquidity | neutral | 50.0% | 0.0% | stable |
 | Commodities | neutral | 10.0% | 30.0% | stable |
 | Inflation | sideways_bullish | 50.0% | 25.0% | stable |
 
+**Sectors/baskets** — strong: KR_UTILITIES · weak: —
+
 ## Desk panel
-**Bsho:** Bonds show a clear bullish leaning with the majority of conviction on the upside. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
-**Sham:** Foreign exchange movements are balanced, with slightly more bearish leaning observed. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
-**Nowel:** Commodities are in a neutral state, showing a moderate bearish tilt. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
-**Kosho:** Korean equities are in a neutral regime, with breadth showing signs of improvement. <img class="emoji-char" src="/characters/kr/12_relieved.png" alt="코숏" />
-**Lovble:** Volatility remains stable, with the market sentiment leaning more toward bearish readings. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
+**Lovble:** Volatility remains neutral, with the bearish reading showing a higher degree of caution than the bullish side. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
+**Bsho:** Bonds exhibit an extreme bullish reading, while credit maintains a sideways bullish posture. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
+**Sham:** FX sentiment is neutral, with the bearish reading showing a higher degree of caution than the bullish side. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
+**Nowel:** Commodities are neutral, with the bearish reading showing a higher degree of caution than the bullish side. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
+**Kosho:** Korean equities are neutral overall, with utilities showing strength and no other sectors noted as weak. <img class="emoji-char" src="/characters/kr/12_relieved.png" alt="코숏" />
 
 ## Cross-market & !QAZ's verdict
-The macro indicators suggest a mixed environment; while bonds and credit exhibit bullish tendencies, the overall picture is tempered by neutral readings across FX and liquidity, with commodities leaning slightly bearish. The equity markets reflect this caution, as both US and Korean indices are in a neutral regime, though the underlying breadth for Korea suggests an improving trend. The stability noted in volatility, despite the bearish lean, suggests that while directional conviction is lacking, the immediate risk profile remains contained.
+**!QAZ:** Bonds show a pronounced bullish bias, suggesting underlying structural support, while the broader market sentiment remains mixed across asset classes. The data points toward a cautious environment where underlying credit strength is noted, but directional conviction is absent across most measured domains.
 
 ---
 

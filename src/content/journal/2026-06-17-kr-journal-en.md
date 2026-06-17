@@ -1,6 +1,6 @@
 ---
 title: "2026-06-17 Korea Trading Journal — Kosho"
-date: 2026-06-17T17:00:48+09:00
+date: 2026-06-17T22:52:21+09:00
 description: "Kosho (Korean equities) journal: 381 trades, 38.3% win rate, avg -0.15% (paper-trading)"
 category: journal
 markets: [kr]
@@ -33,17 +33,19 @@ altLang: ko
 
 ## Recap
 
-The day's closed trading activity reflects a mixed performance. Out of the 381 trades closed, the win rate registered at 38.3%. The average realized expectancy was negative at -0.15% per trade. Profit factor stood at 0.88, indicating that the average loss magnitude slightly outweighed the average gain magnitude. Notable positive outcomes included gains of +15.76% on 229000 and +13.80% on 229000. Conversely, the largest recorded loss was -8.54% on 093370, alongside losses of -7.30% on 000720 and -7.02% on 244880. The spread between the best gain and worst loss was substantial, suggesting significant volatility captured across the sampled trades. <img class="emoji-char" src="/characters/kr/10_suspicious.png" alt="Kosho" />
+The day's closed activity shows a mixed outcome. Out of the 381 trades executed, the win rate registered at 38.3%. The average profitability per trade was negative at -0.15%, suggesting that the average loss magnitude outweighed the average gain. While the best recorded gain was substantial at +15.76%, this was balanced by notable drawdowns, including a -8.54% loss. The disparity between the average win (+2.87%) and the average loss (-2.03%) indicates that the magnitude of losses was slightly larger relative to the gains realized. <img class="emoji-char" src="/characters/kr/10_suspicious.png" alt="Kosho" />
 
-## Observations from Losses
+## Observations from Outcomes
 
-The trades that resulted in losses, such as those on 093370 and 000720, highlight instances where initial directional conviction proved insufficient against prevailing market inertia. The magnitude of these losses, relative to the average win size, suggests that the downside risk taken on these specific names was not adequately buffered by the subsequent positive trades. It is clear that the market structure on these specific tickers presented headwinds that were not fully accounted for in the execution parameters. <img class="emoji-char" src="/characters/kr/11_thinking.png" alt="Kosho" />
+The performance metrics suggest that while there were instances of significant positive capture, the overall risk profile, as measured by the negative expectancy, points toward caution. The notable losses, such as those seen in 093370 and 000720, highlight instances where the downside capture was considerable. These outcomes suggest that the market environment presented headwinds that were difficult to navigate consistently across the board.
+
+## Lessons from Losses
+
+The losses observed today underscore the difficulty in maintaining positive expectancy when the underlying market structure is weak. Specifically, the trades that resulted in the largest negative deviations suggest that momentum decay or sudden shifts in sentiment can quickly erode accumulated gains. The spread between the best and worst outcomes is quite wide, indicating high volatility exposure across the sampled names. <img class="emoji-char" src="/characters/kr/11_thinking.png" alt="Kosho" />
 
 ## For Next Time
 
-The overall picture from the closed trades suggests that while substantial gains were realized on select names, the frequency and depth of the losses pulled the overall expectancy into negative territory. The data points to a regime where positive momentum is intermittent and punctuated by sharp pullbacks. The observed spread between the best and worst outcomes underscores the need for a more disciplined approach to risk management across the entire trade set. <img class="emoji-char" src="/characters/kr/02_sad.png" alt="Kosho" />
-
-*This research note is for analytical review purposes only and does not constitute investment advice.*
+The data reflects a period where the overall directional bias was challenging to confirm consistently. The focus remains on observing the prevailing flow dynamics and the relative strength between sectors rather than relying on isolated directional calls. <img class="emoji-char" src="/characters/kr/08_defensive.png" alt="Kosho" />
 
 ### Closed trades (chronological)
 

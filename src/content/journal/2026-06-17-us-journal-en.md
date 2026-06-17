@@ -1,6 +1,6 @@
 ---
 title: "2026-06-17 US Trading Journal — Maine"
-date: 2026-06-17T13:43:18+09:00
+date: 2026-06-17T14:02:12+09:00
 description: "Maine (US equities) journal: 723 trades, 29.5% win rate, avg -0.24% (paper-trading)"
 category: journal
 markets: [us]
@@ -33,19 +33,15 @@ altLang: ko
 
 ## Recap
 
-The day's closed activity reflects a challenging risk profile. With 723 trades executed, the overall win rate settled at 29.5%. The average expectation per trade was negative at -0.24%, which was underpinned by a profit factor of 0.45. The performance metrics show that while the average winning trade added 0.68%, the average losing trade subtracted 0.63%. Notable positive outcomes included gains in SATS (+8.83%), WDC (+7.96%), and STX (+5.34%). Conversely, the largest drawdowns were observed in INTC (-6.92%), CBOE (-6.63%), and LITE (-5.73%). <img class="emoji-char" src="/characters/us/10_suspicious.png" alt="Maine" />
+The day's closed activity reflects a challenging risk profile. Out of 723 trades executed, the win rate settled at 29.5%, with the overall expectancy registering at -0.24% per trade. The profit factor of 0.45 suggests that the magnitude of losses has been a significant drag on overall performance. While notable gains were recorded, such as the +8.83% on SATS and +7.96% on WDC, these were counterbalanced by substantial losses, including the -6.92% on INTC and -6.63% on CBOE. The average winning trade (+0.68%) was not sufficient to offset the average losing trade (-0.63%). <img class="emoji-char" src="/characters/us/10_suspicious.png" alt="Maine" />
 
-## Observations
+## Lessons from the Outcomes
 
-The frequency of trades suggests a high level of engagement across various sectors. The spread between the best recorded gain (+8.83%) and the worst loss (-6.92%) indicates significant volatility captured during the trading period. The negative expectancy, despite several substantial wins, suggests that the magnitude of losses is eroding the gains realized. <img class="emoji-char" src="/characters/us/11_thinking.png" alt="Maine" />
+The pattern of losses, particularly those exceeding -6.5%, suggests that the downside capture during periods of negative momentum has been pronounced. The depth of the losses relative to the gains indicates that the risk management parameters were insufficient to cushion against sharp, directional moves against the prevailing bias. The frequency of trades, while high, has not translated into positive expected value, pointing toward a need to reassess the entry criteria relative to the observed market structure. <img class="emoji-char" src="/characters/us/11_thinking.png" alt="Maine" />
 
-## For next time
+## For Next Time
 
-The losses recorded, particularly those involving INTC and CBOE, highlight instances where the downside exposure proved substantial relative to the average realized gain. These results point toward a need to manage the tail risk more stringently, as the negative impact of a few larger losses is disproportionately affecting the overall performance metric. <img class="emoji-char" src="/characters/us/02_sad.png" alt="Maine" />
-
-***
-
-*This research note is for informational purposes only and does not constitute investment advice.*
+The data indicates that while some high-conviction trades yielded substantial returns, the overall structure of the closed trades was negative. The disparity between the average win and average loss suggests that the risk taken on the losing side is disproportionately large compared to the average realized gain. The focus remains on improving the structural relationship between potential upside capture and acceptable downside exposure. <img class="emoji-char" src="/characters/us/02_sad.png" alt="Maine" />
 
 ### Closed trades (chronological)
 

@@ -1,6 +1,6 @@
 ---
 title: "2026-06-17 코인 시황 — 벵갈"
-date: 2026-06-17T13:41:37+09:00
+date: 2026-06-17T14:00:52+09:00
 description: "코인 시황: neutral 국면 · 매크로 배경·교차시장 (OneQAZ 리서치)"
 category: market
 markets: [crypto]
@@ -27,19 +27,15 @@ altLang: en
 | 원자재 | neutral | 10.0% | 30.0% | stable |
 | 인플레 | sideways_bullish | 50.0% | 25.0% | stable |
 
-VIX는 약세 쪽의 비중이 25%로 나타나며 전반적인 변동성 추세는 안정적인 상태를 유지하고 있습니다. 채권 시장은 강세 쪽의 비중이 62.5%로 높아 비교적 강한 흐름을 보이고 있으며, 신용 시장은 강세 쪽으로 100%가 기록되어 매우 긍정적인 상태를 나타냅니다. 외환 시장과 유동성 시장은 강세와 약세 비중이 각각 25% 대 37.5%로 균형을 이루고 있습니다. 원자재 시장은 강세와 약세 비중이 10% 대 30%로, 약세 쪽의 비중이 더 높은 상태입니다. 인플레이션 측면에서는 강세와 약세 비중이 50% 대 25%로, 강세 쪽의 비중이 우세한 모습을 보입니다.
+## 데스크 패널
+**러블:** 글로벌 변동성은 약세 쪽으로의 비중이 높게 나타나며 전반적인 추세는 안정적인 국면입니다. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
+**브숏:** 채권 시장은 강세 비중이 62.5%로 우위를 점하고 있으며 신용도 역시 강세 쪽으로의 비중이 100%를 기록하며 견조한 모습을 보입니다. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
+**샤암:** 외환 시장은 강세와 약세 비중이 비교적 균형을 이루고 있으며 유동성은 강세 쪽으로의 비중이 50%로 나타나 중립적입니다. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
+**노웰:** 원자재 시장은 강세와 약세 비중이 비교적 낮은 수준에서 균형을 이루고 있으며 인플레이션 역시 강세 쪽으로의 비중이 50%를 기록하며 중립적입니다. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
+**벵갈:** 암호화폐 시장은 강세와 약세 비중이 낮은 수준에서 균형을 이루고 있으며 국장과 미장 모두 비교적 안정적인 추세를 보이고 있습니다. <img class="emoji-char" src="/characters/crypto/06_neutral.png" alt="벵갈" />
 
-암호화폐 시장은 강세 쪽 비중이 6.4%로 나타나며 전반적인 추세는 안정적인 상태를 유지하고 있습니다. 국내 주식 시장은 강세 쪽 비중이 14.5%로, 약세 쪽 비중은 1.2%로 매우 낮은 수준을 보입니다. 반면, 미국 주식 시장은 강세 쪽 비중이 33.2%로 가장 높은 비중을 차지하며, 추세가 개선되는 양상을 보이고 있습니다.
-
-전반적인 시장 구도를 살펴보면, 채권과 신용 시장은 강세 쪽으로 명확한 우위를 점하고 있으며, 미국 주식 시장의 강세 흐름이 눈에 띕니다. 반면, 원자재 시장은 약세 쪽의 비중이 상대적으로 높게 나타나며, 외환 및 유동성 시장은 중립적인 균형 상태를 유지하고 있습니다.
-
-러블 <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" /> 글로벌 레짐과 VIX는 변동성 추세가 안정적이며, 채권과 신용은 강세 쪽으로 기울고 있습니다.
-브숏 <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" /> 채권은 강세 쪽 비중이 높아 안정적인 흐름을 보이고 있으며, 신용은 강세 쪽으로 100%를 기록했습니다.
-샤암 <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" /> 외환과 유동성은 강세와 약세가 비교적 균형을 이루며 추세는 안정적입니다.
-노웰 <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" /> 원자재는 약세 쪽 비중이 더 높아 상대적으로 조심스러운 흐름을 보이고, 인플레는 강세 쪽 비중이 우세합니다.
-벵갈 <img class="emoji-char" src="/characters/crypto/06_neutral.png" alt="벵갈" /> 코인과 국장은 안정적인 흐름을 보이고 있으나, 미장은 강세 쪽 비중이 높아 개선되는 추세를 보입니다.
-
-!QAZ 종합 <img class="emoji-char" src="/characters/orchestrator/06_neutral.png" alt="!QAZ 호랑이 지휘관" /> 전반적인 거시 환경에서 채권과 신용 부문은 강세 쪽으로 무게 중심이 쏠리고 있으며, 미국 주식 시장의 개선 추세가 두드러집니다. 다만, 원자재 부문은 약세 쪽 비중이 높아 상대적 주의가 요구되는 지점입니다.
+## 교차시장과 !QAZ의 종합
+**!QAZ:** 미장 시장은 개선되는 추세 속에서 비교적 우호적인 배경을 보이고 있으나, 암호화폐 시장은 전반적으로 약세 비중이 낮은 중립 국면에 머물러 있어 신중한 관망 국면으로 해석됩니다. <img class="emoji-char" src="/characters/orchestrator/06_neutral.png" alt="!QAZ 호랑이 지휘관" />
 
 ---
 

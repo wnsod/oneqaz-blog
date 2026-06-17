@@ -1,6 +1,6 @@
 ---
 title: "2026-06-17 Crypto Market Read — Bengal"
-date: 2026-06-17T13:41:57+09:00
+date: 2026-06-17T14:01:03+09:00
 description: "Crypto market read: neutral regime · macro backdrop & cross-market (OneQAZ research)"
 category: market
 markets: [crypto]
@@ -27,19 +27,15 @@ altLang: ko
 | Commodities | neutral | 10.0% | 30.0% | stable |
 | Inflation | sideways_bullish | 50.0% | 25.0% | stable |
 
-## Macro backdrop
-The VIX remains in a neutral state, suggesting no immediate directional consensus on volatility. Bond markets exhibit a clear bullish leaning, while credit conditions show a complete bullish consensus, indicating underlying stability in counterparty risk. Currency movements are balanced, with a slight leaning towards bearish sentiment, and liquidity remains neutral. Commodity trends are also mixed, showing a slight bearish bias, while inflation settles into a sideways-bullish pattern.
+## Desk panel
+**Lovble:** Volatility remains stable with a notable leaning towards bearish readings. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
+**Bsho:** The bond market exhibits a clear bullish bias with stable underlying trends. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
+**Sham:** Foreign exchange movements are characterized by a neutral stance, with a slight leaning towards bearishness. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
+**Nowel:** Commodities are in a neutral state, showing a moderate bearish leaning. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
+**Bengal:** The cryptocurrency market is in a neutral regime, with breadth showing minimal directional conviction. <img class="emoji-char" src="/characters/crypto/06_neutral.png" alt="벵갈" />
 
-## crypto
-The cryptocurrency market displays a neutral trend, with a slight bullish tilt observed in the recent activity.
-
-## Cross-market
-The broader market indicators present a mixed picture: while credit and bonds show bullish stability, the overall sentiment across FX and commodities is more balanced or slightly cautious. The US equity market is noted as improving, contrasting with the neutral readings in other major indices.
-
-## In the news
-Regarding macro developments, reports indicate that central banks globally are expected to continue accumulating gold holdings, as per the World Gold Council survey. Furthermore, domestic corporate governance issues, such as the dispute over the audit committee's oversight function, remain a point of focus in corporate reporting.
-
-!QAZ's take: The macro backdrop suggests underlying structural resilience, particularly in credit and bonds, despite mixed signals across commodities and FX. The market is digesting ongoing geopolitical and central bank positioning, leading to a cautious, yet fundamentally stable, operational environment across asset classes.
+## Cross-market & !QAZ's verdict
+**!QAZ:** The market structure suggests underlying support from credit and bonds, while volatility and commodities present cautionary notes. The overall picture is one of cautious stability across major asset classes. <img class="emoji-char" src="/characters/orchestrator/06_neutral.png" alt="!QAZ 호랑이 지휘관" />
 
 ---
 

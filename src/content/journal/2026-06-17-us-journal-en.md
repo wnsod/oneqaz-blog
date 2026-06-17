@@ -1,6 +1,6 @@
 ---
 title: "2026-06-17 US Trading Journal — Maine"
-date: 2026-06-17T11:25:14+09:00
+date: 2026-06-17T12:48:59+09:00
 description: "Maine (US equities) journal: 723 trades, 29.5% win rate, avg -0.24% (paper-trading)"
 category: journal
 markets: [us]
@@ -33,15 +33,18 @@ altLang: ko
 
 ## Recap
 
-The day's closed activity reflects a challenging risk profile. With a win rate at 29.5% and an expectancy of -0.24% per trade, the aggregate performance suggests that the average loss magnitude is currently outweighing the average gain. The profit factor of 0.45 indicates that the total losses are exceeding the total gains. Notable positive outcomes, such as the gains observed in SATS and WDC, were offset by several larger negative excursions, including the trades in INTC and CBOE. The spread between the best recorded gain (+8.83%) and the worst loss (-6.92%) highlights significant volatility within the sampled trades. <img class="emoji-char" src="/characters/us/10_suspicious.png" alt="Maine" />
+The recent closing activity shows a mixed outcome across the sampled trades. Out of 723 closed positions, the win rate settled at 29.5%. The average profit realized on winning trades was positive at +0.68%, while the average loss incurred on losing trades was -0.63%. The overall expectancy for the closed set was negative at -0.24% per trade, and the profit factor registered at 0.45. Notable positive returns included SATS at +8.83% and WDC at +7.96%. Conversely, the largest recorded losses were seen in INTC at -6.92% and CBOE at -6.63% <img class="emoji-char" src="/characters/us/02_sad.png" alt="Maine" />.
 
-## Observations on Performance
+## Lessons from Outcomes
 
-The losses encountered, particularly those in INTC and CBOE, underscore the difficulty in maintaining positive expectancy when the underlying market structure is trending against the executed positions. The average win (+0.68%) versus the average loss (-0.63%) suggests that while wins are generally modest, the frequency and size of the losses are exerting a noticeable drag on overall returns. The performance metrics point toward a regime where directional conviction is proving costly. <img class="emoji-char" src="/characters/us/11_thinking.png" alt="Maine" />
+The performance metrics suggest that the magnitude of losses is significantly impacting the overall expected return, given the current profit factor. The trades resulting in the largest drawdowns, such as INTC and CBOE, highlight instances where the downside risk materialized substantially against the realized gains. The spread between the best outcome (+8.83%) and the worst outcome (-6.92%) indicates a wide dispersion in realized volatility across the closed set <img class="emoji-char" src="/characters/us/11_thinking.png" alt="Maine" />.
 
-## For Next Time
+## Observations
 
-The data from the closed trades emphasizes the need for a more disciplined approach to sizing relative to the observed negative skew. The magnitude of the losses, relative to the wins, suggests that the risk management parameters need careful review against current market conditions. The overall picture derived from these closed trades is one of caution. <img class="emoji-char" src="/characters/us/02_sad.png" alt="Maine" />
+The data reflects a period where the aggregate performance trend has been downward, as indicated by the negative expectancy. The structure of the outcomes suggests that while some profitable trades occurred, the frequency and size of the losses weighed heavily on the net result. This pattern warrants a measured look at the risk/reward profile across the executed trades.
+
+***
+*This research note is for analytical observation purposes only and does not constitute investment advice.*
 
 ### Closed trades (chronological)
 
@@ -55,4 +58,7 @@ _As of 2026-06-17 (KST)._
 
 > **Disclaimer:** OneQAZ figures are **paper-trading** research, **not investment advice**. Past simulated performance does not predict future real-money results.
 
-Live data is available via [OneQAZ MCP](https://github.com/wnsod/oneqaz-trading-mcp).
+**Three ways to see OneQAZ** — this post is the *synthesis* layer:
+- **Live** — [dashboard stream](https://www.youtube.com/channel/UCZq7DKom3fuxpMPUUjRhMmA/live) (the system's screen, 24/7)
+- **Synthesis** — [blog.oneqaz.com](https://blog.oneqaz.com) (daily reads · journals · track record)
+- **Query** — [OneQAZ MCP](https://github.com/wnsod/oneqaz-trading-mcp) (connect an AI to live data)

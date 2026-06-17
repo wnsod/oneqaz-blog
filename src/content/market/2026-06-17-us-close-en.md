@@ -1,6 +1,6 @@
 ---
 title: "2026-06-17 US Market Close — Maine"
-date: 2026-06-17T11:24:50+09:00
+date: 2026-06-17T12:48:33+09:00
 description: "Maine (US equities) close: 723 trades, 29.5% win rate, avg -0.24% (paper-trading)"
 category: market
 markets: [us]
@@ -32,17 +32,12 @@ altLang: ko
 
 
 ## Today's regime
-
-The recent trading session suggests a challenging environment for US equities. The win rate registered at 29.5%, indicating that the majority of executed trades resulted in losses. This is reflected in the negative expectancy of -0.24% per trade. While the average winning trade (+0.68%) was larger in magnitude than the average losing trade (-0.63%), the overall performance metrics point toward difficulty in capturing consistent positive returns in the current market structure. <img class="emoji-char" src="/characters/us/10_suspicious.png" alt="Maine" />
+The recent trading session reflected a challenging environment. The win rate at 29.5% suggests that positive outcomes were infrequent relative to losses. Furthermore, the negative expectancy of -0.24% per trade indicates that the average loss magnitude outweighed the average gain magnitude across the closed sample. While the average winning trade added 0.68%, the average losing trade subtracted 0.63%, suggesting that the downside risk was slightly more impactful on average than the upside capture. This pattern suggests a degree of caution prevailing in the market structure <img class="emoji-char" src="/characters/us/10_suspicious.png" alt="Maine" />.
 
 ## What stood out
+The performance metrics highlight a notable divergence between the best and worst outcomes. The best recorded gain, such as on SATS at +8.83%, was significantly larger than the average win, while the worst loss, seen on INTC at -6.92%, was also substantial relative to the average loss. The presence of multiple notable losses, including CBOE and LITE, alongside the notable gains in WDC and STX, points to periods of sharp, directional moves that were difficult to consistently capture profitably <img class="emoji-char" src="/characters/us/11_thinking.png" alt="Maine" />.
 
-The performance spread across the sample trades was considerable. Notable gains included SATS (+8.83%) and WDC (+7.96%), suggesting pockets of strength in specific names. Conversely, the losses were substantial, with INTC (-6.92%) and CBOE (-6.63%) representing significant drawdowns. The profit factor of 0.45 confirms that the average losing trade size was disproportionately impactful relative to the average winning trade size. <img class="emoji-char" src="/characters/us/11_thinking.png" alt="Maine" />
-
-The combination of a low win rate and a negative expectancy suggests that while some profitable trades occurred, they were insufficient to offset the losses incurred on the majority of the closed positions. The magnitude of the worst observed loss (-6.92%) relative to the best gain (+8.83%) underscores the potential for sharp reversals within the current market regime. <img class="emoji-char" src="/characters/us/02_sad.png" alt="Maine" />
-
-***
-*This research note is based on simulated paper-trading data and does not constitute investment advice.*
+Overall, the sample trades suggest that while specific names demonstrated strong upward momentum, the overall structure of the session resulted in a net negative expectation. The profit factor of 0.45 indicates that the total gains were less than half the total losses recorded across the 723 closed trades. This suggests that the market environment presented more headwinds than tailwinds for the analyzed set of trades <img class="emoji-char" src="/characters/us/02_sad.png" alt="Maine" />.
 
 ### Closed trades (chronological)
 
@@ -56,4 +51,7 @@ _As of 2026-06-17 (KST)._
 
 > **Disclaimer:** OneQAZ figures are **paper-trading** research, **not investment advice**. Past simulated performance does not predict future real-money results.
 
-Live data is available via [OneQAZ MCP](https://github.com/wnsod/oneqaz-trading-mcp).
+**Three ways to see OneQAZ** — this post is the *synthesis* layer:
+- **Live** — [dashboard stream](https://www.youtube.com/channel/UCZq7DKom3fuxpMPUUjRhMmA/live) (the system's screen, 24/7)
+- **Synthesis** — [blog.oneqaz.com](https://blog.oneqaz.com) (daily reads · journals · track record)
+- **Query** — [OneQAZ MCP](https://github.com/wnsod/oneqaz-trading-mcp) (connect an AI to live data)

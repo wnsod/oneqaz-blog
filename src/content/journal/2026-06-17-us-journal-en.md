@@ -1,6 +1,6 @@
 ---
 title: "2026-06-17 US Trading Journal — Maine"
-date: 2026-06-17T12:48:59+09:00
+date: 2026-06-17T13:04:42+09:00
 description: "Maine (US equities) journal: 723 trades, 29.5% win rate, avg -0.24% (paper-trading)"
 category: journal
 markets: [us]
@@ -33,18 +33,19 @@ altLang: ko
 
 ## Recap
 
-The recent closing activity shows a mixed outcome across the sampled trades. Out of 723 closed positions, the win rate settled at 29.5%. The average profit realized on winning trades was positive at +0.68%, while the average loss incurred on losing trades was -0.63%. The overall expectancy for the closed set was negative at -0.24% per trade, and the profit factor registered at 0.45. Notable positive returns included SATS at +8.83% and WDC at +7.96%. Conversely, the largest recorded losses were seen in INTC at -6.92% and CBOE at -6.63% <img class="emoji-char" src="/characters/us/02_sad.png" alt="Maine" />.
-
-## Lessons from Outcomes
-
-The performance metrics suggest that the magnitude of losses is significantly impacting the overall expected return, given the current profit factor. The trades resulting in the largest drawdowns, such as INTC and CBOE, highlight instances where the downside risk materialized substantially against the realized gains. The spread between the best outcome (+8.83%) and the worst outcome (-6.92%) indicates a wide dispersion in realized volatility across the closed set <img class="emoji-char" src="/characters/us/11_thinking.png" alt="Maine" />.
+The day's closed activity reflects a challenging period across the reviewed set of trades. The overall win rate settled at 29.5%, and the expectancy per trade was negative at -0.24%. The profit factor of 0.45 indicates that the average loss magnitude was greater than the average win magnitude, as evidenced by the average win of +0.68% against an average loss of -0.63%. Notable positive outcomes included gains in SATS (+8.83%), WDC (+7.96%), and STX (+5.34%). Conversely, the losses were significant, with INTC (-6.92%), CBOE (-6.63%), and LITE (-5.73%) representing some of the larger drawdowns observed. <img class="emoji-char" src="/characters/us/10_suspicious.png" alt="Maine" />
 
 ## Observations
 
-The data reflects a period where the aggregate performance trend has been downward, as indicated by the negative expectancy. The structure of the outcomes suggests that while some profitable trades occurred, the frequency and size of the losses weighed heavily on the net result. This pattern warrants a measured look at the risk/reward profile across the executed trades.
+The performance metrics suggest that the magnitude of losses has been a persistent drag on overall returns. The spread between the best recorded gain (+8.83%) and the worst recorded loss (-6.92%) is substantial, but the negative expectancy suggests that the frequency and size of the losses are currently outweighing the gains. The structure of the outcomes points toward a regime where positive momentum is difficult to sustain across multiple varied names.
+
+## For next time
+
+The notable losses, particularly those seen in INTC and CBOE, highlight instances where the market structure appeared resistant to the directional bias taken. These results suggest that when the underlying market environment is not providing clear, sustained support for the initial thesis, the resulting drawdowns can be substantial. <img class="emoji-char" src="/characters/us/11_thinking.png" alt="Maine" />
 
 ***
-*This research note is for analytical observation purposes only and does not constitute investment advice.*
+
+*This research note is for informational analysis purposes only and does not constitute investment advice.*
 
 ### Closed trades (chronological)
 

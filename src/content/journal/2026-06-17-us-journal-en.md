@@ -1,6 +1,6 @@
 ---
 title: "2026-06-17 US Trading Journal — Maine"
-date: 2026-06-17T13:04:42+09:00
+date: 2026-06-17T13:43:18+09:00
 description: "Maine (US equities) journal: 723 trades, 29.5% win rate, avg -0.24% (paper-trading)"
 category: journal
 markets: [us]
@@ -33,19 +33,19 @@ altLang: ko
 
 ## Recap
 
-The day's closed activity reflects a challenging period across the reviewed set of trades. The overall win rate settled at 29.5%, and the expectancy per trade was negative at -0.24%. The profit factor of 0.45 indicates that the average loss magnitude was greater than the average win magnitude, as evidenced by the average win of +0.68% against an average loss of -0.63%. Notable positive outcomes included gains in SATS (+8.83%), WDC (+7.96%), and STX (+5.34%). Conversely, the losses were significant, with INTC (-6.92%), CBOE (-6.63%), and LITE (-5.73%) representing some of the larger drawdowns observed. <img class="emoji-char" src="/characters/us/10_suspicious.png" alt="Maine" />
+The day's closed activity reflects a challenging risk profile. With 723 trades executed, the overall win rate settled at 29.5%. The average expectation per trade was negative at -0.24%, which was underpinned by a profit factor of 0.45. The performance metrics show that while the average winning trade added 0.68%, the average losing trade subtracted 0.63%. Notable positive outcomes included gains in SATS (+8.83%), WDC (+7.96%), and STX (+5.34%). Conversely, the largest drawdowns were observed in INTC (-6.92%), CBOE (-6.63%), and LITE (-5.73%). <img class="emoji-char" src="/characters/us/10_suspicious.png" alt="Maine" />
 
 ## Observations
 
-The performance metrics suggest that the magnitude of losses has been a persistent drag on overall returns. The spread between the best recorded gain (+8.83%) and the worst recorded loss (-6.92%) is substantial, but the negative expectancy suggests that the frequency and size of the losses are currently outweighing the gains. The structure of the outcomes points toward a regime where positive momentum is difficult to sustain across multiple varied names.
+The frequency of trades suggests a high level of engagement across various sectors. The spread between the best recorded gain (+8.83%) and the worst loss (-6.92%) indicates significant volatility captured during the trading period. The negative expectancy, despite several substantial wins, suggests that the magnitude of losses is eroding the gains realized. <img class="emoji-char" src="/characters/us/11_thinking.png" alt="Maine" />
 
 ## For next time
 
-The notable losses, particularly those seen in INTC and CBOE, highlight instances where the market structure appeared resistant to the directional bias taken. These results suggest that when the underlying market environment is not providing clear, sustained support for the initial thesis, the resulting drawdowns can be substantial. <img class="emoji-char" src="/characters/us/11_thinking.png" alt="Maine" />
+The losses recorded, particularly those involving INTC and CBOE, highlight instances where the downside exposure proved substantial relative to the average realized gain. These results point toward a need to manage the tail risk more stringently, as the negative impact of a few larger losses is disproportionately affecting the overall performance metric. <img class="emoji-char" src="/characters/us/02_sad.png" alt="Maine" />
 
 ***
 
-*This research note is for informational analysis purposes only and does not constitute investment advice.*
+*This research note is for informational purposes only and does not constitute investment advice.*
 
 ### Closed trades (chronological)
 

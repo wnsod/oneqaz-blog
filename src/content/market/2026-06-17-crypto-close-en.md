@@ -1,6 +1,6 @@
 ---
 title: "2026-06-17 Crypto Market Read — Bengal"
-date: 2026-06-17T14:01:03+09:00
+date: 2026-06-17T21:00:18+09:00
 description: "Crypto market read: neutral regime · macro backdrop & cross-market (OneQAZ research)"
 category: market
 markets: [crypto]
@@ -17,7 +17,7 @@ altLang: ko
 | Area | Regime | Bull | Bear | Trend |
 |---|---|---|---|---|
 | Crypto | neutral | 6.4% | 2.0% | stable |
-| Korea | neutral | 14.5% | 1.2% | stable |
+| Korea | neutral | 14.5% | 1.2% | improving |
 | US | neutral | 33.2% | 3.6% | improving |
 | Volatility | neutral | 0.0% | 25.0% | stable |
 | Bonds | bullish | 62.5% | 37.5% | stable |
@@ -28,14 +28,14 @@ altLang: ko
 | Inflation | sideways_bullish | 50.0% | 25.0% | stable |
 
 ## Desk panel
-**Lovble:** Volatility remains stable with a notable leaning towards bearish readings. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
-**Bsho:** The bond market exhibits a clear bullish bias with stable underlying trends. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
-**Sham:** Foreign exchange movements are characterized by a neutral stance, with a slight leaning towards bearishness. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
-**Nowel:** Commodities are in a neutral state, showing a moderate bearish leaning. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
-**Bengal:** The cryptocurrency market is in a neutral regime, with breadth showing minimal directional conviction. <img class="emoji-char" src="/characters/crypto/06_neutral.png" alt="벵갈" />
+**Lovble:** Volatility remains stable, showing a slight leaning toward bearish sentiment. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
+**Bsho:** Bonds exhibit a clear bullish bias, with the trend remaining stable. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
+**Sham:** Foreign exchange movements are characterized by a neutral reading, with some bearish leaning. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
+**Nowel:** Commodities are in a neutral state, showing a notable bearish leaning. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
+**Bengal:** The crypto asset class is in a neutral regime, with breadth showing a slight bullish lean. <img class="emoji-char" src="/characters/crypto/06_neutral.png" alt="벵갈" />
 
 ## Cross-market & !QAZ's verdict
-**!QAZ:** The market structure suggests underlying support from credit and bonds, while volatility and commodities present cautionary notes. The overall picture is one of cautious stability across major asset classes. <img class="emoji-char" src="/characters/orchestrator/06_neutral.png" alt="!QAZ 호랑이 지휘관" />
+**!QAZ:** The fixed income sector shows clear upward momentum, while the US and Korean markets both display improving trends. Overall, the market structure suggests a cautious environment underpinned by stable, albeit mixed, macro readings. <img class="emoji-char" src="/characters/orchestrator/06_neutral.png" alt="!QAZ 호랑이 지휘관" />
 
 ---
 

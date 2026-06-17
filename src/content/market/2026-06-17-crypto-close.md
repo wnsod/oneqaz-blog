@@ -1,6 +1,6 @@
 ---
 title: "2026-06-17 코인 시황 — 벵갈"
-date: 2026-06-17T14:00:52+09:00
+date: 2026-06-17T21:00:00+09:00
 description: "코인 시황: neutral 국면 · 매크로 배경·교차시장 (OneQAZ 리서치)"
 category: market
 markets: [crypto]
@@ -17,7 +17,7 @@ altLang: en
 | 영역 | 국면 | 강세 | 약세 | 추세 |
 |---|---|---|---|---|
 | 코인 | neutral | 6.4% | 2.0% | stable |
-| 국장 | neutral | 14.5% | 1.2% | stable |
+| 국장 | neutral | 14.5% | 1.2% | improving |
 | 미장 | neutral | 33.2% | 3.6% | improving |
 | 변동성 | neutral | 0.0% | 25.0% | stable |
 | 채권 | bullish | 62.5% | 37.5% | stable |
@@ -28,14 +28,14 @@ altLang: en
 | 인플레 | sideways_bullish | 50.0% | 25.0% | stable |
 
 ## 데스크 패널
-**러블:** 글로벌 변동성은 약세 쪽으로의 비중이 높게 나타나며 전반적인 추세는 안정적인 국면입니다. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
-**브숏:** 채권 시장은 강세 비중이 62.5%로 우위를 점하고 있으며 신용도 역시 강세 쪽으로의 비중이 100%를 기록하며 견조한 모습을 보입니다. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
-**샤암:** 외환 시장은 강세와 약세 비중이 비교적 균형을 이루고 있으며 유동성은 강세 쪽으로의 비중이 50%로 나타나 중립적입니다. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
-**노웰:** 원자재 시장은 강세와 약세 비중이 비교적 낮은 수준에서 균형을 이루고 있으며 인플레이션 역시 강세 쪽으로의 비중이 50%를 기록하며 중립적입니다. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
-**벵갈:** 암호화폐 시장은 강세와 약세 비중이 낮은 수준에서 균형을 이루고 있으며 국장과 미장 모두 비교적 안정적인 추세를 보이고 있습니다. <img class="emoji-char" src="/characters/crypto/06_neutral.png" alt="벵갈" />
+**러블:** 글로벌 변동성은 약세 쪽으로의 비중이 높아졌으나 전반적인 추세는 안정적인 상태를 유지하고 있습니다. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
+**브숏:** 채권 시장은 강세 쪽으로의 비중이 높게 나타나며 신용도 측면에서는 강세 우위가 확인되었습니다. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
+**샤암:** 외환 시장은 강세와 약세의 비중이 비교적 균형을 이루고 있으며 유동성 역시 중립적인 흐름을 보이고 있습니다. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
+**노웰:** 원자재 시장은 강세와 약세의 비중이 비교적 비슷한 수준에서 움직이고 있으며 인플레이션 역시 강세 쪽으로의 비중이 우세합니다. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
+**벵갈:** 암호화폐 시장은 강세와 약세의 비중이 낮은 중립 국면을 형성하고 있으며 국장과 미장 모두 개선되는 추세를 보이고 있습니다. <img class="emoji-char" src="/characters/crypto/06_neutral.png" alt="벵갈" />
 
 ## 교차시장과 !QAZ의 종합
-**!QAZ:** 미장 시장은 개선되는 추세 속에서 비교적 우호적인 배경을 보이고 있으나, 암호화폐 시장은 전반적으로 약세 비중이 낮은 중립 국면에 머물러 있어 신중한 관망 국면으로 해석됩니다. <img class="emoji-char" src="/characters/orchestrator/06_neutral.png" alt="!QAZ 호랑이 지휘관" />
+**!QAZ:** 주요 시장 전반에서 개선되는 흐름이 관찰되나, 변동성 지표에서 약세 쪽의 비중이 두드러지는 등 전반적으로 신중한 관망 국면이 지배적입니다. <img class="emoji-char" src="/characters/orchestrator/06_neutral.png" alt="!QAZ 호랑이 지휘관" />
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "2026-06-17 US Market Read — Maine"
-date: 2026-06-17T14:01:50+09:00
+date: 2026-06-17T22:52:46+09:00
 description: "US market read: neutral regime · macro backdrop & cross-market (OneQAZ research)"
 category: market
 markets: [us]
@@ -17,25 +17,27 @@ altLang: ko
 | Area | Regime | Bull | Bear | Trend |
 |---|---|---|---|---|
 | Crypto | neutral | 6.4% | 2.0% | stable |
-| Korea | neutral | 14.5% | 1.2% | stable |
+| Korea | neutral | 14.5% | 1.2% | improving |
 | US | neutral | 33.2% | 3.6% | improving |
 | Volatility | neutral | 0.0% | 25.0% | stable |
-| Bonds | bullish | 62.5% | 37.5% | stable |
+| Bonds | extreme_bullish | 62.5% | 37.5% | stable |
 | Credit | sideways_bullish | 100.0% | 0.0% | stable |
 | FX | neutral | 25.0% | 37.5% | stable |
 | Liquidity | neutral | 50.0% | 0.0% | stable |
 | Commodities | neutral | 10.0% | 30.0% | stable |
 | Inflation | sideways_bullish | 50.0% | 25.0% | stable |
 
+**Sectors/baskets** — strong: Consumer Cyclical, Utilities, Financial Services, CONSUMER_DEFENSIVE · weak: —
+
 ## Desk panel
-**Lovble:** Volatility remains stable with a leaning toward bearish readings. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
-**Bsho:** Bonds exhibit a clear bullish bias, while credit remains entirely bullish. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
-**Sham:** Foreign exchange movements are characterized by a neutral stance, with slightly more bearish leaning. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
-**Nowel:** Commodities show a neutral reading, with a notable bearish inclination. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
-**Maine:** US equities are in an improving regime, maintaining a neutral overall reading. <img class="emoji-char" src="/characters/us/12_relieved.png" alt="멘쿤" />
+**Lovble:** Volatility is stable, showing a slight leaning toward bearish readings across the board. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
+**Bsho:** Bonds exhibit an extreme bullish posture, while credit remains firmly in a bullish zone. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
+**Sham:** FX movement is neutral, with bearish sentiment slightly outweighing bullish readings. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
+**Nowel:** Commodities are showing a neutral stance, with bearish indicators holding more weight than bullish ones. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
+**Maine:** US equities are registering a neutral reading, with Consumer Cyclical, Utilities, Financial Services, and CONSUMER_DEFENSIVE sectors showing strength. <img class="emoji-char" src="/characters/us/12_relieved.png" alt="멘쿤" />
 
 ## Cross-market & !QAZ's verdict
-**!QAZ:** The market structure suggests underlying support from credit and bonds, contrasting with more mixed signals across FX and commodities. The US equity picture shows improvement, while the overall tape suggests a period of cautious consolidation. <img class="emoji-char" src="/characters/orchestrator/12_relieved.png" alt="!QAZ 호랑이 지휘관" />
+**!QAZ:** The market structure suggests underlying support from fixed income and credit, contrasting with mixed signals across commodities and FX. The US equity picture is improving, though the overall tape suggests a cautious, range-seeking environment. <img class="emoji-char" src="/characters/orchestrator/12_relieved.png" alt="!QAZ 호랑이 지휘관" />
 
 ---
 

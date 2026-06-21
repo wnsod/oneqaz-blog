@@ -30,14 +30,14 @@ altLang: en
 **섹터·바스켓** — 강세: oracle_infra · 약세: — · 도미넌스: btc_dominant
 
 ## 데스크 패널
-**러블:** 글로벌 변동성은 약세 쪽으로 무게가 실리면서도 전반적인 추세는 안정적인 모습을 보입니다. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
-**브숏:** 채권 시장은 매우 강세에 속하며 신용 지표 역시 강세 쪽으로 기울어 안정적인 흐름을 유지하고 있습니다. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
-**샤암:** 외환 시장은 중립적인 영역에 머물고 있으며 유동성 측면에서는 강세 쪽으로의 기여도가 나타나고 있습니다. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
-**노웰:** 원자재는 중립적인 상태를 유지하며 인플레이션 지표는 강세 쪽으로의 경향성을 보이고 있습니다. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
-**벵갈:** 암호화폐 시장은 중립적이며 전반적인 추세가 약화되는 양상을 보였으나, 반도체와 IT 섹터가 상대적으로 강세를 나타내고 있습니다. <img class="emoji-char" src="/characters/crypto/05_anxious.png" alt="벵갈" />
+- **러블(글로벌):** 글로벌 변동성은 약세 쪽으로 무게가 실리면서도 전반적인 추세는 안정적인 모습을 보입니다. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
+- **브숏(채권):** 채권 시장은 매우 강세에 속하며 신용 지표 역시 강세 쪽으로 기울어 안정적인 흐름을 유지하고 있습니다. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
+- **샤암(외환):** 외환 시장은 중립적인 영역에 머물고 있으며 유동성 측면에서는 강세 쪽으로의 기여도가 나타나고 있습니다. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
+- **노웰(원자재):** 원자재는 중립적인 상태를 유지하며 인플레이션 지표는 강세 쪽으로의 경향성을 보이고 있습니다. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
+- **벵갈(코인):** 암호화폐 시장은 중립적이며 전반적인 추세가 약화되는 양상을 보였으나, 반도체와 IT 섹터가 상대적으로 강세를 나타내고 있습니다. <img class="emoji-char" src="/characters/crypto/05_anxious.png" alt="벵갈" />
 
 ## 교차시장과 !QAZ의 종합
-**!QAZ:** 미장 시장은 개선되는 추세를 보이며 전반적으로 우호적인 배경을 형성하고 있으나, 암호화폐 시장은 약화 추세가 관찰되어 신중한 관망 국면이 지배적입니다. <img class="emoji-char" src="/characters/orchestrator/05_anxious.png" alt="!QAZ 호랑이 지휘관" />
+**!QAZ(의장):** 미장 시장은 개선되는 추세를 보이며 전반적으로 우호적인 배경을 형성하고 있으나, 암호화폐 시장은 약화 추세가 관찰되어 신중한 관망 국면이 지배적입니다. <img class="emoji-char" src="/characters/orchestrator/05_anxious.png" alt="!QAZ 호랑이 지휘관" />
 
 ---
 

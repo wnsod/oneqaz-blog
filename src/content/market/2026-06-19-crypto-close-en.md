@@ -30,11 +30,11 @@ altLang: ko
 **Sectors/baskets** — strong: oracle_infra · weak: — · dominance: btc_dominant
 
 ## Desk panel
-**Bsho:** Bonds exhibit an extreme bullish reading, while credit remains firmly bullish. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
-**Sham:** Foreign exchange movements are registering a neutral state, with slightly more bearish leaning observed. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
-**Nowel:** Commodity sentiment is neutral, showing a higher proportion of bearish readings compared to bullish ones. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
-**Bengal:** Cryptocurrency is showing a neutral overall reading, with the underlying dominance remaining concentrated in Bitcoin. <img class="emoji-char" src="/characters/crypto/05_anxious.png" alt="벵갈" />
-**Lovble:** Volatility is reading as neutral, indicating a stable trend across the spectrum. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
+- **Bsho(Bonds):** Bonds exhibit an extreme bullish reading, while credit remains firmly bullish. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
+- **Sham(FX):** Foreign exchange movements are registering a neutral state, with slightly more bearish leaning observed. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
+- **Nowel(Commodities):** Commodity sentiment is neutral, showing a higher proportion of bearish readings compared to bullish ones. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
+- **Bengal(Crypto):** Cryptocurrency is showing a neutral overall reading, with the underlying dominance remaining concentrated in Bitcoin. <img class="emoji-char" src="/characters/crypto/05_anxious.png" alt="벵갈" />
+- **Lovble(Global):** Volatility is reading as neutral, indicating a stable trend across the spectrum. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
 
 ## Cross-market & !QAZ's verdict
 The macro picture suggests underlying strength in fixed income and credit, contrasting with a more cautious reading in commodities and FX. The market structure shows both US and Korean indices are in an improving trend, while crypto's trend is noted as deteriorating. The overall liquidity reading is neutral, suggesting a balanced environment despite the differing sectorial signals.

@@ -30,14 +30,14 @@ altLang: ko
 **Sectors/baskets** — strong: KR_UTILITIES, KR_IT_MEDIA · weak: —
 
 ## Desk panel
-**Lovble:** Volatility remains neutral, showing a stable trend with a slight leaning toward bearish readings. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
-**Bsho:** Bonds exhibit an extreme bullish regime, while credit maintains a sideways bullish posture. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
-**Sham:** Foreign exchange movements are reading as neutral, with a slight tilt toward the bearish side. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
-**Nowel:** Commodities are in a neutral state, with a noticeable degree of bearish sentiment present. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
-**Kosho:** Korean equities are showing a neutral reading overall, with the utilities and IT media sectors demonstrating strength. <img class="emoji-char" src="/characters/kr/12_relieved.png" alt="코숏" />
+- **Lovble(Global):** Volatility remains neutral, showing a stable trend with a slight leaning toward bearish readings. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
+- **Bsho(Bonds):** Bonds exhibit an extreme bullish regime, while credit maintains a sideways bullish posture. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
+- **Sham(FX):** Foreign exchange movements are reading as neutral, with a slight tilt toward the bearish side. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
+- **Nowel(Commodities):** Commodities are in a neutral state, with a noticeable degree of bearish sentiment present. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
+- **Kosho(KR):** Korean equities are showing a neutral reading overall, with the utilities and IT media sectors demonstrating strength. <img class="emoji-char" src="/characters/kr/12_relieved.png" alt="코숏" />
 
 ## Cross-market & !QAZ's verdict
-**!QAZ:** The bond market's strong bullish bias contrasts with the neutral readings across FX and commodities, suggesting varied directional conviction across asset classes. The improvement noted in US and Korean equities, coupled with the deteriorating trend in crypto, points toward a mixed risk appetite across major asset pools.
+**!QAZ(Chair):** The bond market's strong bullish bias contrasts with the neutral readings across FX and commodities, suggesting varied directional conviction across asset classes. The improvement noted in US and Korean equities, coupled with the deteriorating trend in crypto, points toward a mixed risk appetite across major asset pools.
 
 ---
 

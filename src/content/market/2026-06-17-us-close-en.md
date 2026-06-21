@@ -30,14 +30,14 @@ altLang: ko
 **Sectors/baskets** — strong: Consumer Cyclical, Utilities, Financial Services, CONSUMER_DEFENSIVE · weak: —
 
 ## Desk panel
-**Lovble:** Volatility is stable, showing a slight leaning toward bearish readings across the board. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
-**Bsho:** Bonds exhibit an extreme bullish posture, while credit remains firmly in a bullish zone. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
-**Sham:** FX movement is neutral, with bearish sentiment slightly outweighing bullish readings. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
-**Nowel:** Commodities are showing a neutral stance, with bearish indicators holding more weight than bullish ones. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
-**Maine:** US equities are registering a neutral reading, with Consumer Cyclical, Utilities, Financial Services, and CONSUMER_DEFENSIVE sectors showing strength. <img class="emoji-char" src="/characters/us/12_relieved.png" alt="멘쿤" />
+- **Lovble(Global):** Volatility is stable, showing a slight leaning toward bearish readings across the board. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
+- **Bsho(Bonds):** Bonds exhibit an extreme bullish posture, while credit remains firmly in a bullish zone. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
+- **Sham(FX):** FX movement is neutral, with bearish sentiment slightly outweighing bullish readings. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
+- **Nowel(Commodities):** Commodities are showing a neutral stance, with bearish indicators holding more weight than bullish ones. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
+- **Maine(US):** US equities are registering a neutral reading, with Consumer Cyclical, Utilities, Financial Services, and CONSUMER_DEFENSIVE sectors showing strength. <img class="emoji-char" src="/characters/us/12_relieved.png" alt="멘쿤" />
 
 ## Cross-market & !QAZ's verdict
-**!QAZ:** The market structure suggests underlying support from fixed income and credit, contrasting with mixed signals across commodities and FX. The US equity picture is improving, though the overall tape suggests a cautious, range-seeking environment. <img class="emoji-char" src="/characters/orchestrator/12_relieved.png" alt="!QAZ 호랑이 지휘관" />
+**!QAZ(Chair):** The market structure suggests underlying support from fixed income and credit, contrasting with mixed signals across commodities and FX. The US equity picture is improving, though the overall tape suggests a cautious, range-seeking environment. <img class="emoji-char" src="/characters/orchestrator/12_relieved.png" alt="!QAZ 호랑이 지휘관" />
 
 ---
 

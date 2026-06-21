@@ -30,14 +30,14 @@ altLang: ko
 **Sectors/baskets** — strong: KR_UTILITIES · weak: —
 
 ## Desk panel
-**Lovble:** Volatility remains neutral, with the bearish reading showing a higher degree of caution than the bullish side. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
-**Bsho:** Bonds exhibit an extreme bullish reading, while credit maintains a sideways bullish posture. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
-**Sham:** FX sentiment is neutral, with the bearish reading showing a higher degree of caution than the bullish side. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
-**Nowel:** Commodities are neutral, with the bearish reading showing a higher degree of caution than the bullish side. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
-**Kosho:** Korean equities are neutral overall, with utilities showing strength and no other sectors noted as weak. <img class="emoji-char" src="/characters/kr/12_relieved.png" alt="코숏" />
+- **Lovble(Global):** Volatility remains neutral, with the bearish reading showing a higher degree of caution than the bullish side. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
+- **Bsho(Bonds):** Bonds exhibit an extreme bullish reading, while credit maintains a sideways bullish posture. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
+- **Sham(FX):** FX sentiment is neutral, with the bearish reading showing a higher degree of caution than the bullish side. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
+- **Nowel(Commodities):** Commodities are neutral, with the bearish reading showing a higher degree of caution than the bullish side. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
+- **Kosho(KR):** Korean equities are neutral overall, with utilities showing strength and no other sectors noted as weak. <img class="emoji-char" src="/characters/kr/12_relieved.png" alt="코숏" />
 
 ## Cross-market & !QAZ's verdict
-**!QAZ:** Bonds show a pronounced bullish bias, suggesting underlying structural support, while the broader market sentiment remains mixed across asset classes. The data points toward a cautious environment where underlying credit strength is noted, but directional conviction is absent across most measured domains.
+**!QAZ(Chair):** Bonds show a pronounced bullish bias, suggesting underlying structural support, while the broader market sentiment remains mixed across asset classes. The data points toward a cautious environment where underlying credit strength is noted, but directional conviction is absent across most measured domains.
 
 ---
 

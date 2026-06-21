@@ -30,14 +30,14 @@ altLang: ko
 **Sectors/baskets** — strong: — · weak: — · dominance: btc_dominant
 
 ## Desk panel
-**Lovble:** Volatility remains stable, showing a slight tilt towards bearish readings. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
-**Bsho:** Bonds exhibit an extreme bullish posture, while credit maintains a bullish bias. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
-**Sham:** FX movements are characterized by neutrality, with bearish sentiment holding a slight edge. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
-**Nowel:** Commodities are in a neutral state, with bearish indications showing a higher frequency than bullish ones. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
-**Bengal:** Crypto is neutral overall, with the overall market structure showing a clear dominance from BTC. <img class="emoji-char" src="/characters/crypto/06_neutral.png" alt="벵갈" />
+- **Lovble(Global):** Volatility remains stable, showing a slight tilt towards bearish readings. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
+- **Bsho(Bonds):** Bonds exhibit an extreme bullish posture, while credit maintains a bullish bias. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
+- **Sham(FX):** FX movements are characterized by neutrality, with bearish sentiment holding a slight edge. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
+- **Nowel(Commodities):** Commodities are in a neutral state, with bearish indications showing a higher frequency than bullish ones. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
+- **Bengal(Crypto):** Crypto is neutral overall, with the overall market structure showing a clear dominance from BTC. <img class="emoji-char" src="/characters/crypto/06_neutral.png" alt="벵갈" />
 
 ## Cross-market & !QAZ's verdict
-**!QAZ:** The bond market's pronounced bullishness contrasts with the more balanced readings across FX and commodities, suggesting underlying structural support despite mixed sector signals. The improving trends noted in both Korea and the US markets suggest localized strength, while the overall crypto landscape remains range-bound.
+**!QAZ(Chair):** The bond market's pronounced bullishness contrasts with the more balanced readings across FX and commodities, suggesting underlying structural support despite mixed sector signals. The improving trends noted in both Korea and the US markets suggest localized strength, while the overall crypto landscape remains range-bound.
 
 ---
 

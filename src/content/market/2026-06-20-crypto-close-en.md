@@ -30,14 +30,14 @@ altLang: ko
 **Sectors/baskets** — strong: oracle_infra · weak: — · dominance: btc_dominant
 
 ## Desk panel
-**Lovble:** Volatility remains stable, showing a slight leaning towards bearish readings. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
-**Bsho:** The bond market exhibits an extreme bullish posture, while credit remains firmly bullish. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
-**Sham:** Foreign exchange activity is registering as neutral, with a slight tilt toward bearish sentiment. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
-**Nowel:** Commodities are in a neutral state, with a noticeable bearish leaning. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
-**Bengal:** Crypto is showing a deteriorating trend, though the overall market structure suggests Bitcoin dominance is in play. <img class="emoji-char" src="/characters/crypto/05_anxious.png" alt="벵갈" />
+- **Lovble(Global):** Volatility remains stable, showing a slight leaning towards bearish readings. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
+- **Bsho(Bonds):** The bond market exhibits an extreme bullish posture, while credit remains firmly bullish. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
+- **Sham(FX):** Foreign exchange activity is registering as neutral, with a slight tilt toward bearish sentiment. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
+- **Nowel(Commodities):** Commodities are in a neutral state, with a noticeable bearish leaning. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
+- **Bengal(Crypto):** Crypto is showing a deteriorating trend, though the overall market structure suggests Bitcoin dominance is in play. <img class="emoji-char" src="/characters/crypto/05_anxious.png" alt="벵갈" />
 
 ## Cross-market & !QAZ's verdict
-**!QAZ:** The bond market's strong bullish reading contrasts with the deteriorating trend noted in the crypto space. Overall, the macro picture suggests underlying support in credit and bonds, while the broader market sentiment remains mixed, pointing toward caution. <img class="emoji-char" src="/characters/orchestrator/05_anxious.png" alt="!QAZ 호랑이 지휘관" />
+**!QAZ(Chair):** The bond market's strong bullish reading contrasts with the deteriorating trend noted in the crypto space. Overall, the macro picture suggests underlying support in credit and bonds, while the broader market sentiment remains mixed, pointing toward caution. <img class="emoji-char" src="/characters/orchestrator/05_anxious.png" alt="!QAZ 호랑이 지휘관" />
 
 ---
 

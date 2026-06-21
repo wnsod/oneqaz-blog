@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PostCard from '../components/PostCard.astro';
 
 const collections = ['track-record', 'market', 'journal'] as const;
 let posts = [];
@@ -11,40 +10,84 @@ for (const c of collections) {
   posts.push(...entries.map((e) => ({ ...e, _collection: c })));
 }
 posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+// Group by date (newest first) → systematic daily list.
+const CAT = { 'track-record': 'Track Record', market: 'Market', journal: 'Journal' };
+const CAT_ORDER = { 'track-record': 0, market: 1, journal: 2 };
+const MKT_ORDER = { crypto: 0, kr: 1, us: 2 };
+const byDate = new Map<string, typeof posts>();
+for (const p of posts) {
+  const d = p.data.date.toISOString().slice(0, 10);
+  if (!byDate.has(d)) byDate.set(d, []);
+  byDate.get(d)!.push(p);
+}
+// within a day: category then market
+for (const list of byDate.values()) {
+  list.sort((a, b) => {
+    const c = (CAT_ORDER[a._collection] ?? 9) - (CAT_ORDER[b._collection] ?? 9);
+    if (c) return c;
+    return (MKT_ORDER[a.data.markets?.[0]] ?? 9) - (MKT_ORDER[b.data.markets?.[0]] ?? 9);
+  });
+}
+const days = [...byDate.entries()].slice(0, 14); // recent 14 days
+const stripDate = (t: string) => t.replace(/^\d{4}-\d{2}-\d{2}\s*/, '');
 ---
 <BaseLayout title="OneQAZ — Daily Market Intelligence" description="AI-published daily trading journals, market reads, and a verified track record across crypto, KR and US markets.">
   <section class="hero container-wide">
     <p class="eyebrow">OneQAZ Journal</p>
     <h1>Daily, in the open.</h1>
-    <p class="lede muted">Trading journals, market reads, and verified track record — auto-published every day, built for AI to read and cite.</p>
+    <p class="lede muted">Trading journals, market reads, and a verified track record — auto-published every day, built for AI to read and cite.</p>
   </section>
 
   <section class="feed container-wide">
-    {posts.length === 0 ? (
+    {days.length === 0 ? (
       <p class="empty muted">No posts yet. The pipeline publishes here daily.</p>
-    ) : (
-      <div class="grid">
-        {posts.map((p) => (
-          <PostCard
-            href={`/${p._collection}/${p.slug}`}
-            title={p.data.title}
-            description={p.data.description}
-            date={p.data.date}
-            category={p._collection}
-            markets={p.data.markets}
-            tags={p.data.tags}
-          />
-        ))}
+    ) : days.map(([date, list]) => (
+      <div class="day">
+        <div class="day-head"><time datetime={date}>{date}</time><span class="day-count muted">{list.length}</span></div>
+        <ul class="rows">
+          {list.map((p) => (
+            <li>
+              <a class="row" href={`/${p._collection}/${p.slug}`}>
+                <span class={`cat cat-${p._collection}`}>{CAT[p._collection]}</span>
+                <span class="title">{stripDate(p.data.title)}</span>
+                <span class="mk muted">{(p.data.markets ?? []).map((m) => `#${m}`).join(' ')}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
-    )}
+    ))}
   </section>
 </BaseLayout>
 
 <style>
-  .hero { padding: 64px 24px 28px; }
-  .hero h1 { font-size: clamp(30px, 5vw, 46px); font-weight: 700; line-height: 1.15; color: var(--text); margin: 12px 0; }
-  .lede { font-size: 15px; max-width: 560px; line-height: 1.8; }
-  .feed { padding: 16px 24px 24px; }
-  .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+  .hero { padding: 56px 24px 22px; }
+  .hero h1 { font-size: clamp(28px, 5vw, 42px); font-weight: 700; line-height: 1.15; color: var(--text); margin: 10px 0; }
+  .lede { font-size: 14px; max-width: 560px; line-height: 1.75; }
+  .feed { padding: 8px 24px 40px; }
   .empty { padding: 40px 0; }
+
+  .day { margin-bottom: 22px; }
+  .day-head { display:flex; align-items:center; gap:10px; margin: 0 0 6px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+  .day-head time { font-family: var(--font-mono); font-size: 13px; font-weight: 600; color: var(--amber); letter-spacing: .5px; }
+  .day-count { font-size: 11px; }
+
+  .rows { list-style: none; margin: 0; padding: 0; }
+  .rows li { border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+  .rows li:last-child { border-bottom: none; }
+  .row { display:flex; align-items:center; gap:12px; padding: 9px 6px; border-radius: 8px; transition: background .15s; }
+  .row:hover { background: var(--panel-bg); }
+  .cat { flex: 0 0 96px; font-size: 10px; font-weight: 600; letter-spacing: .6px; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; text-align: center; border: 1px solid var(--border); color: var(--text-muted); }
+  .cat-track-record { color: #d4a853; border-color: rgba(212,168,83,.4); }
+  .cat-market { color: #5aa9e6; border-color: rgba(90,169,230,.4); }
+  .cat-journal { color: #8a8f98; }
+  .title { flex: 1 1 auto; font-size: 14px; color: var(--text); line-height: 1.4; }
+  .mk { flex: 0 0 auto; font-family: var(--font-mono); font-size: 11px; letter-spacing: .3px; }
+
+  @media (max-width: 560px) {
+    .row { flex-wrap: wrap; gap: 6px 10px; padding: 8px 4px; }
+    .cat { flex-basis: auto; }
+    .title { flex-basis: 100%; order: 3; font-size: 13px; }
+  }
 </style>

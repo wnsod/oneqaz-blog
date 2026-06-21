@@ -1,6 +1,6 @@
 ---
 title: "2026-06-21 Crypto Market Read — Bengal"
-date: 2026-06-21T17:32:37+09:00
+date: 2026-06-21T21:00:20+09:00
 description: "Crypto market read: neutral regime · macro backdrop & cross-market (OneQAZ research)"
 category: market
 markets: [crypto]
@@ -30,14 +30,13 @@ altLang: ko
 **Sectors/baskets** — strong: oracle_infra · weak: — · dominance: btc_dominant
 
 ## Desk panel
-- **Macro:** Bonds show an extreme bullish leaning, while volatility and liquidity remain in a neutral state. :macro:
-- **Korea:** The Korean market reads as neutral, showing an improving trend. :korea:
-- **US:** The US market is reading as neutral, with an improving trend noted. :us:
-- **Crypto:** Cryptocurrency activity is neutral overall, though the underlying trend is showing signs of deterioration. :crypto:
-- **Commodities:** Commodities are reading as neutral, with a slight lean towards bearish sentiment. :commodities:
+- **Macro:** Bonds show an extreme bullish bias, while volatility and liquidity remain in a neutral state. :macro:
+- **Korea:** The Korean market exhibits a neutral stance with a slight upward bias and an improving trend. :korea:
+- **US:** The US market reads as neutral overall, though the underlying trend is showing signs of improvement. :us:
+- **Sectors:** Infrastructure tokens show strength, with Bitcoin maintaining dominance across the analyzed assets. :sectors:
 
 ## Cross-market & !QAZ's verdict
-**!QAZ(Chair):** The macro picture suggests underlying strength in credit and bonds, which contrasts with the deteriorating trend observed in the crypto space. The cross-market reading points to improving momentum in both US and Korean equities, while commodities remain range-bound. On balance, the tape suggests a cautious, consolidating environment underpinned by stable credit conditions. <img class="emoji-char" src="/characters/orchestrator/05_anxious.png" alt="!QAZ 호랑이 지휘관" />
+**!QAZ(Chair):** The macro picture suggests underlying strength in credit and bonds, contrasting with a neutral read on volatility and liquidity. While the US and Korean markets are showing improving trends, the overall cross-market sentiment is one of cautious consolidation, with sector strength anchored by Bitcoin's dominance. <img class="emoji-char" src="/characters/orchestrator/05_anxious.png" alt="!QAZ 호랑이 지휘관" />
 
 ---
 

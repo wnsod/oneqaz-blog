@@ -1,6 +1,6 @@
 ---
 title: "2026-06-21 코인 시황 — 벵갈"
-date: 2026-06-21T17:32:24+09:00
+date: 2026-06-21T21:00:00+09:00
 description: "코인 시황: neutral 국면 · 매크로 배경·교차시장 (OneQAZ 리서치)"
 category: market
 markets: [crypto]
@@ -30,14 +30,14 @@ altLang: en
 **섹터·바스켓** — 강세: oracle_infra · 약세: — · 도미넌스: btc_dominant
 
 ## 데스크 패널
-- **러블(글로벌):** 글로벌 변동성은 약세 쪽으로의 비중이 25%로 나타나며 전반적인 추세는 안정적인 국면에 머물고 있습니다. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
-- **브숏(채권):** 채권 시장은 매우 강세한 우위 속에 있으며, 신용 지표는 전 구간에서 강세 쪽으로의 비중이 100%를 기록하며 견조함을 보이고 있습니다. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
-- **샤암(외환):** 외환 시장은 강세와 약세 비중이 각각 25%와 37.5%로 나타나며 중립적인 흐름을 유지하고 있고, 유동성 역시 강세와 약세 비중이 50% 대 0%로 중립적입니다. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
-- **노웰(원자재):** 원자재 시장은 강세 비중이 10%로 비교적 낮은 수준이며, 인플레이션 지표는 강세와 약세 비중이 각각 50%와 25%로 나타나며 중립적인 구간에 있습니다. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
-- **벵갈(코인):** 암호화폐 시장은 강세 비중이 8.2%로 나타나며 추세가 약화되는 양상을 보였으나, 국내 주식 시장과 미국 주식 시장은 각각 개선되는 추세를 보이며 상대적 강세를 나타냈습니다. <img class="emoji-char" src="/characters/crypto/05_anxious.png" alt="벵갈" />
+- **러블(글로벌):** 글로벌 변동성은 약세 쪽으로의 비중이 높아지며 전반적으로 안정적인 흐름을 보이고 있습니다. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
+- **브숏(채권):** 채권 시장은 매우 강세 우위의 국면을 유지하고 있으며, 신용 지표 역시 강세 쪽으로의 비중이 높아지며 견조함을 나타내고 있습니다. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
+- **샤암(외환):** 외환 시장은 강세와 약세의 비중이 비교적 균형을 이루고 있으며, 전반적인 유동성은 강세 쪽으로의 비중이 높아지며 안정적인 흐름을 보이고 있습니다. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
+- **노웰(원자재):** 원자재 시장은 강세와 약세의 비중이 비교적 균형을 이루고 있으며, 인플레이션 지표는 강세 쪽으로의 비중이 높아지며 안정적인 흐름을 보이고 있습니다. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
+- **벵갈(코인):** 암호화폐 시장은 전반적으로 중립 국면에 머물러 있으며, 국장과 미장 시장은 각각 개선되는 추세를 보이고 있습니다. <img class="emoji-char" src="/characters/crypto/05_anxious.png" alt="벵갈" />
 
 ## 교차시장과 !QAZ의 종합
-**!QAZ(의장):** 미국 시장은 37.0%의 강세 비중을 기록하며 개선되는 추세를 보였으나, 암호화폐 시장은 약화되는 추세가 관찰되었습니다. 종합적으로 볼 때, 거시 환경에서는 채권과 신용 부문에서 강한 지지 기반이 확인되나, 자산군별로는 차별화된 움직임이 나타나 신중한 관망 국면으로 해석됩니다. <img class="emoji-char" src="/characters/orchestrator/05_anxious.png" alt="!QAZ 호랑이 지휘관" />
+**!QAZ(의장):** 채권과 신용 지표에서 강세 우위가 뚜렷하게 관찰되는 반면, 암호화폐 시장은 추세가 약화되는 양상을 보이고 있습니다. 종합적으로 볼 때, 거시 지표 전반은 비교적 안정적인 가운데, 개별 자산군 간의 흐름에 있어 신중한 관망 국면이 지배적입니다. <img class="emoji-char" src="/characters/orchestrator/05_anxious.png" alt="!QAZ 호랑이 지휘관" />
 
 ---
 

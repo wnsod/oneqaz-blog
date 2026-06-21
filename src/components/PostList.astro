@@ -1,0 +1,60 @@
+---
+// 날짜별 그룹 + 컴팩트 행 리스트 (홈·카테고리 공용). data-* 속성으로 클라이언트 필터 지원.
+export interface Props { posts: any[] }
+const { posts } = Astro.props;
+const CAT: Record<string, string> = { 'track-record': 'Track Record', market: 'Market', journal: 'Journal' };
+const CAT_ORDER: Record<string, number> = { 'track-record': 0, market: 1, journal: 2 };
+const MKT_ORDER: Record<string, number> = { crypto: 0, kr: 1, us: 2 };
+const byDate = new Map<string, any[]>();
+for (const p of posts) {
+  const d = p.data.date.toISOString().slice(0, 10);
+  if (!byDate.has(d)) byDate.set(d, []);
+  byDate.get(d)!.push(p);
+}
+for (const list of byDate.values()) {
+  list.sort((a, b) =>
+    ((CAT_ORDER[a._collection] ?? 9) - (CAT_ORDER[b._collection] ?? 9)) ||
+    ((MKT_ORDER[a.data.markets?.[0]] ?? 9) - (MKT_ORDER[b.data.markets?.[0]] ?? 9)));
+}
+const days = [...byDate.entries()];
+const stripDate = (t: string) => t.replace(/^\d{4}-\d{2}-\d{2}\s*/, '');
+---
+{days.map(([date, list]) => (
+  <div class="day" data-day>
+    <div class="day-head"><time datetime={date}>{date}</time><span class="day-count muted">{list.length}</span></div>
+    <ul class="rows">
+      {list.map((p) => (
+        <li data-row data-cat={p._collection} data-mkt={(p.data.markets ?? []).join(' ')}>
+          <a class="row" href={`/${p._collection}/${p.slug}`}>
+            <span class={`cat cat-${p._collection}`}>{CAT[p._collection]}</span>
+            <span class="title">{stripDate(p.data.title)}</span>
+            <span class="mk muted">{(p.data.markets ?? []).map((m: string) => `#${m}`).join(' ')}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+))}
+
+<style>
+  .day { margin-bottom: 20px; }
+  .day-head { display:flex; align-items:center; gap:10px; margin:0 0 6px; padding-bottom:6px; border-bottom:1px solid var(--border); }
+  .day-head time { font-family: var(--font-mono); font-size:13px; font-weight:600; color: var(--amber); letter-spacing:.5px; }
+  .day-count { font-size:11px; }
+  .rows { list-style:none; margin:0; padding:0; }
+  .rows li { border-bottom:1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+  .rows li:last-child { border-bottom:none; }
+  .row { display:flex; align-items:center; gap:12px; padding:9px 6px; border-radius:8px; transition: background .15s; }
+  .row:hover { background: var(--panel-bg); }
+  .cat { flex:0 0 96px; font-size:10px; font-weight:600; letter-spacing:.6px; text-transform:uppercase; padding:3px 8px; border-radius:999px; text-align:center; border:1px solid var(--border); color: var(--text-muted); }
+  .cat-track-record { color:#d4a853; border-color: rgba(212,168,83,.4); }
+  .cat-market { color:#5aa9e6; border-color: rgba(90,169,230,.4); }
+  .cat-journal { color:#8a8f98; }
+  .title { flex:1 1 auto; font-size:14px; color: var(--text); line-height:1.4; }
+  .mk { flex:0 0 auto; font-family: var(--font-mono); font-size:11px; letter-spacing:.3px; }
+  @media (max-width:560px) {
+    .row { flex-wrap:wrap; gap:6px 10px; padding:8px 4px; }
+    .cat { flex-basis:auto; }
+    .title { flex-basis:100%; order:3; font-size:13px; }
+  }
+</style>

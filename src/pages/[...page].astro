@@ -1,0 +1,98 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostList from '../components/PostList.astro';
+import Pager from '../components/Pager.astro';
+
+export async function getStaticPaths({ paginate }: { paginate: any }) {
+  const cols = ['track-record', 'market', 'journal'] as const;
+  let posts: any[] = [];
+  for (const c of cols) {
+    const e = await getCollection(c, ({ data }) => !data.draft && data.lang !== 'en');
+    posts.push(...e.map((x) => ({ ...x, _collection: c })));
+  }
+  posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  return paginate(posts, { pageSize: 36 });
+}
+
+const { page } = Astro.props;
+---
+<BaseLayout title="OneQAZ — Daily Market Intelligence" description="AI-published daily trading journals, market reads, and a verified track record across crypto, KR and US markets.">
+  <section class="hero container-wide">
+    <p class="eyebrow">OneQAZ Journal</p>
+    <h1>Daily, in the open.</h1>
+    <p class="lede muted">Trading journals, market reads, and a verified track record — auto-published every day, built for AI to read and cite.</p>
+  </section>
+
+  <section class="feed container-wide">
+    <div class="filters" id="filters">
+      <div class="fgroup" data-filter="cat">
+        <span class="flabel muted">유형</span>
+        <button class="chip active" data-val="all">전체</button>
+        <button class="chip" data-val="market">Market</button>
+        <button class="chip" data-val="journal">Journal</button>
+        <button class="chip" data-val="track-record">Track Record</button>
+      </div>
+      <div class="fgroup" data-filter="mkt">
+        <span class="flabel muted">시장</span>
+        <button class="chip active" data-val="all">전체</button>
+        <button class="chip" data-val="crypto">코인</button>
+        <button class="chip" data-val="kr">국장</button>
+        <button class="chip" data-val="us">미장</button>
+      </div>
+    </div>
+    <p class="fhint muted" id="fhint"></p>
+
+    {page.data.length === 0 ? (
+      <p class="empty muted">No posts yet. The pipeline publishes here daily.</p>
+    ) : <PostList posts={page.data} />}
+
+    <Pager page={page} />
+  </section>
+</BaseLayout>
+
+<style>
+  .hero { padding: 56px 24px 18px; }
+  .hero h1 { font-size: clamp(28px,5vw,42px); font-weight:700; line-height:1.15; color: var(--text); margin:10px 0; }
+  .lede { font-size:14px; max-width:560px; line-height:1.75; }
+  .feed { padding: 6px 24px 40px; }
+  .empty { padding:40px 0; }
+  .filters { display:flex; flex-wrap:wrap; gap:18px 28px; align-items:center; margin: 6px 0 4px; padding-bottom:14px; }
+  .fgroup { display:flex; align-items:center; gap:6px; }
+  .flabel { font-size:11px; text-transform:uppercase; letter-spacing:.6px; margin-right:4px; }
+  .chip { font-size:12px; padding:5px 12px; border:1px solid var(--border); border-radius:999px; background:transparent; color: var(--text-muted); cursor:pointer; transition: all .15s; }
+  .chip:hover { color: var(--text); }
+  .chip.active { background: var(--amber); color:#1a1408; border-color: var(--amber); font-weight:600; }
+  .fhint { font-size:12px; margin:0 0 12px; min-height:1em; }
+</style>
+
+<script is:inline>
+  (function () {
+    const state = { cat: 'all', mkt: 'all' };
+    const hint = document.getElementById('fhint');
+    document.querySelectorAll('#filters .chip').forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const grp = chip.closest('.fgroup').dataset.filter;
+        state[grp] = chip.dataset.val;
+        chip.closest('.fgroup').querySelectorAll('.chip').forEach((c) => c.classList.toggle('active', c === chip));
+        apply();
+      });
+    });
+    function apply() {
+      let shown = 0;
+      document.querySelectorAll('[data-row]').forEach((li) => {
+        const okCat = state.cat === 'all' || li.dataset.cat === state.cat;
+        const okMkt = state.mkt === 'all' || (li.dataset.mkt || '').split(' ').includes(state.mkt);
+        const ok = okCat && okMkt;
+        li.style.display = ok ? '' : 'none';
+        if (ok) shown++;
+      });
+      document.querySelectorAll('[data-day]').forEach((day) => {
+        const any = [...day.querySelectorAll('[data-row]')].some((li) => li.style.display !== 'none');
+        day.style.display = any ? '' : 'none';
+      });
+      const filtered = state.cat !== 'all' || state.mkt !== 'all';
+      hint.textContent = filtered ? `이 페이지에서 ${shown}건 표시 (필터는 현재 페이지 기준 · 전체는 상단 메뉴/태그)` : '';
+    }
+  })();
+</script>

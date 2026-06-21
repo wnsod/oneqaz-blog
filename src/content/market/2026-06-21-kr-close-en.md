@@ -1,6 +1,6 @@
 ---
 title: "2026-06-21 Korea Market Read — Kosho"
-date: 2026-06-21T17:00:17+09:00
+date: 2026-06-21T17:33:26+09:00
 description: "Korea market read: neutral regime · macro backdrop & cross-market (OneQAZ research)"
 category: market
 markets: [kr]
@@ -30,14 +30,14 @@ altLang: ko
 **Sectors/baskets** — strong: KR_UTILITIES, KR_IT_MEDIA · weak: —
 
 ## Desk panel
-**Lovble:** Volatility is reading neutral, with bearish readings showing a more pronounced presence than bullish ones. <img class="emoji-char" src="/characters/news/06_neutral.png" alt="러블" />
-**Bsho:** Bonds are showing an extreme bullish posture, while credit indicators suggest a sideways bias leaning toward the bullish side. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
-**Sham:** Foreign exchange movements are registering as neutral, with bearish sentiment showing a higher percentage than bullish sentiment. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
-**Nowel:** Commodities are exhibiting a neutral state, with bearish readings showing three times the weight of bullish readings. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
-**Kosho:** Korean equities are showing a neutral overall posture, with the utilities and IT media sectors showing strength. <img class="emoji-char" src="/characters/kr/12_relieved.png" alt="코숏" />
+- **Bsho(Bonds):** Bonds exhibit an extreme bullish posture, while credit remains in a sideways bullish regime. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
+- **Sham(FX):** Foreign exchange movements suggest a neutral environment with slightly more bearish leaning activity observed. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
+- **Nowel(Commodities):** Commodity sentiment is neutral, showing a higher degree of bearish leaning compared to bullish leaning. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
+- **Kosho(KR):** Korean equities are reading as neutral overall, with the utilities and IT media sectors showing relative strength. <img class="emoji-char" src="/characters/kr/12_relieved.png" alt="코숏" />
+- **Crypto:** The cryptocurrency market is registering a neutral state, though the underlying trend is noted as deteriorating. :crypto:
 
 ## Cross-market & !QAZ's verdict
-**!QAZ:** The macro picture presents a mixed signal, characterized by strong underlying support in fixed income and credit, contrasted by deteriorating momentum in crypto assets. On balance, the market structure suggests a cautious, range-seeking tape. <img class="emoji-char" src="/characters/orchestrator/12_relieved.png" alt="!QAZ 호랑이 지휘관" />
+**!QAZ(Chair):** The macro picture shows underlying support in fixed income and credit, contrasting with softening momentum in digital assets. The overall market tone suggests a cautious, range-seeking environment underpinned by mixed sectoral strength. <img class="emoji-char" src="/characters/orchestrator/12_relieved.png" alt="!QAZ 호랑이 지휘관" />
 
 ---
 

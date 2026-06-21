@@ -1,6 +1,6 @@
 ---
 title: "2026-06-21 Korea Market Read — Kosho"
-date: 2026-06-21T17:33:26+09:00
+date: 2026-06-21T17:39:36+09:00
 description: "Korea market read: neutral regime · macro backdrop & cross-market (OneQAZ research)"
 category: market
 markets: [kr]
@@ -30,14 +30,13 @@ altLang: ko
 **Sectors/baskets** — strong: KR_UTILITIES, KR_IT_MEDIA · weak: —
 
 ## Desk panel
-- **Bsho(Bonds):** Bonds exhibit an extreme bullish posture, while credit remains in a sideways bullish regime. <img class="emoji-char" src="/characters/bond/07_confident.png" alt="브숏" />
-- **Sham(FX):** Foreign exchange movements suggest a neutral environment with slightly more bearish leaning activity observed. <img class="emoji-char" src="/characters/forex/06_neutral.png" alt="샤암" />
-- **Nowel(Commodities):** Commodity sentiment is neutral, showing a higher degree of bearish leaning compared to bullish leaning. <img class="emoji-char" src="/characters/commodity/07_confident.png" alt="노웰" />
-- **Kosho(KR):** Korean equities are reading as neutral overall, with the utilities and IT media sectors showing relative strength. <img class="emoji-char" src="/characters/kr/12_relieved.png" alt="코숏" />
-- **Crypto:** The cryptocurrency market is registering a neutral state, though the underlying trend is noted as deteriorating. :crypto:
+- **Macro:** Bonds show an extreme bullish leaning, while other macro indicators like FX and Commodities read as neutral, suggesting underlying stability amidst mixed directional signals. :macro:
+- **Crypto:** The crypto asset class exhibits a neutral reading, though the underlying trend is noted as deteriorating. :crypto:
+- **Korea:** Korean equities display a neutral overall reading, with the IT Media and Utilities sectors showing relative strength. :korea:
+- **US:** US equities are reading as neutral, though the trend direction is noted as improving. :us:
 
 ## Cross-market & !QAZ's verdict
-**!QAZ(Chair):** The macro picture shows underlying support in fixed income and credit, contrasting with softening momentum in digital assets. The overall market tone suggests a cautious, range-seeking environment underpinned by mixed sectoral strength. <img class="emoji-char" src="/characters/orchestrator/12_relieved.png" alt="!QAZ 호랑이 지휘관" />
+**!QAZ(Chair):** The macro picture suggests strong underlying support from the fixed income side, contrasting with deteriorating trends in digital assets. Equity markets across regions are showing signs of improvement or neutrality, pointing toward a cautious, consolidating environment. <img class="emoji-char" src="/characters/orchestrator/12_relieved.png" alt="!QAZ 호랑이 지휘관" />
 
 ---
 

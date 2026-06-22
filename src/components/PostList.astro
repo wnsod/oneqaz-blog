@@ -2,8 +2,8 @@
 // 날짜별 그룹 + 컴팩트 행 리스트 (홈·카테고리 공용). data-* 속성으로 클라이언트 필터 지원.
 export interface Props { posts: any[] }
 const { posts } = Astro.props;
-const CAT: Record<string, string> = { 'track-record': 'Track Record', market: 'Market', journal: 'Journal' };
-const CAT_ORDER: Record<string, number> = { 'track-record': 0, market: 1, journal: 2 };
+const CAT: Record<string, string> = { 'track-record': 'Track Record', market: 'Market', journal: 'Journal', spotlight: 'Spotlight' };
+const CAT_ORDER: Record<string, number> = { 'track-record': 0, market: 1, spotlight: 2, journal: 3 };
 const MKT_ORDER: Record<string, number> = { crypto: 0, kr: 1, us: 2 };
 const byDate = new Map<string, any[]>();
 for (const p of posts) {
@@ -49,6 +49,7 @@ const stripDate = (t: string) => t.replace(/^\d{4}-\d{2}-\d{2}\s*/, '');
   .cat { flex:0 0 96px; font-size:10px; font-weight:600; letter-spacing:.6px; text-transform:uppercase; padding:3px 8px; border-radius:999px; text-align:center; border:1px solid var(--border); color: var(--text-muted); }
   .cat-track-record { color:#d4a853; border-color: rgba(212,168,83,.4); }
   .cat-market { color:#5aa9e6; border-color: rgba(90,169,230,.4); }
+  .cat-spotlight { color:#c98ae6; border-color: rgba(201,138,230,.4); }
   .cat-journal { color:#8a8f98; }
   .title { flex:1 1 auto; font-size:14px; color: var(--text); line-height:1.4; }
   .mk { flex:0 0 auto; font-family: var(--font-mono); font-size:11px; letter-spacing:.3px; }

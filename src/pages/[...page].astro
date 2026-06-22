@@ -5,7 +5,7 @@ import PostList from '../components/PostList.astro';
 import Pager from '../components/Pager.astro';
 
 export async function getStaticPaths({ paginate }: { paginate: any }) {
-  const cols = ['track-record', 'market', 'journal'] as const;
+  const cols = ['track-record', 'market', 'spotlight', 'journal'] as const;
   let posts: any[] = [];
   for (const c of cols) {
     const e = await getCollection(c, ({ data }) => !data.draft && data.lang !== 'en');
@@ -30,6 +30,7 @@ const { page } = Astro.props;
         <span class="flabel muted">유형</span>
         <button class="chip active" data-val="all">전체</button>
         <button class="chip" data-val="market">Market</button>
+        <button class="chip" data-val="spotlight">Spotlight</button>
         <button class="chip" data-val="journal">Journal</button>
         <button class="chip" data-val="track-record">Track Record</button>
       </div>

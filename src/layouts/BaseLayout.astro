@@ -26,6 +26,8 @@ const ogImg = ogImage ? new URL(ogImage, Astro.site).href : new URL('/og/default
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 검색엔진 소유권 확인 -->
+  <meta name="google-site-verification" content="oQldIHegNVQFRW5lzkPZMEPjp3gL66mgK7Q6yCS20Gc" />
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />

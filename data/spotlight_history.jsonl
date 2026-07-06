@@ -52,3 +52,15 @@
 {"date": "2026-07-03", "market": "kr", "symbol": "062040", "rvol": 1.9, "price_chg": -0.9, "close": 227500.0, "rank": 10}
 {"date": "2026-07-03", "market": "kr", "symbol": "357780", "rvol": 1.8, "price_chg": -20.3, "close": 307000.0, "rank": 11}
 {"date": "2026-07-03", "market": "kr", "symbol": "026960", "rvol": 1.8, "price_chg": 5.4, "close": 25400.0, "rank": 12}
+{"date": "2026-07-02", "market": "us", "symbol": "CHTR", "rvol": 2.9, "price_chg": 11.4, "close": 139.84, "rank": 1}
+{"date": "2026-07-02", "market": "us", "symbol": "CMCSA", "rvol": 2.4, "price_chg": 6.3, "close": 23.73, "rank": 2}
+{"date": "2026-07-02", "market": "us", "symbol": "AXON", "rvol": 2.3, "price_chg": 44.9, "close": 593.96, "rank": 3}
+{"date": "2026-07-02", "market": "us", "symbol": "DLR", "rvol": 2.1, "price_chg": -9.8, "close": 176.32, "rank": 4}
+{"date": "2026-07-02", "market": "us", "symbol": "VZ", "rvol": 2.0, "price_chg": -7.4, "close": 41.99, "rank": 5}
+{"date": "2026-07-02", "market": "us", "symbol": "NKE", "rvol": 2.0, "price_chg": -0.3, "close": 43.06, "rank": 6}
+{"date": "2026-07-02", "market": "us", "symbol": "MLM", "rvol": 1.9, "price_chg": -5.0, "close": 579.24, "rank": 7}
+{"date": "2026-07-02", "market": "us", "symbol": "META", "rvol": 1.9, "price_chg": 8.7, "close": 612.91, "rank": 8}
+{"date": "2026-07-02", "market": "us", "symbol": "PANW", "rvol": 1.8, "price_chg": 22.9, "close": 352.04, "rank": 9}
+{"date": "2026-07-02", "market": "us", "symbol": "GIS", "rvol": 1.7, "price_chg": 13.3, "close": 37.77, "rank": 10}
+{"date": "2026-07-02", "market": "us", "symbol": "CRWD", "rvol": 1.7, "price_chg": 14.4, "close": 772.74, "rank": 11}
+{"date": "2026-07-02", "market": "us", "symbol": "TPL", "rvol": 1.7, "price_chg": 14.9, "close": 415.02, "rank": 12}

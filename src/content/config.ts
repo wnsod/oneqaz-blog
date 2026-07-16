@@ -13,6 +13,8 @@ const postSchema = z.object({
   tags: z.array(z.string()).default([]),
   lang: z.enum(['ko', 'en']).default('ko'),
   draft: z.boolean().default(false),
+  // 정정/갱신 재발행 시각 — JSON-LD dateModified 로 노출 (없으면 미수정 글)
+  updated: z.coerce.date().optional(),
   ogImage: z.string().optional(),
   // hreflang pairing — the alternate-language version of this same post
   altUrl: z.string().optional(),

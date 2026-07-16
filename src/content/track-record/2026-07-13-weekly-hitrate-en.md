@@ -1,55 +1,58 @@
 ---
 title: "2026-07-11 Weekly Track Record — OneQAZ Quorum"
-date: 2026-07-13T08:01:19+09:00
-description: "Last week 11008 trades, 39.2% win rate, avg +0.34% · OneQAZ Quorum market review (paper-trading)"
+date: 2026-07-13T08:00:00+09:00
+description: "Last week 155 trades, 66.5% win rate, avg +0.93% · OneQAZ Quorum market review (paper-trading)"
 category: track-record
 markets: [kr, us, crypto]
 tags: [hitrate, weekly, track-record]
 lang: en
 draft: false
-ogImage: /characters/orchestrator/01_joy.png
+updated: 2026-07-16T00:36:36+00:00
+ogImage: /characters/orchestrator/09_excited.png
 altUrl: /track-record/2026-07-13-weekly-hitrate
 altLang: ko
 ---
 
+> ⚠️ **Correction (2026-07-16)**: A simulation data defect affecting 2026-07-08 through 07-15 was found, and this journal has been corrected and republished. A signal-persistence failure caused entries to be recorded at stale signal prices instead of live market prices, producing simulated trades at prices and returns that could not have existed in the market. The defective trades have been quarantined from the ledger and the engine has been repaired. This republished version reflects verified, valid trades only.
+
 ## Key takeaways
 
-- **11008 closed trades**, win rate **39.2%**, expectancy **+0.34%** per trade.
-- Profit factor **1.14** · avg win **+7.22%** vs avg loss **-4.08%** (R:R **1.77**).
-- Best **+31.04%** / worst **-31.92%** — every closed trade counted, losses included.
+- **155 closed trades**, win rate **66.5%**, expectancy **+0.93%** per trade.
+- Profit factor **2.50** · avg win **+2.33%** vs avg loss **-1.85%** (R:R **1.26**).
+- Best **+10.18%** / worst **-4.69%** — every closed trade counted, losses included.
 - Paper-trading simulation, not investment advice.
 
 ### Metrics
 
 | Metric | Value |
 |---|---|
-| Closed trades | 11008 (4313W / 6695L) |
-| Win rate | 39.2% |
-| Expectancy / trade | +0.34% |
-| Profit factor | 1.14 |
-| Avg win / avg loss | +7.22% / -4.08% |
-| Best / worst | +31.04% / -31.92% |
+| Closed trades | 155 (103W / 52L) |
+| Win rate | 66.5% |
+| Expectancy / trade | +0.93% |
+| Profit factor | 2.50 |
+| Avg win / avg loss | +2.33% / -1.85% |
+| Best / worst | +10.18% / -4.69% |
 
 ### By market
 
 | Market | Closed | Win rate | Avg P&L |
 |---|---|---|---|
-| coin | 4897 | 38.3% | -0.37% |
-| kr | 4311 | 46.5% | +2.01% |
-| us | 1800 | 24.1% | -1.69% |
+| coin | 132 | 71.2% | +1.27% |
+| kr | 16 | 31.2% | -1.58% |
+| us | 7 | 57.1% | +0.21% |
 
-**Bengal:** The crypto market saw a win rate of 38.3% across nearly 4900 observations, with an average profit and loss that was negative at -0.374. This suggests that while trades were executed frequently, the average outcome leaned toward losses. <img class="emoji-char" src="/characters/crypto/02_sad.png" alt="벵갈" />
+**Bengal:** The crypto market showed a strong win rate of 71.2% across 132 observations, with a positive average profit and a healthy profit factor of 2.5. <img class="emoji-char" src="/characters/crypto/09_excited.png" alt="벵갈" />
 
-**Kosho:** Korean equities demonstrated a solid win rate of 46.5% over 4311 observations, accompanied by a positive average profit and loss of 2.01. This indicates that the recent trading activity in this sector was profitable on average. <img class="emoji-char" src="/characters/kr/01_joy.png" alt="코숏" />
+**Kosho:** Korean equities presented a challenging period, evidenced by a low win rate of 31.2% and a negative average profit, despite a relatively small sample size of 16 observations. <img class="emoji-char" src="/characters/kr/02_sad.png" alt="코숏" />
 
-**Maine:** US equities posted a win rate of 24.1% based on 1800 observations. The average profit and loss was negative at -1.691, suggesting that the majority of the recorded trades resulted in losses. <img class="emoji-char" src="/characters/us/02_sad.png" alt="멘쿤" />
+**Maine:** US equities posted a win rate of 57.1% over 7 observations, achieving a positive average profit, though the small sample size warrants caution in interpretation. <img class="emoji-char" src="/characters/us/07_confident.png" alt="멘쿤" />
 
 **!QAZ the Tiger Commander:**
-The overall sentiment derived from this week's results is one of 'joyful' mixed performance across the monitored asset classes. The data shows a divergence in performance: Kosho exhibited a notably high win rate and positive average return, suggesting a favorable regime for that market. Conversely, both Bengal and Maine registered negative average P&L, indicating that the losses incurred on those trades outweighed the gains across the sample period.
+The overall sentiment across the tracked markets this week reads as 'excited'. The data indicates distinct performance profiles across the asset classes reviewed. Crypto demonstrated robust positive performance metrics, while Korean equities showed significant difficulty in this period. US equities maintained positive returns, though the limited data points suggest caution regarding extrapolation.
 
-The Quorum notes that the sample size for US equities (Maine) was the smallest among the three markets analyzed. While the overall profit factor for the period was 1.14, the differing signals across the markets suggest that performance was highly sector-dependent.
+The quorum synthesizes these results to note the divergence in market performance. The high win rate and positive metrics in crypto contrast sharply with the negative average profit observed in Korean equities. The small sample sizes noted for both Kosho and Maine mean that while positive trends are visible, they are based on limited historical context within this paper-trading research.
 
-This summary reflects only the historical paper-trading outcomes observed through yesterday and should not be construed as any form of investment guidance or prediction of future market movements. <img class="emoji-char" src="/characters/orchestrator/01_joy.png" alt="!QAZ 호랑이 지휘관" />
+This summary reflects what occurred during the tracking period and should not be construed as any form of investment guidance. <img class="emoji-char" src="/characters/orchestrator/09_excited.png" alt="!QAZ 호랑이 지휘관" />
 
 ---
 

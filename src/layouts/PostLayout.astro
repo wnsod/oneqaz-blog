@@ -13,13 +13,17 @@ export interface Props {
   ogImage?: string;
   altUrl?: string;
   altLang?: 'ko' | 'en';
+  /** correction/update timestamp — rendered as JSON-LD dateModified + visible label */
+  updated?: Date;
 }
 
-const { title, description, date, category, markets = [], tags = [], lang = 'ko', ogImage, altUrl, altLang } = Astro.props;
+const { title, description, date, category, markets = [], tags = [], lang = 'ko', ogImage, altUrl, altLang, updated } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const iso = date.toISOString();
 const dateLabel = date.toISOString().slice(0, 10);
+const updatedIso = updated ? updated.toISOString() : null;
+const updatedLabel = updated ? updated.toISOString().slice(0, 10) : null;
 
 // hreflang pairing — let AI/search engines see the KO↔EN versions of this post.
 const altHref = altUrl ? new URL(altUrl, Astro.site).href : null;
@@ -33,6 +37,7 @@ const jsonLd = {
   headline: title,
   description,
   datePublished: iso,
+  ...(updatedIso ? { dateModified: updatedIso } : {}),
   inLanguage: lang,
   url: canonical,
   author: { '@type': 'Organization', name: 'OneQAZ', url: 'https://oneqaz.com' },
@@ -51,6 +56,7 @@ const jsonLd = {
     <h1>{title}</h1>
     <div class="meta">
       <time datetime={iso}>{dateLabel}</time>
+      {updatedIso && <span class="updated" title={updatedIso}>{lang === 'en' ? 'corrected' : '정정'} <time datetime={updatedIso}>{updatedLabel}</time></span>}
       <TagList markets={markets} tags={tags} />
       {altHref && <a class="lang-toggle" href={altUrl} hreflang={altLang}>{toggleLabel}</a>}
     </div>
@@ -69,6 +75,7 @@ const jsonLd = {
   .back { display:inline-block; margin-bottom: 20px; opacity:.8; }
   h1 { font-size: clamp(26px, 4vw, 38px); font-weight: 700; line-height: 1.25; color: var(--text); margin-bottom: 14px; }
   .meta { display:flex; align-items:center; gap:14px; flex-wrap:wrap; font-size:13px; color: var(--text-muted); margin-bottom: 36px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+  .updated { font-size:11px; padding:2px 9px; border:1px solid rgba(212,168,83,.45); border-radius:999px; color: var(--amber); letter-spacing:.3px; }
   .lang-toggle { margin-left:auto; border:1px solid var(--border); border-radius: 999px; padding: 3px 11px; font-size:12px; letter-spacing:.5px; color: var(--text-muted); transition: color .2s, border-color .2s; }
   .lang-toggle:hover { color: var(--amber); border-color: var(--amber); }
   .prose :global(p) { margin: 0 0 18px; }

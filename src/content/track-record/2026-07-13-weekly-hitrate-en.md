@@ -1,14 +1,14 @@
 ---
 title: "2026-07-11 Weekly Track Record — OneQAZ Quorum"
 date: 2026-07-13T08:00:00+09:00
-description: "Last week 155 trades, 66.5% win rate, avg +0.93% · OneQAZ Quorum market review (paper-trading)"
+description: "Last week 5150 trades, 35.3% win rate, avg -0.27% · OneQAZ Quorum market review (paper-trading)"
 category: track-record
 markets: [kr, us, crypto]
 tags: [hitrate, weekly, track-record]
 lang: en
 draft: false
-updated: 2026-07-16T00:36:36+00:00
-ogImage: /characters/orchestrator/09_excited.png
+updated: 2026-07-16T16:05:25+00:00
+ogImage: /characters/orchestrator/02_sad.png
 altUrl: /track-record/2026-07-13-weekly-hitrate
 altLang: ko
 ---
@@ -17,42 +17,47 @@ altLang: ko
 
 ## Key takeaways
 
-- **155 closed trades**, win rate **66.5%**, expectancy **+0.93%** per trade.
-- Profit factor **2.50** · avg win **+2.33%** vs avg loss **-1.85%** (R:R **1.26**).
-- Best **+10.18%** / worst **-4.69%** — every closed trade counted, losses included.
+- **5150 closed trades**, win rate **35.3%**, expectancy **-0.27%** per trade.
+- Profit factor **0.67** · avg win **+1.55%** vs avg loss **-1.26%** (R:R **1.23**).
+- Best **+20.32%** / worst **-18.13%** — every closed trade counted, losses included.
 - Paper-trading simulation, not investment advice.
 
 ### Metrics
 
 | Metric | Value |
 |---|---|
-| Closed trades | 155 (103W / 52L) |
-| Win rate | 66.5% |
-| Expectancy / trade | +0.93% |
-| Profit factor | 2.50 |
-| Avg win / avg loss | +2.33% / -1.85% |
-| Best / worst | +10.18% / -4.69% |
+| Closed trades | 5150 (1816W / 3334L) |
+| Win rate | 35.3% |
+| Expectancy / trade | -0.27% |
+| Profit factor | 0.67 |
+| Avg win / avg loss | +1.55% / -1.26% |
+| Best / worst | +20.32% / -18.13% |
 
 ### By market
 
 | Market | Closed | Win rate | Avg P&L |
 |---|---|---|---|
-| coin | 132 | 71.2% | +1.27% |
-| kr | 16 | 31.2% | -1.58% |
-| us | 7 | 57.1% | +0.21% |
+| coin | 4117 | 33.7% | -0.34% |
+| kr | 906 | 39.4% | -0.15% |
+| us | 127 | 55.9% | +1.07% |
 
-**Bengal:** The crypto market showed a strong win rate of 71.2% across 132 observations, with a positive average profit and a healthy profit factor of 2.5. <img class="emoji-char" src="/characters/crypto/09_excited.png" alt="벵갈" />
+## Remarks by market
 
-**Kosho:** Korean equities presented a challenging period, evidenced by a low win rate of 31.2% and a negative average profit, despite a relatively small sample size of 16 observations. <img class="emoji-char" src="/characters/kr/02_sad.png" alt="코숏" />
+**Bengal:** The crypto market showed a win rate of 33.7% with an average loss magnitude of -1.26, contributing to a negative average PnL of -0.341 over its recorded trades. <img class="emoji-char" src="/characters/crypto/02_sad.png" alt="벵갈" />
 
-**Maine:** US equities posted a win rate of 57.1% over 7 observations, achieving a positive average profit, though the small sample size warrants caution in interpretation. <img class="emoji-char" src="/characters/us/07_confident.png" alt="멘쿤" />
+**Kosho:** Korean equities posted a win rate of 39.4%, which is better than the overall average, but the average PnL remains negative at -0.151. <img class="emoji-char" src="/characters/kr/02_sad.png" alt="코숏" />
 
-**!QAZ the Tiger Commander:**
-The overall sentiment across the tracked markets this week reads as 'excited'. The data indicates distinct performance profiles across the asset classes reviewed. Crypto demonstrated robust positive performance metrics, while Korean equities showed significant difficulty in this period. US equities maintained positive returns, though the limited data points suggest caution regarding extrapolation.
+**Maine:** US equities demonstrated the highest win rate at 55.9%, and notably, this was the only market to show a positive average PnL of 1.067. <img class="emoji-char" src="/characters/us/09_excited.png" alt="멘쿤" />
 
-The quorum synthesizes these results to note the divergence in market performance. The high win rate and positive metrics in crypto contrast sharply with the negative average profit observed in Korean equities. The small sample sizes noted for both Kosho and Maine mean that while positive trends are visible, they are based on limited historical context within this paper-trading research.
+## !QAZ quorum verdict
 
-This summary reflects what occurred during the tracking period and should not be construed as any form of investment guidance. <img class="emoji-char" src="/characters/orchestrator/09_excited.png" alt="!QAZ 호랑이 지휘관" />
+The overall performance summary indicates a challenging period, reflected in the negative overall average PnL and a profit factor below parity. While the win rate across the board is mixed, the disparity in performance between the three sectors is clear.
+
+The data suggests that the US equities segment outperformed the others significantly in terms of positive average returns, despite the smaller sample size noted for this market. Conversely, both crypto and Korean equities registered negative average PnLs, suggesting that the losses incurred in those areas outweighed the gains realized.
+
+Overall, the aggregate picture points to a 'down' sentiment for the week. The variance in performance, particularly the divergence between Maine's positive average return and the negative averages seen elsewhere, suggests that market conditions were not uniformly favorable across asset classes.
+
+*This research represents a review of historical paper-trading data and should not be construed as investment advice.* <img class="emoji-char" src="/characters/orchestrator/02_sad.png" alt="!QAZ 호랑이 지휘관" />
 
 ---
 

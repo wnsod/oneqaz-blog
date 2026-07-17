@@ -56,7 +56,7 @@ const jsonLd = {
     <h1>{title}</h1>
     <div class="meta">
       <time datetime={iso}>{dateLabel}</time>
-      {updatedIso && <span class="updated" title={updatedIso}>{lang === 'en' ? 'corrected' : '정정'} <time datetime={updatedIso}>{updatedLabel}</time></span>}
+      {updatedIso && <a class="updated" href="/corrections" title={updatedIso}>{lang === 'en' ? 'corrected' : '정정'} <time datetime={updatedIso}>{updatedLabel}</time></a>}
       <TagList markets={markets} tags={tags} />
       {altHref && <a class="lang-toggle" href={altUrl} hreflang={altLang}>{toggleLabel}</a>}
     </div>

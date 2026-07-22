@@ -1,0 +1,102 @@
+---
+// 누적 트랙레코드 (P1 §1-1 v1) — 공개 기록 기간의 거래 단위 통계.
+// 데이터: src/data/alltime.json (발행 사이클마다 원장에서 재계산·커밋 — 글과 동일 소스).
+// 자본곡선 지표(에쿼티 커브·MDD·월별 수익률)는 자본 모델 확정 후 추가 — 미준비 셀 비렌더 원칙.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import stats from '../../data/alltime.json';
+
+const MK: Record<string, string> = { coin: '코인 (Crypto)', kr: '국장 (KR)', us: '미장 (US)' };
+const pf = (v: number | null) => (v === null || v === undefined ? '—' : v.toFixed(2));
+const t = stats.total;
+---
+<BaseLayout title="누적 트랙레코드 — OneQAZ" description={`OneQAZ all-time track record (paper trading): ${t.n.toLocaleString()} closed trades since ${stats.public_record_start}, win rate ${t.win_rate}%, losses included. Verifiable via MCP.`}>
+  <article class="container post">
+    <p class="eyebrow">track-record / all-time</p>
+    <h1>누적 트랙레코드 <span class="paper">모의매매 · paper</span></h1>
+    <p class="muted lede">
+      공개 발행 시작({stats.public_record_start}) 이후 전 기록 — 매일 발행된 매매일지와 같은
+      원장에서 집계하며, 손실을 포함해 있는 그대로 공개합니다.
+    </p>
+
+    <div class="counters">
+      <div class="counter"><span class="num">{stats.days_operating}</span><span class="lab">운영 일수</span></div>
+      <div class="counter"><span class="num">{t.n.toLocaleString()}</span><span class="lab">누적 마감 거래</span></div>
+      <div class="counter"><span class="num">{t.win_rate}%</span><span class="lab">누적 승률</span></div>
+      <div class="counter"><span class="num">{pf(t.profit_factor)}</span><span class="lab">프로핏 팩터</span></div>
+    </div>
+
+    <h2>시장별 분해</h2>
+    <table>
+      <thead><tr><th>시장</th><th>마감</th><th>승률</th><th>PF</th><th>건당 평균</th><th>최고</th><th>최저</th></tr></thead>
+      <tbody>
+        {Object.entries(stats.markets).map(([m, s]: [string, any]) => (
+          <tr>
+            <td>{MK[m] ?? m}</td><td>{s.n.toLocaleString()}</td><td>{s.win_rate}%</td>
+            <td>{pf(s.profit_factor)}</td><td>{s.avg_pnl > 0 ? '+' : ''}{s.avg_pnl}%</td>
+            <td class="win">+{s.best}%</td><td class="loss">{s.worst}%</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p class="muted small">기준: {stats.public_record_start} ~ {stats.last_day} · 갱신 {stats.generated_at} (발행 사이클마다 자동 재계산)</p>
+
+    <h2>이 수치의 경계 — 무엇을 세고, 무엇을 안 세나</h2>
+    <ul>
+      <li><strong>공개 기록 기간만 셉니다.</strong> {stats.public_record_start}(블로그 공개 발행 시작) 이후의
+        거래만 — 이 기간의 모든 거래는 당일 매매일지로 동시대에 공개되어 사후 대조가 가능합니다.
+        그 이전의 개발·실험기 원장은 존재하지만 동시대 공개 기록이 없어 검증 불가이므로 트랙레코드에
+        포함하지 않습니다.</li>
+      <li><strong>2026-07-08~15 데이터 결함 구간</strong>은 결함 거래 격리 후 수치입니다 —
+        전말은 <a href="/corrections/">정정 기록</a>에 공개되어 있습니다.</li>
+      <li><strong>에쿼티 커브·MDD·월별 수익률·벤치마크 대비</strong>는 자본 모델 검증이 끝나는 대로
+        추가됩니다. 준비되지 않은 지표를 추정치로 채우지 않습니다.</li>
+      <li>전부 <strong>모의매매(paper trading)</strong>입니다. 실계좌 전환 시에도 paper 기록과 live
+        기록은 분리 표기하며 하나로 잇지 않습니다.</li>
+    </ul>
+
+    <h2>직접 검증하기</h2>
+    <p>
+      이 페이지의 수치는 매매일지와 동일한 원장에서 나옵니다. <a href="https://github.com/wnsod/oneqaz-trading-mcp">OneQAZ MCP</a>를
+      AI에 연결하면 같은 데이터를 직접 조회할 수 있습니다 — 예: <code>get_trade_history</code>(마감 거래),
+      <code>get_winning_trades</code>/<code>get_losing_trades</code>, <code>get_ledger_integrity</code>(원장
+      해시체인 — 사후 수정 감지). 각 매매일지 하단의 전량 CSV로도 대조 가능합니다.
+    </p>
+
+    <p class="en muted">
+      <strong>English.</strong> All-time paper-trading record since {stats.public_record_start} (start of
+      contemporaneous public publication): {t.n.toLocaleString()} closed trades, {t.win_rate}% win rate,
+      profit factor {pf(t.profit_factor)} — losses included, defect window quarantined and disclosed at
+      <a href="/corrections/">/corrections</a>. Equity-curve metrics (MDD, monthly returns, benchmarks)
+      will be added once the capital model is finalized; unprepared metrics are not rendered. Verify via
+      OneQAZ MCP or per-post CSV downloads.
+    </p>
+
+    <hr />
+    <p class="muted small">
+      <strong>면책:</strong> OneQAZ 수치는 모의 매매(paper-trading) 리서치이며 투자 자문이 아닙니다.
+      과거 모의 성과는 미래 실현 수익을 보장하지 않습니다. (Paper-trading research, not investment advice.)
+    </p>
+  </article>
+</BaseLayout>
+
+<style>
+  .post { padding: 56px 24px 80px; }
+  h1 { font-size: clamp(26px, 4vw, 38px); font-weight: 700; color: var(--text); margin: 8px 0 12px; }
+  h2 { font-size: 21px; font-weight: 600; margin: 40px 0 14px; color: var(--text); }
+  .paper { font-size: 12px; vertical-align: middle; margin-left: 10px; padding: 3px 10px; border: 1px solid rgba(212,168,83,.45); border-radius: 999px; color: var(--amber); font-weight: 400; letter-spacing: .4px; }
+  .lede { font-size: 14px; line-height: 1.8; max-width: 640px; }
+  .counters { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; margin: 28px 0 8px; }
+  .counter { border: 1px solid var(--border); border-radius: var(--radius-md, 10px); padding: 18px 16px; text-align: center; background: var(--panel-bg); }
+  .num { display: block; font-size: 26px; font-weight: 700; color: var(--amber); font-family: var(--font-mono); }
+  .lab { display: block; margin-top: 6px; font-size: 12px; color: var(--text-muted); }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 0 0 10px; }
+  th, td { border: 1px solid var(--border); padding: 8px 12px; text-align: left; }
+  thead th { background: var(--panel-bg); color: var(--text); font-weight: 600; }
+  .win { color: #3fb950; } .loss { color: #f85149; }
+  p, li { font-size: 14px; line-height: 1.8; color: var(--text); }
+  ul { margin: 0 0 16px 22px; } li { margin: 6px 0; }
+  .small { font-size: 12px; } .en { font-size: 13px; }
+  code { font-family: var(--font-mono); font-size: .92em; background: var(--panel-bg); padding: 2px 6px; border-radius: 4px; }
+  a { color: var(--amber); }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 36px 0 16px; }
+</style>

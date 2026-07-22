@@ -1,0 +1,47 @@
+{
+ "account": "paper",
+ "public_record_start": "2026-06-16",
+ "markets": {
+  "coin": {
+   "n": 46329,
+   "wins": 18101,
+   "losses": 28228,
+   "win_rate": 39.1,
+   "avg_pnl": -0.214,
+   "best": 97.12,
+   "worst": -32.58,
+   "profit_factor": 0.72
+  },
+  "kr": {
+   "n": 11530,
+   "wins": 3692,
+   "losses": 7838,
+   "win_rate": 32.0,
+   "avg_pnl": -0.291,
+   "best": 30.4,
+   "worst": -29.92,
+   "profit_factor": 0.71
+  },
+  "us": {
+   "n": 10862,
+   "wins": 2700,
+   "losses": 8162,
+   "win_rate": 24.9,
+   "avg_pnl": -0.216,
+   "best": 25.38,
+   "worst": -19.74,
+   "profit_factor": 0.53
+  }
+ },
+ "total": {
+  "n": 68721,
+  "wins": 24493,
+  "losses": 44228,
+  "win_rate": 35.6,
+  "profit_factor": 0.7
+ },
+ "first_day": "2026-06-16",
+ "last_day": "2026-07-22",
+ "days_operating": 37,
+ "generated_at": "2026-07-22T14:40:01+00:00"
+}

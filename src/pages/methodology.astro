@@ -1,0 +1,99 @@
+---
+// 방법론 (P1 §1-2) — 체결/집계 "가정"만 문서화. 시그널 산출 내부구조는 비공개(모트·특허).
+// 원칙: 검증된 사실만 쓴다. 미확인 항목은 추정으로 채우지 않고 명시적으로 보류 표기.
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="방법론 — OneQAZ" description="How OneQAZ paper-trading numbers are produced: fill model, data boundaries, win-rate framing, paper/live separation, and how to verify. Execution assumptions only — signal logic stays private.">
+  <article class="container post">
+    <p class="eyebrow">methodology</p>
+    <h1>방법론 — 이 수치들이 만들어지는 방식</h1>
+    <p class="muted lede">
+      이 페이지는 <strong>체결·집계 가정</strong>을 문서화합니다. 시그널 산출 로직(지표 조합·파라미터)은
+      비공개이며 여기서 다루지 않습니다 — 공개하는 것은 "결과가 어떻게 기록·집계되는가"입니다.
+    </p>
+
+    <h2>1. 모의 체결 모델</h2>
+    <ul>
+      <li><strong>진입가</strong>: 시그널 기준가에 슬리피지 계수(×1.001)를 적용한 <strong>합성 체결가</strong>입니다.
+        그래서 국장 종목에서 KRX 호가단위와 정확히 일치하지 않는 가격(예: 45,095원)이 보일 수 있습니다 —
+        실제 호가 체결이 아니라 시뮬레이션 체결가이기 때문입니다.</li>
+      <li><strong>청산가</strong>: 청산 시점의 실시간 캔들 가격으로 평가됩니다.</li>
+      <li><strong>2026-07-15 이후</strong>: 진입가에 실시간 가격 검증(괴리 가드·시그널 신선도 게이트)이
+        추가되었습니다 — 이전 구간에서 이 가드 부재로 발생한 결함과 정정은
+        <a href="/corrections/">정정 기록</a>에 공개되어 있습니다.</li>
+      <li><strong>수수료·세금, 포지션 사이징 규칙</strong>: 엔진 문서화 확인 작업이 진행 중이며, 확인되는
+        대로 이 페이지에 원문 그대로 추가합니다. 확인 전에는 추정으로 기재하지 않습니다.</li>
+    </ul>
+
+    <h2>2. 데이터 경계 — 각 글이 세는 범위</h2>
+    <ul>
+      <li><strong>마감 거래만</strong> 집계합니다(청산 완료 기준). 미청산 포지션은 어떤 통계에도 넣지 않습니다.</li>
+      <li>매매일지 = 발행 시각 직전 24시간 창. 주간 트랙레코드 = T+1 경계(발행일 전날까지) 7일 창.</li>
+      <li><strong>as-of 스냅샷 원칙</strong>: 각 글의 수치는 발행 시점 원장의 스냅샷입니다. 지연 기록이
+        사후에 더해질 수 있어(실측: 일지의 약 34%에서 +1~5% 건수 상향, 삭제는 없음) 나중에 원장을
+        재조회하면 소폭 차이가 날 수 있습니다 — 이는 정정이 아니라 기록 지연입니다.</li>
+      <li><strong>누적 트랙레코드</strong>는 공개 발행 시작(2026-06-16) 이후만 셉니다 — 동시대 공개
+        기록이 있어 검증 가능한 기간만 "트랙레코드"로 인정합니다.
+        상세: <a href="/track-record/all-time/">누적 트랙레코드</a>의 경계 섹션.</li>
+    </ul>
+
+    <h2>3. 승률을 읽는 법 — 낮은 승률이 곧 나쁜 시스템은 아니다</h2>
+    <p>
+      기대손익은 <code>승률 × 평균이익 − (1−승률) × 평균손실</code>로 결정됩니다. 예컨대 승률 36%라도
+      손익비(평균이익/평균손실)가 2.6이면 기대손익은 양수가 됩니다. 반대로 승률이 높아도 손익비가
+      나쁘면 누적은 음수일 수 있습니다. 그래서 이 블로그는 승률·손익비·프로핏 팩터(PF)를 항상 함께
+      공개합니다 — <strong>PF&lt;1 구간은 누적 손실 구간이라는 뜻이며, 그것도 그대로 표시합니다.</strong>
+      현재 수치는 <a href="/track-record/all-time/">누적 트랙레코드</a>에서 확인하세요.
+    </p>
+
+    <h2>4. 모의(paper)와 실거래(live)의 분리</h2>
+    <p>
+      모든 수치는 현재 <strong>모의매매(paper)</strong>입니다. 향후 실계좌를 병행하더라도 paper 기록과
+      live 기록은 <strong>분리된 통계·분리된 차트로만 제시하고 절대 하나로 잇지 않습니다</strong> —
+      가상 수익과 실제 수익을 섞으면 트랙레코드가 오염되기 때문입니다(GIPS 계열 원칙). 이 원칙은
+      데이터 스키마 레벨(계정 유형 필터 강제)에도 반영됩니다.
+    </p>
+
+    <h2>5. 검증 경로</h2>
+    <ul>
+      <li><strong>MCP 재조회</strong>: <a href="https://github.com/wnsod/oneqaz-trading-mcp">OneQAZ MCP</a>로
+        같은 원장을 직접 조회할 수 있습니다 (<code>get_trade_history</code> 등).</li>
+      <li><strong>전량 CSV</strong>: 각 매매일지 하단에서 해당 창의 전체 마감 거래를 내려받을 수 있습니다.</li>
+      <li><strong>원장 해시체인</strong>: 예측 원장은 일별 SHA-256 체인으로 봉인되며 주간 트랙레코드에
+        최신 앵커를 공개합니다 — 사후 수정은 체인 불일치로 드러납니다.</li>
+      <li><strong>정정 정책</strong>: 오류는 <a href="/corrections/">정정 기록</a>에 사유와 함께 공개하고
+        원문 URL 을 유지합니다.</li>
+    </ul>
+
+    <p class="en muted">
+      <strong>English.</strong> This page documents execution & aggregation assumptions only — signal
+      logic stays private. Entries are synthetic fills (signal reference price ×1.001 slippage; live-price
+      validation added 2026-07-15), exits are marked at live candle prices. Closed trades only; each post
+      is an as-of snapshot (late writes can add +1–5% counts afterwards — measured, additions only).
+      The all-time record counts only the contemporaneously-published period (since 2026-06-16). Paper
+      and live records will never be merged. Fees/taxes and position sizing will be documented verbatim
+      once confirmed from the engine — never estimated. Verify via MCP, per-post CSV, and the daily
+      SHA-256 ledger chain.
+    </p>
+
+    <hr />
+    <p class="muted small">
+      <strong>면책:</strong> OneQAZ 수치는 모의 매매(paper-trading) 리서치이며 투자 자문이 아닙니다.
+      (Paper-trading research, not investment advice.)
+    </p>
+  </article>
+</BaseLayout>
+
+<style>
+  .post { padding: 56px 24px 80px; max-width: 760px; }
+  h1 { font-size: clamp(26px, 4vw, 36px); font-weight: 700; color: var(--text); margin: 8px 0 12px; }
+  h2 { font-size: 20px; font-weight: 600; margin: 38px 0 12px; color: var(--text); }
+  .lede { font-size: 14px; line-height: 1.8; }
+  p, li { font-size: 14px; line-height: 1.85; color: var(--text); }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 16px 22px; } li { margin: 7px 0; }
+  code { font-family: var(--font-mono); font-size: .9em; background: var(--panel-bg); padding: 2px 6px; border-radius: 4px; }
+  a { color: var(--amber); }
+  .small { font-size: 12px; } .en { font-size: 13px; }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 36px 0 16px; }
+</style>

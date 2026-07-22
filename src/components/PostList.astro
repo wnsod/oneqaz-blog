@@ -25,7 +25,7 @@ const stripDate = (t: string) => t.replace(/^\d{4}-\d{2}-\d{2}\s*/, '');
     <ul class="rows">
       {list.map((p) => (
         <li data-row data-cat={p._collection} data-mkt={(p.data.markets ?? []).join(' ')}>
-          <a class="row" href={`/${p._collection}/${p.slug}`}>
+          <a class="row" href={`/${p._collection}/${p.slug}/`}>
             <span class={`cat cat-${p._collection}`}>{CAT[p._collection]}</span>
             <span class="title">{stripDate(p.data.title)}</span>
             <span class="mk muted">{(p.data.markets ?? []).map((m: string) => `#${m}`).join(' ')}</span>

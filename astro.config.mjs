@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 // site URL is REQUIRED for correct sitemap + canonical URLs.
 export default defineConfig({
   site: 'https://blog.oneqaz.com',
-  trailingSlash: 'never',
+  trailingSlash: 'always',
   integrations: [
     sitemap(),
   ],

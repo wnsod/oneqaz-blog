@@ -26,7 +26,9 @@ const updatedIso = updated ? updated.toISOString() : null;
 const updatedLabel = updated ? updated.toISOString().slice(0, 10) : null;
 
 // hreflang pairing — let AI/search engines see the KO↔EN versions of this post.
-const altHref = altUrl ? new URL(altUrl, Astro.site).href : null;
+// 과거 글 frontmatter altUrl 은 슬래시 없음 — trailingSlash always 체계에 맞게 정규화(301 방지).
+const altNorm = altUrl ? (altUrl.endsWith('/') ? altUrl : altUrl + '/') : null;
+const altHref = altNorm ? new URL(altNorm, Astro.site).href : null;
 const xDefault = lang === 'ko' ? canonical : altHref; // KO is the default language
 const toggleLabel = altLang === 'en' ? 'EN' : '한국어';
 
@@ -52,13 +54,13 @@ const jsonLd = {
   {altHref && xDefault && <link rel="alternate" hreflang="x-default" href={xDefault} slot="head" />}
 
   <article class="container post">
-    <a href={`/${category}`} class="eyebrow back">&larr; {category}</a>
+    <a href={`/${category}/`} class="eyebrow back">&larr; {category}</a>
     <h1>{title}</h1>
     <div class="meta">
       <time datetime={iso}>{dateLabel}</time>
-      {updatedIso && <a class="updated" href="/corrections" title={updatedIso}>{lang === 'en' ? 'corrected' : '정정'} <time datetime={updatedIso}>{updatedLabel}</time></a>}
+      {updatedIso && <a class="updated" href="/corrections/" title={updatedIso}>{lang === 'en' ? 'corrected' : '정정'} <time datetime={updatedIso}>{updatedLabel}</time></a>}
       <TagList markets={markets} tags={tags} />
-      {altHref && <a class="lang-toggle" href={altUrl} hreflang={altLang}>{toggleLabel}</a>}
+      {altHref && <a class="lang-toggle" href={altNorm} hreflang={altLang}>{toggleLabel}</a>}
     </div>
     <div class="prose">
       <slot />

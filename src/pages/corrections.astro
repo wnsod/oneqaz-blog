@@ -73,7 +73,7 @@ const fmt = (d: Date) => d.toISOString().slice(0, 10);
     <ul class="list">
       {corrected.filter((p) => p.data.lang !== 'en').map((p) => (
         <li>
-          <a href={`/${p._collection}/${p.slug}`}>{p.data.title}</a>
+          <a href={`/${p._collection}/${p.slug}/`}>{p.data.title}</a>
           <span class="muted"> — {fmt(p.data.date)} 발행 · {fmt(p.data.updated)} 정정</span>
         </li>
       ))}

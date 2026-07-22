@@ -7,6 +7,7 @@ markets: [kr]
 tags: [regime, close]
 lang: en
 draft: false
+data_as_of: 2026-06-26
 ogImage: /characters/kr/05_anxious.png
 altUrl: /market/2026-06-26-kr-close
 altLang: ko

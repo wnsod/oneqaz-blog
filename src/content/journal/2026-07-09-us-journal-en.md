@@ -7,6 +7,7 @@ markets: [us]
 tags: [journal, review]
 lang: en
 draft: false
+data_as_of: 2026-07-09
 updated: 2026-07-16T16:05:25+00:00
 ogImage: /characters/us/07_confident.png
 altUrl: /journal/2026-07-09-us-journal

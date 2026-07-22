@@ -7,6 +7,7 @@ markets: [us]
 tags: [journal, review]
 lang: ko
 draft: false
+data_as_of: 2026-07-01
 ogImage: /characters/us/02_sad.png
 altUrl: /journal/2026-07-01-us-journal-en
 altLang: en

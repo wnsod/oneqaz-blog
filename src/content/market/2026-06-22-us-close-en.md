@@ -7,6 +7,7 @@ markets: [us]
 tags: [regime, close]
 lang: en
 draft: false
+data_as_of: 2026-06-22
 ogImage: /characters/us/06_neutral.png
 altUrl: /market/2026-06-22-us-close
 altLang: ko

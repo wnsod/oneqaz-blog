@@ -7,6 +7,7 @@ markets: [us]
 tags: [regime, close]
 lang: en
 draft: false
+data_as_of: 2026-07-09
 ogImage: /characters/us/12_relieved.png
 altUrl: /market/2026-07-09-us-close
 altLang: ko

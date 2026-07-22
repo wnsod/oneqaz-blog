@@ -7,6 +7,7 @@ markets: [crypto]
 tags: [journal, review]
 lang: ko
 draft: false
+data_as_of: 2026-07-10
 updated: 2026-07-16T00:36:36+00:00
 ogImage: /characters/crypto/09_excited.png
 altUrl: /journal/2026-07-10-crypto-journal-en

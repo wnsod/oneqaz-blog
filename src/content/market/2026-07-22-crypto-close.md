@@ -7,6 +7,7 @@ markets: [crypto]
 tags: [regime, close]
 lang: ko
 draft: false
+data_as_of: 2026-07-22
 ogImage: /characters/crypto/12_relieved.png
 altUrl: /market/2026-07-22-crypto-close-en
 altLang: en

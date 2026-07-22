@@ -7,6 +7,7 @@ markets: [kr, us, crypto]
 tags: [hitrate, weekly, track-record]
 lang: ko
 draft: false
+data_as_of: 2026-07-11
 updated: 2026-07-16T16:05:25+00:00
 ogImage: /characters/orchestrator/02_sad.png
 altUrl: /track-record/2026-07-13-weekly-hitrate-en

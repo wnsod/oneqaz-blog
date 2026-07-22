@@ -7,6 +7,7 @@ markets: [kr]
 tags: [journal, review]
 lang: ko
 draft: false
+data_as_of: 2026-07-01
 ogImage: /characters/kr/05_anxious.png
 altUrl: /journal/2026-07-01-kr-journal-en
 altLang: en

@@ -7,6 +7,7 @@ markets: [kr]
 tags: [journal, review]
 lang: ko
 draft: false
+data_as_of: 2026-06-29
 ogImage: /characters/kr/07_confident.png
 altUrl: /journal/2026-06-29-kr-journal-en
 altLang: en

@@ -7,6 +7,7 @@ markets: [us]
 tags: [journal, review]
 lang: en
 draft: false
+data_as_of: 2026-07-11
 updated: 2026-07-16T00:36:36+00:00
 ogImage: /characters/us/08_defensive.png
 altUrl: /journal/2026-07-11-us-journal

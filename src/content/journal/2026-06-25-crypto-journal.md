@@ -7,6 +7,7 @@ markets: [crypto]
 tags: [journal, review]
 lang: ko
 draft: false
+data_as_of: 2026-06-25
 ogImage: /characters/crypto/02_sad.png
 altUrl: /journal/2026-06-25-crypto-journal-en
 altLang: en

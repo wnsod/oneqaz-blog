@@ -15,6 +15,10 @@ const postSchema = z.object({
   draft: z.boolean().default(false),
   // 정정/갱신 재발행 시각 — JSON-LD dateModified 로 노출 (없으면 미수정 글)
   updated: z.coerce.date().optional(),
+  // 데이터 기준일 (발행일 date 와 분리 — 날짜 오귀속 방지, §4-2)
+  data_as_of: z.coerce.date().optional(),
+  // 기계 가독 핵심 수치 (§4-7 — AI 인용용, 소스 명기)
+  metrics: z.record(z.union([z.string(), z.number()])).optional(),
   ogImage: z.string().optional(),
   // hreflang pairing — the alternate-language version of this same post
   altUrl: z.string().optional(),

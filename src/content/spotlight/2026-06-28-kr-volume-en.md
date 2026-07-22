@@ -7,6 +7,7 @@ markets: [kr]
 tags: [spotlight, volume, screener, weekly]
 lang: en
 draft: false
+data_as_of: 2026-06-26
 ogImage: /characters/kr/09_excited.png
 altUrl: /spotlight/2026-06-28-kr-volume
 altLang: ko

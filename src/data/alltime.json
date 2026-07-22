@@ -3,9 +3,9 @@
  "public_record_start": "2026-06-16",
  "markets": {
   "coin": {
-   "n": 46329,
-   "wins": 18101,
-   "losses": 28228,
+   "n": 46726,
+   "wins": 18251,
+   "losses": 28475,
    "win_rate": 39.1,
    "avg_pnl": -0.214,
    "best": 97.12,
@@ -23,25 +23,25 @@
    "profit_factor": 0.71
   },
   "us": {
-   "n": 10862,
-   "wins": 2700,
-   "losses": 8162,
-   "win_rate": 24.9,
+   "n": 11031,
+   "wins": 2723,
+   "losses": 8308,
+   "win_rate": 24.7,
    "avg_pnl": -0.216,
    "best": 25.38,
    "worst": -19.74,
-   "profit_factor": 0.53
+   "profit_factor": 0.52
   }
  },
  "total": {
-  "n": 68721,
-  "wins": 24493,
-  "losses": 44228,
+  "n": 69287,
+  "wins": 24666,
+  "losses": 44621,
   "win_rate": 35.6,
   "profit_factor": 0.7
  },
  "first_day": "2026-06-16",
- "last_day": "2026-07-22",
- "days_operating": 37,
- "generated_at": "2026-07-22T14:40:01+00:00"
+ "last_day": "2026-07-23",
+ "days_operating": 38,
+ "generated_at": "2026-07-22T22:00:56+00:00"
 }

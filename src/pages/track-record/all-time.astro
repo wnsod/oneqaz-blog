@@ -1,15 +1,32 @@
 ---
-// 누적 트랙레코드 (P1 §1-1 v1) — 공개 기록 기간의 거래 단위 통계.
-// 데이터: src/data/alltime.json (발행 사이클마다 원장에서 재계산·커밋 — 글과 동일 소스).
-// 자본곡선 지표(에쿼티 커브·MDD·월별 수익률)는 자본 모델 확정 후 추가 — 미준비 셀 비렌더 원칙.
+// 누적 트랙레코드 (P1 §1-1) — 공개 기록 기간의 거래통계 + 합성 고정 북 자본 곡선.
+// 데이터: src/data/alltime.json (발행 사이클마다 원장·admin.v1_daily_equity 에서 재계산·커밋).
+// 계산 경로: 본체 뷰가 단일 정의처(S=400 모델) — MCP get_performance_metrics 라이브 후 산출처 교체.
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import stats from '../../data/alltime.json';
 
 const MK: Record<string, string> = { coin: '코인 (Crypto)', kr: '국장 (KR)', us: '미장 (US)' };
 const pf = (v: number | null) => (v === null || v === undefined ? '—' : v.toFixed(2));
 const t = stats.total;
+const curves: Record<string, any> = (stats as any).curves ?? {};
+const months: string[] = [...new Set(Object.values(curves).flatMap((c: any) => c.monthly.map((x: any) => x.month)))].sort() as string[];
+
+// SVG 커브 — 에쿼티(앰버) + 벤치마크(회색, 100 정규화). 빌드 타임 정적 렌더(JS 없음).
+const W = 640, H = 170, P = 8;
+function paths(c: any) {
+  const vals = [...c.equity, ...c.benchmark.filter((v: any) => v !== null)];
+  const lo = Math.min(...vals) - 1, hi = Math.max(...vals) + 1;
+  const x = (i: number) => P + (i / Math.max(c.dates.length - 1, 1)) * (W - 2 * P);
+  const y = (v: number) => H - P - ((v - lo) / (hi - lo)) * (H - 2 * P);
+  const line = (arr: (number | null)[]) =>
+    arr.map((v, i) => (v === null ? null : `${x(i).toFixed(1)},${y(v).toFixed(1)}`))
+       .filter(Boolean).join(' ');
+  return { eq: line(c.equity), bench: line(c.benchmark), lo: lo.toFixed(0), hi: hi.toFixed(0) };
+}
+const mret = (c: any, mo: string) => c.monthly.find((x: any) => x.month === mo)?.ret;
+const bret = (c: any, mo: string) => c.bench_monthly.find((x: any) => x.month === mo)?.ret;
 ---
-<BaseLayout title="누적 트랙레코드 — OneQAZ" description={`OneQAZ all-time track record (paper trading): ${t.n.toLocaleString()} closed trades since ${stats.public_record_start}, win rate ${t.win_rate}%, losses included. Verifiable via MCP.`}>
+<BaseLayout title="누적 트랙레코드 — OneQAZ" description={`OneQAZ all-time paper-trading record since ${stats.public_record_start}: ${t.n.toLocaleString()} closed trades, equity curve with benchmarks, MDD, monthly returns — losses included, verifiable via MCP.`}>
   <article class="container post">
     <p class="eyebrow">track-record / all-time</p>
     <h1>누적 트랙레코드 <span class="paper">모의매매 · paper</span></h1>
@@ -25,20 +42,76 @@ const t = stats.total;
       <div class="counter"><span class="num">{pf(t.profit_factor)}</span><span class="lab">프로핏 팩터</span></div>
     </div>
 
-    <h2>시장별 분해</h2>
+    <h2>자본 곡선 (합성 고정 북 · {stats.public_record_start} = 100)</h2>
+    {Object.entries(curves).map(([m, c]: [string, any]) => {
+      const p = paths(c);
+      return (
+        <div class="chart">
+          <div class="chart-head">
+            <strong>{MK[m] ?? m}</strong>
+            <span class="legend"><i class="sw eq"></i>OneQAZ {c.equity[c.equity.length - 1]}</span>
+            {c.bench_label && <span class="legend"><i class="sw bn"></i>{c.bench_label} {c.benchmark.filter((v: any) => v !== null).slice(-1)[0]}</span>}
+            {c.bench_excluded && <span class="legend muted">벤치마크: 데이터 품질 이상으로 제외(확인 중)</span>}
+            <span class="paper-mini">paper</span>
+          </div>
+          <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${MK[m]} equity curve (paper trading)`}>
+            <text x={W - P} y="14" text-anchor="end" class="ax">{p.hi}</text>
+            <text x={W - P} y={H - 2} text-anchor="end" class="ax">{p.lo}</text>
+            {c.bench_label && <polyline points={p.bench} class="l-bench" />}
+            <polyline points={p.eq} class="l-eq" />
+          </svg>
+          <p class="muted small">MDD <strong>{c.mdd.max_dd}%</strong> · 현재 드로다운 {c.mdd.current_dd}% · 최장 수면하 {c.mdd.longest_underwater_days}일 · {c.dates[0]} ~ {c.dates[c.dates.length - 1]}</p>
+        </div>
+      );
+    })}
+
+    <h2>월별 수익률 (%)</h2>
     <table>
-      <thead><tr><th>시장</th><th>마감</th><th>승률</th><th>PF</th><th>건당 평균</th><th>최고</th><th>최저</th></tr></thead>
+      <thead><tr><th>월</th>{Object.keys(curves).map((m) => <th colspan="2">{MK[m] ?? m}</th>)}</tr>
+        <tr><th></th>{Object.keys(curves).map(() => <><th class="sub">OneQAZ</th><th class="sub">벤치마크</th></>)}</tr></thead>
       <tbody>
-        {Object.entries(stats.markets).map(([m, s]: [string, any]) => (
-          <tr>
-            <td>{MK[m] ?? m}</td><td>{s.n.toLocaleString()}</td><td>{s.win_rate}%</td>
-            <td>{pf(s.profit_factor)}</td><td>{s.avg_pnl > 0 ? '+' : ''}{s.avg_pnl}%</td>
-            <td class="win">+{s.best}%</td><td class="loss">{s.worst}%</td>
+        {months.map((mo) => (
+          <tr><td>{mo}</td>
+            {Object.values(curves).map((c: any) => {
+              const r = mret(c, mo), b = bret(c, mo);
+              return (<><td class={r > 0 ? 'win' : r < 0 ? 'loss' : ''}>{r === undefined ? '—' : (r > 0 ? '+' : '') + r}</td>
+                       <td class="muted">{b === undefined ? '—' : (b > 0 ? '+' : '') + b}</td></>);
+            })}
           </tr>
         ))}
       </tbody>
     </table>
+
+    <h2>시장별 거래 통계</h2>
+    <table>
+      <thead><tr><th>시장</th><th>마감</th><th>승률</th><th>PF</th><th>건당 평균</th><th>최고</th><th>최저</th><th>누적 수익률</th><th>MDD</th></tr></thead>
+      <tbody>
+        {Object.entries(stats.markets).map(([m, s]: [string, any]) => {
+          const c = curves[m];
+          const cum = c ? (c.equity[c.equity.length - 1] - 100).toFixed(1) : null;
+          return (
+            <tr>
+              <td>{MK[m] ?? m}</td><td>{s.n.toLocaleString()}</td><td>{s.win_rate}%</td>
+              <td>{pf(s.profit_factor)}</td><td>{s.avg_pnl > 0 ? '+' : ''}{s.avg_pnl}%</td>
+              <td class="win">+{s.best}%</td><td class="loss">{s.worst}%</td>
+              <td class={cum && +cum < 0 ? 'loss' : 'win'}>{cum === null ? '—' : (+cum > 0 ? '+' : '') + cum + '%'}</td>
+              <td class="loss">{c ? c.mdd.max_dd + '%' : '—'}</td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
     <p class="muted small">기준: {stats.public_record_start} ~ {stats.last_day} · 갱신 {stats.generated_at} (발행 사이클마다 자동 재계산)</p>
+
+    <h2>자본 모델 — 이 곡선이 계산되는 방식</h2>
+    <p>
+      페이퍼 엔진은 실제 자본 풀 없이 거래하므로, 자본 곡선은 <strong>합성 고정 북 모델</strong>로
+      계산합니다: 시장별 400슬롯 북을 가정하고, 일수익률 = Σ(청산 손익% × 사이징 배수) ÷ 400,
+      {stats.public_record_start}=100 앵커로 일복리 누적합니다. 400은 공개 기간 중 어떤 시점에도
+      동시 노출이 자본 100%를 넘지 않는 최소 라운드 수(실측 최대 노출 323~371슬롯)로 잡았고,
+      평균 가동률은 31~50%입니다 — 즉 <strong>미가동 현금의 드래그가 그대로 포함된 보수적
+      수치</strong>입니다. 상세 정의는 <a href="/methodology/">방법론</a>에 있습니다.
+    </p>
 
     <h2>이 수치의 경계 — 무엇을 세고, 무엇을 안 세나</h2>
     <ul>
@@ -48,8 +121,8 @@ const t = stats.total;
         포함하지 않습니다.</li>
       <li><strong>2026-07-08~15 데이터 결함 구간</strong>은 결함 거래 격리 후 수치입니다 —
         전말은 <a href="/corrections/">정정 기록</a>에 공개되어 있습니다.</li>
-      <li><strong>에쿼티 커브·MDD·월별 수익률·벤치마크 대비</strong>는 자본 모델 검증이 끝나는 대로
-        추가됩니다. 준비되지 않은 지표를 추정치로 채우지 않습니다.</li>
+      <li>벤치마크는 BTC(원본)·S&P500(SPY 프록시)·KOSPI200(KODEX200 프록시)입니다. 프록시 데이터에
+        품질 이상이 감지되면 해당 벤치마크는 수정될 때까지 표시하지 않습니다(현재 국장 벤치마크 제외 중).</li>
       <li>전부 <strong>모의매매(paper trading)</strong>입니다. 실계좌 전환 시에도 paper 기록과 live
         기록은 분리 표기하며 하나로 잇지 않습니다.</li>
     </ul>
@@ -58,17 +131,18 @@ const t = stats.total;
     <p>
       이 페이지의 수치는 매매일지와 동일한 원장에서 나옵니다. <a href="https://github.com/wnsod/oneqaz-trading-mcp">OneQAZ MCP</a>를
       AI에 연결하면 같은 데이터를 직접 조회할 수 있습니다 — 예: <code>get_trade_history</code>(마감 거래),
-      <code>get_winning_trades</code>/<code>get_losing_trades</code>, <code>get_ledger_integrity</code>(원장
+      <code>get_performance_metrics</code>(MDD·샤프 등 자본곡선 지표), <code>get_ledger_integrity</code>(원장
       해시체인 — 사후 수정 감지). 각 매매일지 하단의 전량 CSV로도 대조 가능합니다.
     </p>
 
     <p class="en muted">
-      <strong>English.</strong> All-time paper-trading record since {stats.public_record_start} (start of
-      contemporaneous public publication): {t.n.toLocaleString()} closed trades, {t.win_rate}% win rate,
-      profit factor {pf(t.profit_factor)} — losses included, defect window quarantined and disclosed at
-      <a href="/corrections/">/corrections</a>. Equity-curve metrics (MDD, monthly returns, benchmarks)
-      will be added once the capital model is finalized; unprepared metrics are not rendered. Verify via
-      OneQAZ MCP or per-post CSV downloads.
+      <strong>English.</strong> All-time paper-trading record since {stats.public_record_start}:
+      {t.n.toLocaleString()} closed trades, win rate {t.win_rate}%, PF {pf(t.profit_factor)}.
+      Equity curves use a synthetic fixed-book model (400 slots per market, daily compounding from
+      {stats.public_record_start}=100; sized so exposure never exceeds 100% — cash drag included).
+      Losses shown as-is; the 07-08~15 defect window is quarantined and disclosed at
+      <a href="/corrections/">/corrections</a>. A benchmark feed failing quality checks is withheld
+      rather than shown. Verify via OneQAZ MCP or per-post CSV downloads.
     </p>
 
     <hr />
@@ -89,9 +163,20 @@ const t = stats.total;
   .counter { border: 1px solid var(--border); border-radius: var(--radius-md, 10px); padding: 18px 16px; text-align: center; background: var(--panel-bg); }
   .num { display: block; font-size: 26px; font-weight: 700; color: var(--amber); font-family: var(--font-mono); }
   .lab { display: block; margin-top: 6px; font-size: 12px; color: var(--text-muted); }
+  .chart { border: 1px solid var(--border); border-radius: var(--radius-md, 10px); padding: 14px 14px 6px; margin: 0 0 18px; background: var(--panel-bg); }
+  .chart-head { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; font-size: 13px; margin-bottom: 8px; color: var(--text); }
+  .legend { display: inline-flex; align-items: center; gap: 5px; font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); }
+  .sw { width: 14px; height: 3px; display: inline-block; border-radius: 2px; }
+  .sw.eq { background: var(--amber); } .sw.bn { background: #8a8f98; }
+  .paper-mini { margin-left: auto; font-size: 10px; padding: 2px 8px; border: 1px solid rgba(212,168,83,.4); border-radius: 999px; color: var(--amber); letter-spacing: .5px; }
+  svg { width: 100%; height: auto; display: block; }
+  .l-eq { fill: none; stroke: var(--amber); stroke-width: 2; }
+  .l-bench { fill: none; stroke: #8a8f98; stroke-width: 1.4; stroke-dasharray: 4 3; }
+  .ax { font-size: 10px; fill: var(--text-muted); font-family: var(--font-mono); }
   table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 0 0 10px; }
   th, td { border: 1px solid var(--border); padding: 8px 12px; text-align: left; }
   thead th { background: var(--panel-bg); color: var(--text); font-weight: 600; }
+  th.sub { font-size: 11px; font-weight: 500; color: var(--text-muted); }
   .win { color: #3fb950; } .loss { color: #f85149; }
   p, li { font-size: 14px; line-height: 1.8; color: var(--text); }
   ul { margin: 0 0 16px 22px; } li { margin: 6px 0; }

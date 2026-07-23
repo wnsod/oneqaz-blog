@@ -1,13 +1,15 @@
 ---
 // 정적 페이지네이션 내비 (Astro paginate 의 page 객체 사용).
-export interface Props { page: any }
-const { page } = Astro.props;
+export interface Props { page: any; lang?: 'ko' | 'en' }
+const { page, lang = 'ko' } = Astro.props;
+const prevLabel = lang === 'en' ? '← Prev' : '← 이전';
+const nextLabel = lang === 'en' ? 'Next →' : '다음 →';
 ---
 {page.lastPage > 1 && (
   <nav class="pager" aria-label="pagination">
-    <a class={`pg ${page.url.prev ? '' : 'off'}`} href={page.url.prev || '#'} aria-disabled={!page.url.prev}>← 이전</a>
+    <a class={`pg ${page.url.prev ? '' : 'off'}`} href={page.url.prev || '#'} aria-disabled={!page.url.prev}>{prevLabel}</a>
     <span class="pg-count muted">{page.currentPage} / {page.lastPage}</span>
-    <a class={`pg ${page.url.next ? '' : 'off'}`} href={page.url.next || '#'} aria-disabled={!page.url.next}>다음 →</a>
+    <a class={`pg ${page.url.next ? '' : 'off'}`} href={page.url.next || '#'} aria-disabled={!page.url.next}>{nextLabel}</a>
   </nav>
 )}
 <style>

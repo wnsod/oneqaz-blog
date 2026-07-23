@@ -13,8 +13,13 @@ export async function getStaticPaths({ paginate }: { paginate: any }) {
 const { page } = Astro.props;
 const TITLE = 'Journal';
 const DESC = 'Trading log — what the system did and why, published on a delay.';
+const koHref = new URL(Astro.url.pathname, Astro.site).href;
+const enHref = new URL('/en' + Astro.url.pathname, Astro.site).href;
 ---
 <BaseLayout title={`${TITLE} — OneQAZ`} description={DESC}>
+  <link rel="alternate" hreflang="ko" href={koHref} slot="head" />
+  <link rel="alternate" hreflang="en" href={enHref} slot="head" />
+  <link rel="alternate" hreflang="x-default" href={enHref} slot="head" />
   <section class="head container-wide">
     <p class="eyebrow">journal</p>
     <h1>{TITLE}</h1>

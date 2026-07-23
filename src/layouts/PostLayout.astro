@@ -55,7 +55,7 @@ const jsonLd = {
   {altHref && xDefault && <link rel="alternate" hreflang="x-default" href={xDefault} slot="head" />}
 
   <article class="container post">
-    <a href={`/${category}/`} class="eyebrow back">&larr; {category}</a>
+    <a href={lang === 'en' ? `/en/${category}/` : `/${category}/`} class="eyebrow back">&larr; {category}</a>
     <h1>{title}</h1>
     <div class="meta">
       <time datetime={iso}>{dateLabel}</time>

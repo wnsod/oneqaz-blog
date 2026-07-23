@@ -1,14 +1,15 @@
 ---
+// EN 홈 — 영어판 글만 나열(루트 홈의 쌍둥이). 페이지 수는 208쌍 대칭이라 KO 와 동일.
 import { getCollection } from 'astro:content';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import PostList from '../components/PostList.astro';
-import Pager from '../components/Pager.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostList from '../../components/PostList.astro';
+import Pager from '../../components/Pager.astro';
 
 export async function getStaticPaths({ paginate }: { paginate: any }) {
   const cols = ['track-record', 'market', 'spotlight', 'journal'] as const;
   let posts: any[] = [];
   for (const c of cols) {
-    const e = await getCollection(c, ({ data }) => !data.draft && data.lang !== 'en');
+    const e = await getCollection(c, ({ data }) => !data.draft && data.lang === 'en');
     posts.push(...e.map((x) => ({ ...x, _collection: c })));
   }
   posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
@@ -16,12 +17,12 @@ export async function getStaticPaths({ paginate }: { paginate: any }) {
 }
 
 const { page } = Astro.props;
-const koHref = new URL(Astro.url.pathname, Astro.site).href;
-const enHref = new URL('/en' + Astro.url.pathname, Astro.site).href;
+const koHref = new URL(Astro.url.pathname.replace(/^\/en/, '') || '/', Astro.site).href;
+const enHref = new URL(Astro.url.pathname, Astro.site).href;
 ---
-<BaseLayout title="OneQAZ — Daily Market Intelligence" description="AI-published daily trading journals, market reads, and a verified track record across crypto, KR and US markets.">
-  <link rel="alternate" hreflang="ko" href={koHref} slot="head" />
+<BaseLayout title="OneQAZ — Daily Market Intelligence" description="AI-published daily trading journals, market reads, and a verified track record across crypto, KR and US markets." lang="en">
   <link rel="alternate" hreflang="en" href={enHref} slot="head" />
+  <link rel="alternate" hreflang="ko" href={koHref} slot="head" />
   <link rel="alternate" hreflang="x-default" href={enHref} slot="head" />
   <section class="hero container-wide">
     <p class="eyebrow">OneQAZ Journal</p>
@@ -32,19 +33,19 @@ const enHref = new URL('/en' + Astro.url.pathname, Astro.site).href;
   <section class="feed container-wide">
     <div class="filters" id="filters">
       <div class="fgroup" data-filter="cat">
-        <span class="flabel muted">유형</span>
-        <button class="chip active" data-val="all">전체</button>
+        <span class="flabel muted">Type</span>
+        <button class="chip active" data-val="all">All</button>
         <button class="chip" data-val="market">Market</button>
         <button class="chip" data-val="spotlight">Spotlight</button>
         <button class="chip" data-val="journal">Journal</button>
         <button class="chip" data-val="track-record">Track Record</button>
       </div>
       <div class="fgroup" data-filter="mkt">
-        <span class="flabel muted">시장</span>
-        <button class="chip active" data-val="all">전체</button>
-        <button class="chip" data-val="crypto">코인</button>
-        <button class="chip" data-val="kr">국장</button>
-        <button class="chip" data-val="us">미장</button>
+        <span class="flabel muted">Market</span>
+        <button class="chip active" data-val="all">All</button>
+        <button class="chip" data-val="crypto">Crypto</button>
+        <button class="chip" data-val="kr">KR</button>
+        <button class="chip" data-val="us">US</button>
       </div>
     </div>
     <p class="fhint muted" id="fhint"></p>
@@ -53,7 +54,7 @@ const enHref = new URL('/en' + Astro.url.pathname, Astro.site).href;
       <p class="empty muted">No posts yet. The pipeline publishes here daily.</p>
     ) : <PostList posts={page.data} />}
 
-    <Pager page={page} />
+    <Pager page={page} lang="en" />
   </section>
 </BaseLayout>
 
@@ -98,7 +99,7 @@ const enHref = new URL('/en' + Astro.url.pathname, Astro.site).href;
         day.style.display = any ? '' : 'none';
       });
       const filtered = state.cat !== 'all' || state.mkt !== 'all';
-      hint.textContent = filtered ? `이 페이지에서 ${shown}건 표시 (필터는 현재 페이지 기준 · 전체는 상단 메뉴/태그)` : '';
+      hint.textContent = filtered ? `${shown} shown on this page (filters apply to the current page — use the menu/tags for everything)` : '';
     }
   })();
 </script>

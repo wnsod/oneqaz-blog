@@ -1,11 +1,12 @@
 ---
+// EN Track Record 목록 — /track-record/ 의 영어판 쌍둥이 (/en/track-record/all-time 은 정적 라우트 우선).
 import { getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import PostList from '../../components/PostList.astro';
-import Pager from '../../components/Pager.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PostList from '../../../components/PostList.astro';
+import Pager from '../../../components/Pager.astro';
 
 export async function getStaticPaths({ paginate }: { paginate: any }) {
-  const e = await getCollection('track-record', ({ data }) => !data.draft && data.lang !== 'en');
+  const e = await getCollection('track-record', ({ data }) => !data.draft && data.lang === 'en');
   const posts = e.map((x) => ({ ...x, _collection: 'track-record' }))
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
   return paginate(posts, { pageSize: 36 });
@@ -13,21 +14,21 @@ export async function getStaticPaths({ paginate }: { paginate: any }) {
 const { page } = Astro.props;
 const TITLE = 'Track Record';
 const DESC = 'Verified prediction accuracy and outcome checks — the evidence behind OneQAZ.';
-const koHref = new URL(Astro.url.pathname, Astro.site).href;
-const enHref = new URL('/en' + Astro.url.pathname, Astro.site).href;
+const koHref = new URL(Astro.url.pathname.replace(/^\/en/, ''), Astro.site).href;
+const enHref = new URL(Astro.url.pathname, Astro.site).href;
 ---
-<BaseLayout title={`${TITLE} — OneQAZ`} description={DESC}>
-  <link rel="alternate" hreflang="ko" href={koHref} slot="head" />
+<BaseLayout title={`${TITLE} — OneQAZ`} description={DESC} lang="en">
   <link rel="alternate" hreflang="en" href={enHref} slot="head" />
+  <link rel="alternate" hreflang="ko" href={koHref} slot="head" />
   <link rel="alternate" hreflang="x-default" href={enHref} slot="head" />
   <section class="head container-wide">
     <p class="eyebrow">track-record</p>
     <h1>{TITLE}</h1>
-    <p class="muted lede">{DESC} <a href="/track-record/all-time/">누적 트랙레코드 →</a></p>
+    <p class="muted lede">{DESC} <a href="/en/track-record/all-time/">All-time record →</a></p>
   </section>
   <section class="feed container-wide">
     {page.data.length === 0 ? <p class="muted empty">No posts yet.</p> : <PostList posts={page.data} />}
-    <Pager page={page} />
+    <Pager page={page} lang="en" />
   </section>
 </BaseLayout>
 <style>

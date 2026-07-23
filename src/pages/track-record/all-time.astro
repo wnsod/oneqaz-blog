@@ -82,23 +82,34 @@ const bret = (c: any, mo: string) => c.bench_monthly.find((x: any) => x.month ==
       </tbody>
     </table>
 
+    <h2>자본곡선 지표</h2>
+    <table>
+      <thead><tr><th>시장</th><th>누적 수익률</th><th>MDD</th><th>샤프</th><th>소르티노</th><th>Calmar</th></tr></thead>
+      <tbody>
+        {Object.entries(curves).map(([m, c]: [string, any]) => (
+          <tr>
+            <td>{MK[m] ?? m}</td>
+            <td class={c.metrics.cum_return < 0 ? 'loss' : 'win'}>{c.metrics.cum_return > 0 ? '+' : ''}{c.metrics.cum_return}%</td>
+            <td class="loss">{c.mdd.max_dd}%</td>
+            <td>{c.metrics.sharpe}</td><td>{c.metrics.sortino}</td><td>{c.metrics.calmar}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p class="muted small">산출: OneQAZ MCP <code>get_performance_metrics</code> — 이 표와 MCP 재조회가
+      같은 값을 반환합니다(동일 계산 경로). 샤프·소르티노는 일수익률 연환산(365일) 기준.</p>
+
     <h2>시장별 거래 통계</h2>
     <table>
-      <thead><tr><th>시장</th><th>마감</th><th>승률</th><th>PF</th><th>건당 평균</th><th>최고</th><th>최저</th><th>누적 수익률</th><th>MDD</th></tr></thead>
+      <thead><tr><th>시장</th><th>마감</th><th>승률</th><th>PF</th><th>건당 평균</th><th>최고</th><th>최저</th></tr></thead>
       <tbody>
-        {Object.entries(stats.markets).map(([m, s]: [string, any]) => {
-          const c = curves[m];
-          const cum = c ? (c.equity[c.equity.length - 1] - 100).toFixed(1) : null;
-          return (
-            <tr>
-              <td>{MK[m] ?? m}</td><td>{s.n.toLocaleString()}</td><td>{s.win_rate}%</td>
-              <td>{pf(s.profit_factor)}</td><td>{s.avg_pnl > 0 ? '+' : ''}{s.avg_pnl}%</td>
-              <td class="win">+{s.best}%</td><td class="loss">{s.worst}%</td>
-              <td class={cum && +cum < 0 ? 'loss' : 'win'}>{cum === null ? '—' : (+cum > 0 ? '+' : '') + cum + '%'}</td>
-              <td class="loss">{c ? c.mdd.max_dd + '%' : '—'}</td>
-            </tr>
-          );
-        })}
+        {Object.entries(stats.markets).map(([m, s]: [string, any]) => (
+          <tr>
+            <td>{MK[m] ?? m}</td><td>{s.n.toLocaleString()}</td><td>{s.win_rate}%</td>
+            <td>{pf(s.profit_factor)}</td><td>{s.avg_pnl > 0 ? '+' : ''}{s.avg_pnl}%</td>
+            <td class="win">+{s.best}%</td><td class="loss">{s.worst}%</td>
+          </tr>
+        ))}
       </tbody>
     </table>
     <p class="muted small">기준: {stats.public_record_start} ~ {stats.last_day} · 갱신 {stats.generated_at} (발행 사이클마다 자동 재계산)</p>

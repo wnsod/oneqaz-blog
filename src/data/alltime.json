@@ -3,11 +3,11 @@
  "public_record_start": "2026-06-16",
  "markets": {
   "coin": {
-   "n": 47669,
-   "wins": 18515,
-   "losses": 29154,
+   "n": 48200,
+   "wins": 18685,
+   "losses": 29515,
    "win_rate": 38.8,
-   "avg_pnl": -0.217,
+   "avg_pnl": -0.219,
    "best": 97.12,
    "worst": -32.58,
    "profit_factor": 0.71
@@ -23,26 +23,26 @@
    "profit_factor": 0.73
   },
   "us": {
-   "n": 11034,
-   "wins": 2724,
-   "losses": 8310,
-   "win_rate": 24.7,
-   "avg_pnl": -0.216,
+   "n": 11226,
+   "wins": 2779,
+   "losses": 8447,
+   "win_rate": 24.8,
+   "avg_pnl": -0.217,
    "best": 25.38,
    "worst": -19.74,
-   "profit_factor": 0.53
+   "profit_factor": 0.52
   }
  },
  "total": {
-  "n": 70620,
-  "wins": 25103,
-  "losses": 45517,
+  "n": 71343,
+  "wins": 25328,
+  "losses": 46015,
   "win_rate": 35.5,
   "profit_factor": 0.7
  },
  "first_day": "2026-06-16",
- "last_day": "2026-07-23",
- "days_operating": 38,
+ "last_day": "2026-07-24",
+ "days_operating": 39,
  "curves": {
   "coin": {
    "dates": [
@@ -83,7 +83,8 @@
     "2026-07-20",
     "2026-07-21",
     "2026-07-22",
-    "2026-07-23"
+    "2026-07-23",
+    "2026-07-24"
    ],
    "equity": [
     98.69,
@@ -123,7 +124,8 @@
     79.68,
     79.75,
     79.52,
-    79.08
+    79.07,
+    78.9
    ],
    "benchmark": [
     100.0,
@@ -163,20 +165,21 @@
     95.83,
     99.11,
     97.33,
-    96.33
+    96.36,
+    96.76
    ],
    "bench_label": "BTC",
    "bench_excluded": false,
    "mdd": {
-    "max_dd": -20.92,
-    "current_dd": -20.92,
-    "longest_underwater_days": 38
+    "max_dd": -21.1,
+    "current_dd": -21.1,
+    "longest_underwater_days": 39
    },
    "metrics": {
-    "cum_return": -20.92,
-    "sharpe": -16.26,
-    "sortino": -12.51,
-    "calmar": -4.28
+    "cum_return": -21.1,
+    "sharpe": -16.16,
+    "sortino": -12.45,
+    "calmar": -4.22
    },
    "monthly": [
     {
@@ -185,7 +188,7 @@
     },
     {
      "month": "2026-07",
-     "ret": -7.67
+     "ret": -7.88
     }
    ],
    "bench_monthly": [
@@ -195,7 +198,7 @@
     },
     {
      "month": "2026-07",
-     "ret": 6.39
+     "ret": 6.87
     }
    ],
    "source": "mcp:get_performance_metrics"
@@ -352,7 +355,8 @@
     "2026-07-20",
     "2026-07-21",
     "2026-07-22",
-    "2026-07-23"
+    "2026-07-23",
+    "2026-07-24"
    ],
    "equity": [
     99.68,
@@ -382,7 +386,8 @@
     94.69,
     94.68,
     94.66,
-    94.62
+    94.6,
+    94.55
    ],
    "benchmark": [
     100.0,
@@ -412,20 +417,21 @@
     98.9,
     99.73,
     99.61,
+    99.61,
     99.61
    ],
    "bench_label": "SPY (S&P500 proxy)",
    "bench_excluded": false,
    "mdd": {
-    "max_dd": -5.38,
-    "current_dd": -5.38,
-    "longest_underwater_days": 28
+    "max_dd": -5.45,
+    "current_dd": -5.45,
+    "longest_underwater_days": 29
    },
    "metrics": {
-    "cum_return": -5.38,
-    "sharpe": -9.8,
-    "sortino": -8.63,
-    "calmar": -7.29
+    "cum_return": -5.45,
+    "sharpe": -9.74,
+    "sortino": -8.59,
+    "calmar": -7.07
    },
    "monthly": [
     {
@@ -434,7 +440,7 @@
     },
     {
      "month": "2026-07",
-     "ret": -1.73
+     "ret": -1.8
     }
    ],
    "bench_monthly": [
@@ -458,5 +464,5 @@
   "public_anchor": "2026-06-16",
   "note": "페이퍼 엔진에는 자본/현금 실계열이 없어(무자본 사이징 배수 체결) 합성 고정 북 모델을 사용. 근거: 2026-06-16 이후 동시 노출(Σ배수) 최대 371 < 400 — 노출이 자본 100%를 넘지 않음. 미사용 슬롯은 현금 0% (cash drag 포함). 정의 단일 소스 = admin.v1_daily_equity."
  },
- "generated_at": "2026-07-23T13:56:46+00:00"
+ "generated_at": "2026-07-23T22:00:53+00:00"
 }

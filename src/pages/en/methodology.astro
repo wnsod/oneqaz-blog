@@ -1,0 +1,111 @@
+---
+// Methodology (EN — primary for the global AI/reader audience; KO twin at /methodology/).
+// Documents execution & aggregation assumptions only. Signal logic stays private (moat/patents).
+// Principle: verified facts only — unconfirmed items are explicitly deferred, never estimated.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Methodology — OneQAZ" description="How OneQAZ paper-trading numbers are produced: fill model, data boundaries, win-rate framing, paper/live separation, and how to verify. Execution assumptions only — signal logic stays private." lang="en">
+  <link rel="alternate" hreflang="en" href="https://blog.oneqaz.com/en/methodology/" slot="head" />
+  <link rel="alternate" hreflang="ko" href="https://blog.oneqaz.com/methodology/" slot="head" />
+  <link rel="alternate" hreflang="x-default" href="https://blog.oneqaz.com/en/methodology/" slot="head" />
+  <article class="container post">
+    <p class="eyebrow">methodology <a class="lt" href="/methodology/">한국어</a></p>
+    <h1>Methodology — how these numbers are produced</h1>
+    <p class="muted lede">
+      This page documents <strong>execution and aggregation assumptions</strong>. Signal-generation
+      logic (indicator combinations, parameters) is private and not covered here — what we publish
+      is how results are recorded and aggregated.
+    </p>
+
+    <h2>1. Simulated fill model (measured from engine code)</h2>
+    <ul>
+      <li><strong>Entry price</strong> = signal reference price × 1.001 (slippage assumption).
+        <strong>Exit price</strong> = candle close at exit × 0.999. Both are <strong>synthetic
+        fills</strong> and <strong>no tick-size rounding is applied</strong> — which is why Korean
+        symbols can show prices that don't align with KRX tick sizes (e.g. ₩45,095).</li>
+      <li><strong>Fees & taxes = 0</strong>: the current model does not include commissions or
+        transaction taxes. Real-money results would be lower — read these numbers conservatively.</li>
+      <li><strong>Position sizing</strong>: trades are recorded with a per-trade sizing multiplier
+        (0.25–2.0) and no capital pool. Equity curves therefore use a synthetic fixed-book model
+        (400 slots) — see the model section on the
+        <a href="/en/track-record/all-time/">all-time track record</a>.</li>
+      <li><strong>Exit evaluation</strong>: judged on finalized candle closes. Timestamps are
+        <strong>candle-bar times</strong>, not wall-clock — rows land a few minutes late
+        (crypto measured: median 9.4 min, p95 16.2 min).</li>
+      <li><strong>Since 2026-07-15</strong>: entries carry live-price validation (deviation guard +
+        signal-freshness gate). Defects from the period before these guards, and their corrections,
+        are disclosed at <a href="/en/corrections/">corrections</a>.</li>
+    </ul>
+
+    <h2>2. Data boundaries — what each post counts</h2>
+    <ul>
+      <li><strong>Closed trades only.</strong> Open positions are never included in any statistic.</li>
+      <li>Daily journals cover the 24 hours before publication. The weekly track record uses a
+        T+1 boundary (through the day before publication), 7-day window.</li>
+      <li><strong>As-of snapshot principle</strong>: each post's numbers are a snapshot of the ledger
+        at publication time. The ledger is INSERT-only (no update path), but because timestamps are
+        candle-bar times rows arrive late — and crypto trades 24/7, so same-day exits keep accruing
+        until midnight after the 21:00 KST publication. Re-querying later can therefore show small
+        upward drift (measured: ~34% of journals, +1–5%, additions only). That is recording latency,
+        not correction.</li>
+      <li><strong>The all-time record counts only the public-record period</strong> (since
+        2026-06-16, the start of contemporaneous publication) — only the period with same-day public
+        attestation qualifies as a verified track record. See the boundary section on the
+        <a href="/en/track-record/all-time/">all-time page</a>.</li>
+    </ul>
+
+    <h2>3. Reading win rates — a low win rate is not a bad system per se</h2>
+    <p>
+      Expectancy is <code>win_rate × avg_win − (1 − win_rate) × avg_loss</code>. A 36% win rate with
+      a 2.6 win/loss ratio still yields positive expectancy; a high win rate with a poor ratio can
+      still lose money cumulatively. That is why this blog always publishes win rate, win/loss ratio
+      and profit factor (PF) together — <strong>PF&lt;1 means a cumulative-loss period, and we show
+      that as-is.</strong> Current figures:
+      <a href="/en/track-record/all-time/">all-time track record</a>.
+    </p>
+
+    <h2>4. Paper vs live separation</h2>
+    <p>
+      All current figures are <strong>paper trading</strong>. If live accounts are added later,
+      paper and live records will be presented as <strong>separate statistics and separate charts,
+      never merged into one curve</strong> — mixing simulated and real returns contaminates a track
+      record (GIPS-family principle). This rule is also enforced at the data-schema level
+      (account-type filter is a required argument in the serving layer).
+    </p>
+
+    <h2>5. Verification paths</h2>
+    <ul>
+      <li><strong>MCP re-query</strong>: connect <a href="https://github.com/wnsod/oneqaz-trading-mcp">OneQAZ MCP</a>
+        to an AI and query the same ledger directly (<code>get_trade_history</code>,
+        <code>get_performance_metrics</code>, …).</li>
+      <li><strong>Full CSV</strong>: every daily journal links a download of all closed trades in
+        its window.</li>
+      <li><strong>Ledger hash chain</strong>: the prediction ledger is sealed by a daily SHA-256
+        chain with the latest anchor published in weekly track records — post-hoc edits break the
+        chain.</li>
+      <li><strong>Corrections policy</strong>: errors are disclosed with reasons at
+        <a href="/en/corrections/">corrections</a>; original URLs never change.</li>
+    </ul>
+
+    <hr />
+    <p class="muted small">
+      <strong>Disclaimer:</strong> OneQAZ figures are paper-trading research, not investment advice.
+      Past simulated performance does not predict future real-money returns.
+    </p>
+  </article>
+</BaseLayout>
+
+<style>
+  .post { padding: 56px 24px 80px; max-width: 760px; }
+  h1 { font-size: clamp(26px, 4vw, 36px); font-weight: 700; color: var(--text); margin: 8px 0 12px; }
+  h2 { font-size: 20px; font-weight: 600; margin: 38px 0 12px; color: var(--text); }
+  .lede { font-size: 14px; line-height: 1.8; }
+  p, li { font-size: 14px; line-height: 1.85; color: var(--text); }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 16px 22px; } li { margin: 7px 0; }
+  code { font-family: var(--font-mono); font-size: .9em; background: var(--panel-bg); padding: 2px 6px; border-radius: 4px; }
+  a { color: var(--amber); }
+  .small { font-size: 12px; }
+  .lt { margin-left: 10px; font-size: 11px; padding: 2px 10px; border: 1px solid var(--border); border-radius: 999px; color: var(--text-muted); letter-spacing: .5px; }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 36px 0 16px; }
+</style>

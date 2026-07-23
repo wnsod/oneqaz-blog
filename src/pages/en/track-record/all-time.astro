@@ -1,17 +1,16 @@
 ---
-// 누적 트랙레코드 (P1 §1-1) — 공개 기록 기간의 거래통계 + 합성 고정 북 자본 곡선.
-// 데이터: src/data/alltime.json (발행 사이클마다 원장·admin.v1_daily_equity 에서 재계산·커밋).
-// 계산 경로: 본체 뷰가 단일 정의처(S=400 모델) — MCP get_performance_metrics 라이브 후 산출처 교체.
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import stats from '../../data/alltime.json';
+// All-time track record (EN — primary for the global audience; KO twin at /track-record/all-time/).
+// Data: src/data/alltime.json — refreshed each publish cycle. Metrics single-sourced from
+// MCP get_performance_metrics; curve series from the defining view (admin.v1_daily_equity).
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import stats from '../../../data/alltime.json';
 
-const MK: Record<string, string> = { coin: '코인 (Crypto)', kr: '국장 (KR)', us: '미장 (US)' };
+const MK: Record<string, string> = { coin: 'Crypto', kr: 'Korea (KR)', us: 'US' };
 const pf = (v: number | null) => (v === null || v === undefined ? '—' : v.toFixed(2));
 const t = stats.total;
 const curves: Record<string, any> = (stats as any).curves ?? {};
 const months: string[] = [...new Set(Object.values(curves).flatMap((c: any) => c.monthly.map((x: any) => x.month)))].sort() as string[];
 
-// SVG 커브 — 에쿼티(앰버) + 벤치마크(회색, 100 정규화). 빌드 타임 정적 렌더(JS 없음).
 const W = 640, H = 170, P = 8;
 function paths(c: any) {
   const vals = [...c.equity, ...c.benchmark.filter((v: any) => v !== null)];
@@ -26,26 +25,26 @@ function paths(c: any) {
 const mret = (c: any, mo: string) => c.monthly.find((x: any) => x.month === mo)?.ret;
 const bret = (c: any, mo: string) => c.bench_monthly.find((x: any) => x.month === mo)?.ret;
 ---
-<BaseLayout title="누적 트랙레코드 — OneQAZ" description={`OneQAZ all-time paper-trading record since ${stats.public_record_start}: ${t.n.toLocaleString()} closed trades, equity curve with benchmarks, MDD, monthly returns — losses included, verifiable via MCP.`}>
-  <link rel="alternate" hreflang="ko" href="https://blog.oneqaz.com/track-record/all-time/" slot="head" />
+<BaseLayout title="All-time Track Record — OneQAZ" description={`OneQAZ all-time paper-trading record since ${stats.public_record_start}: ${t.n.toLocaleString()} closed trades, equity curves with benchmarks, MDD, Sharpe/Sortino/Calmar, monthly returns — losses included, verifiable via MCP.`} lang="en">
   <link rel="alternate" hreflang="en" href="https://blog.oneqaz.com/en/track-record/all-time/" slot="head" />
+  <link rel="alternate" hreflang="ko" href="https://blog.oneqaz.com/track-record/all-time/" slot="head" />
   <link rel="alternate" hreflang="x-default" href="https://blog.oneqaz.com/en/track-record/all-time/" slot="head" />
   <article class="container post">
-    <p class="eyebrow">track-record / all-time <a class="lt" href="/en/track-record/all-time/">EN</a></p>
-    <h1>누적 트랙레코드 <span class="paper">모의매매 · paper</span></h1>
+    <p class="eyebrow">track-record / all-time <a class="lt" href="/track-record/all-time/">한국어</a></p>
+    <h1>All-time Track Record <span class="paper">paper trading</span></h1>
     <p class="muted lede">
-      공개 발행 시작({stats.public_record_start}) 이후 전 기록 — 매일 발행된 매매일지와 같은
-      원장에서 집계하며, 손실을 포함해 있는 그대로 공개합니다.
+      Everything since public publication began ({stats.public_record_start}) — aggregated from the
+      same ledger as the daily journals, losses included, shown as-is.
     </p>
 
     <div class="counters">
-      <div class="counter"><span class="num">{stats.days_operating}</span><span class="lab">운영 일수</span></div>
-      <div class="counter"><span class="num">{t.n.toLocaleString()}</span><span class="lab">누적 마감 거래</span></div>
-      <div class="counter"><span class="num">{t.win_rate}%</span><span class="lab">누적 승률</span></div>
-      <div class="counter"><span class="num">{pf(t.profit_factor)}</span><span class="lab">프로핏 팩터</span></div>
+      <div class="counter"><span class="num">{stats.days_operating}</span><span class="lab">days operating</span></div>
+      <div class="counter"><span class="num">{t.n.toLocaleString()}</span><span class="lab">closed trades</span></div>
+      <div class="counter"><span class="num">{t.win_rate}%</span><span class="lab">win rate</span></div>
+      <div class="counter"><span class="num">{pf(t.profit_factor)}</span><span class="lab">profit factor</span></div>
     </div>
 
-    <h2>자본 곡선 (합성 고정 북 · {stats.public_record_start} = 100)</h2>
+    <h2>Equity curves (synthetic fixed book · {stats.public_record_start} = 100)</h2>
     {Object.entries(curves).map(([m, c]: [string, any]) => {
       const p = paths(c);
       return (
@@ -54,7 +53,7 @@ const bret = (c: any, mo: string) => c.bench_monthly.find((x: any) => x.month ==
             <strong>{MK[m] ?? m}</strong>
             <span class="legend"><i class="sw eq"></i>OneQAZ {c.equity[c.equity.length - 1]}</span>
             {c.bench_label && <span class="legend"><i class="sw bn"></i>{c.bench_label} {c.benchmark.filter((v: any) => v !== null).slice(-1)[0]}</span>}
-            {c.bench_excluded && <span class="legend muted">벤치마크: 데이터 품질 이상으로 제외(확인 중)</span>}
+            {c.bench_excluded && <span class="legend muted">benchmark withheld — data-quality issue under review</span>}
             <span class="paper-mini">paper</span>
           </div>
           <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${MK[m]} equity curve (paper trading)`}>
@@ -63,15 +62,15 @@ const bret = (c: any, mo: string) => c.bench_monthly.find((x: any) => x.month ==
             {c.bench_label && <polyline points={p.bench} class="l-bench" />}
             <polyline points={p.eq} class="l-eq" />
           </svg>
-          <p class="muted small">MDD <strong>{c.mdd.max_dd}%</strong> · 현재 드로다운 {c.mdd.current_dd}% · 최장 수면하 {c.mdd.longest_underwater_days}일 · {c.dates[0]} ~ {c.dates[c.dates.length - 1]}</p>
+          <p class="muted small">MDD <strong>{c.mdd.max_dd}%</strong> · current drawdown {c.mdd.current_dd}% · longest underwater {c.mdd.longest_underwater_days}d · {c.dates[0]} ~ {c.dates[c.dates.length - 1]}</p>
         </div>
       );
     })}
 
-    <h2>월별 수익률 (%)</h2>
+    <h2>Monthly returns (%)</h2>
     <table>
-      <thead><tr><th>월</th>{Object.keys(curves).map((m) => <th colspan="2">{MK[m] ?? m}</th>)}</tr>
-        <tr><th></th>{Object.keys(curves).map(() => <><th class="sub">OneQAZ</th><th class="sub">벤치마크</th></>)}</tr></thead>
+      <thead><tr><th>Month</th>{Object.keys(curves).map((m) => <th colspan="2">{MK[m] ?? m}</th>)}</tr>
+        <tr><th></th>{Object.keys(curves).map(() => <><th class="sub">OneQAZ</th><th class="sub">benchmark</th></>)}</tr></thead>
       <tbody>
         {months.map((mo) => (
           <tr><td>{mo}</td>
@@ -85,9 +84,9 @@ const bret = (c: any, mo: string) => c.bench_monthly.find((x: any) => x.month ==
       </tbody>
     </table>
 
-    <h2>자본곡선 지표</h2>
+    <h2>Equity-curve metrics</h2>
     <table>
-      <thead><tr><th>시장</th><th>누적 수익률</th><th>MDD</th><th>샤프</th><th>소르티노</th><th>Calmar</th></tr></thead>
+      <thead><tr><th>Market</th><th>Cumulative</th><th>MDD</th><th>Sharpe</th><th>Sortino</th><th>Calmar</th></tr></thead>
       <tbody>
         {Object.entries(curves).map(([m, c]: [string, any]) => (
           <tr>
@@ -99,12 +98,12 @@ const bret = (c: any, mo: string) => c.bench_monthly.find((x: any) => x.month ==
         ))}
       </tbody>
     </table>
-    <p class="muted small">산출: OneQAZ MCP <code>get_performance_metrics</code> — 이 표와 MCP 재조회가
-      같은 값을 반환합니다(동일 계산 경로). 샤프·소르티노는 일수익률 연환산(365일) 기준.</p>
+    <p class="muted small">Source: OneQAZ MCP <code>get_performance_metrics</code> — this table and an
+      MCP re-query return the same values (single computation path). Sharpe/Sortino annualized at 365 days.</p>
 
-    <h2>시장별 거래 통계</h2>
+    <h2>Trade statistics by market</h2>
     <table>
-      <thead><tr><th>시장</th><th>마감</th><th>승률</th><th>PF</th><th>건당 평균</th><th>최고</th><th>최저</th></tr></thead>
+      <thead><tr><th>Market</th><th>Closed</th><th>Win rate</th><th>PF</th><th>Avg/trade</th><th>Best</th><th>Worst</th></tr></thead>
       <tbody>
         {Object.entries(stats.markets).map(([m, s]: [string, any]) => (
           <tr>
@@ -115,48 +114,49 @@ const bret = (c: any, mo: string) => c.bench_monthly.find((x: any) => x.month ==
         ))}
       </tbody>
     </table>
-    <p class="muted small">기준: {stats.public_record_start} ~ {stats.last_day} · 갱신 {stats.generated_at} (발행 사이클마다 자동 재계산)</p>
+    <p class="muted small">Window: {stats.public_record_start} ~ {stats.last_day} · refreshed {stats.generated_at} (recomputed every publish cycle)</p>
 
-    <h2>자본 모델 — 이 곡선이 계산되는 방식</h2>
+    <h2>The capital model — how these curves are computed</h2>
     <p>
-      페이퍼 엔진은 실제 자본 풀 없이 거래하므로, 자본 곡선은 <strong>합성 고정 북 모델</strong>로
-      계산합니다: 시장별 400슬롯 북을 가정하고, 일수익률 = Σ(청산 손익% × 사이징 배수) ÷ 400,
-      {stats.public_record_start}=100 앵커로 일복리 누적합니다. 400은 공개 기간 중 어떤 시점에도
-      동시 노출이 자본 100%를 넘지 않는 최소 라운드 수(실측 최대 노출 323~371슬롯)로 잡았고,
-      평균 가동률은 31~50%입니다 — 즉 <strong>미가동 현금의 드래그가 그대로 포함된 보수적
-      수치</strong>입니다. 상세 정의는 <a href="/methodology/">방법론</a>에 있습니다.
+      The paper engine trades without a real capital pool, so equity is computed with a
+      <strong>synthetic fixed-book model</strong>: a 400-slot book per market, daily return =
+      Σ(closed-trade P&L% × sizing multiplier) ÷ 400, compounded daily from
+      {stats.public_record_start} = 100. 400 is the smallest round number such that concurrent
+      exposure never exceeded 100% of the book in the public period (measured peak exposure
+      323–371 slots); average utilization is 31–50%, so <strong>cash drag from idle slots is
+      honestly included</strong>. Full definition: <a href="/en/methodology/">methodology</a>.
     </p>
 
-    <h2>이 수치의 경계 — 무엇을 세고, 무엇을 안 세나</h2>
+    <h2>Boundaries — what is counted, and what is not</h2>
     <ul>
-      <li><strong>공개 기록 기간만 셉니다.</strong> {stats.public_record_start}(블로그 공개 발행 시작) 이후의
-        거래만 — 이 기간의 모든 거래는 당일 매매일지로 동시대에 공개되어 사후 대조가 가능합니다.
-        그 이전의 개발·실험기 원장은 존재하지만 동시대 공개 기록이 없어 검증 불가이므로 트랙레코드에
-        포함하지 않습니다.</li>
-      <li><strong>2026-07-08~15 데이터 결함 구간</strong>은 결함 거래 격리 후 수치입니다 —
-        전말은 <a href="/corrections/">정정 기록</a>에 공개되어 있습니다.</li>
-      <li>벤치마크는 BTC(원본)·S&P500(SPY 프록시)·KOSPI200(KODEX200 프록시)입니다. 프록시 데이터에
-        품질 이상이 감지되면 해당 벤치마크는 수정될 때까지 표시하지 않습니다(현재 국장 벤치마크 제외 중).</li>
-      <li>전부 <strong>모의매매(paper trading)</strong>입니다. 실계좌 전환 시에도 paper 기록과 live
-        기록은 분리 표기하며 하나로 잇지 않습니다.</li>
+      <li><strong>Public-record period only.</strong> Only trades after {stats.public_record_start}
+        (the start of contemporaneous publication) count — every trade in this period was published
+        in a same-day journal and can be cross-checked after the fact. Earlier development-era ledger
+        history exists but has no contemporaneous public record, so it is not part of the verified
+        track record.</li>
+      <li><strong>The 2026-07-08~15 data-defect window</strong> is shown post-quarantine — full
+        disclosure at <a href="/en/corrections/">corrections</a>.</li>
+      <li>Benchmarks: BTC (native), S&P500 (SPY proxy), KOSPI200 (KODEX200 proxy). A benchmark feed
+        failing quality checks is withheld rather than shown (the KR benchmark is currently withheld
+        pending review).</li>
+      <li>Everything is <strong>paper trading</strong>. If live accounts are ever added, paper and
+        live records will be kept separate and never merged into one curve.</li>
     </ul>
 
-    <h2>직접 검증하기</h2>
+    <h2>Verify it yourself</h2>
     <p>
-      이 페이지의 수치는 매매일지와 동일한 원장에서 나옵니다. <a href="https://github.com/wnsod/oneqaz-trading-mcp">OneQAZ MCP</a>를
-      AI에 연결하면 같은 데이터를 직접 조회할 수 있습니다 — 예: <code>get_trade_history</code>(마감 거래),
-      <code>get_performance_metrics</code>(MDD·샤프 등 자본곡선 지표), <code>get_ledger_integrity</code>(원장
-      해시체인 — 사후 수정 감지). 각 매매일지 하단의 전량 CSV로도 대조 가능합니다.
-    </p>
-
-    <p class="en muted">
-      <strong>English version:</strong> <a href="/en/track-record/all-time/">blog.oneqaz.com/en/track-record/all-time</a>
+      These numbers come from the same ledger as the daily journals. Connect
+      <a href="https://github.com/wnsod/oneqaz-trading-mcp">OneQAZ MCP</a> to an AI and query the
+      same data directly — e.g. <code>get_trade_history</code> (closed trades),
+      <code>get_performance_metrics</code> (MDD, Sharpe and other curve metrics),
+      <code>get_ledger_integrity</code> (daily SHA-256 hash chain — detects post-hoc edits). Each
+      daily journal also links a full CSV of its window.
     </p>
 
     <hr />
     <p class="muted small">
-      <strong>면책:</strong> OneQAZ 수치는 모의 매매(paper-trading) 리서치이며 투자 자문이 아닙니다.
-      과거 모의 성과는 미래 실현 수익을 보장하지 않습니다. (Paper-trading research, not investment advice.)
+      <strong>Disclaimer:</strong> OneQAZ figures are paper-trading research, not investment advice.
+      Past simulated performance does not predict future real-money returns.
     </p>
   </article>
 </BaseLayout>
@@ -188,7 +188,7 @@ const bret = (c: any, mo: string) => c.bench_monthly.find((x: any) => x.month ==
   .win { color: #3fb950; } .loss { color: #f85149; }
   p, li { font-size: 14px; line-height: 1.8; color: var(--text); }
   ul { margin: 0 0 16px 22px; } li { margin: 6px 0; }
-  .small { font-size: 12px; } .en { font-size: 13px; }
+  .small { font-size: 12px; }
   code { font-family: var(--font-mono); font-size: .92em; background: var(--panel-bg); padding: 2px 6px; border-radius: 4px; }
   a { color: var(--amber); }
   .lt { margin-left: 10px; font-size: 11px; padding: 2px 10px; border: 1px solid var(--border); border-radius: 999px; color: var(--text-muted); letter-spacing: .5px; }

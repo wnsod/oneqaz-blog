@@ -4,8 +4,11 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="방법론 — OneQAZ" description="How OneQAZ paper-trading numbers are produced: fill model, data boundaries, win-rate framing, paper/live separation, and how to verify. Execution assumptions only — signal logic stays private.">
+  <link rel="alternate" hreflang="ko" href="https://blog.oneqaz.com/methodology/" slot="head" />
+  <link rel="alternate" hreflang="en" href="https://blog.oneqaz.com/en/methodology/" slot="head" />
+  <link rel="alternate" hreflang="x-default" href="https://blog.oneqaz.com/en/methodology/" slot="head" />
   <article class="container post">
-    <p class="eyebrow">methodology</p>
+    <p class="eyebrow">methodology <a class="lt" href="/en/methodology/">EN</a></p>
     <h1>방법론 — 이 수치들이 만들어지는 방식</h1>
     <p class="muted lede">
       이 페이지는 <strong>체결·집계 가정</strong>을 문서화합니다. 시그널 산출 로직(지표 조합·파라미터)은
@@ -72,14 +75,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </ul>
 
     <p class="en muted">
-      <strong>English.</strong> This page documents execution & aggregation assumptions only — signal
-      logic stays private. Entries are synthetic fills (signal reference price ×1.001 slippage; live-price
-      validation added 2026-07-15), exits are marked at live candle prices. Closed trades only; each post
-      is an as-of snapshot (late writes can add +1–5% counts afterwards — measured, additions only).
-      The all-time record counts only the contemporaneously-published period (since 2026-06-16). Paper
-      and live records will never be merged. Fees/taxes and position sizing will be documented verbatim
-      once confirmed from the engine — never estimated. Verify via MCP, per-post CSV, and the daily
-      SHA-256 ledger chain.
+      <strong>English version:</strong> <a href="/en/methodology/">blog.oneqaz.com/en/methodology</a>
     </p>
 
     <hr />
@@ -101,5 +97,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   code { font-family: var(--font-mono); font-size: .9em; background: var(--panel-bg); padding: 2px 6px; border-radius: 4px; }
   a { color: var(--amber); }
   .small { font-size: 12px; } .en { font-size: 13px; }
+  .lt { margin-left: 10px; font-size: 11px; padding: 2px 10px; border: 1px solid var(--border); border-radius: 999px; color: var(--text-muted); letter-spacing: .5px; }
   hr { border: 0; border-top: 1px solid var(--border); margin: 36px 0 16px; }
 </style>

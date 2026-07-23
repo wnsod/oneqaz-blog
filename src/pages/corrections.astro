@@ -15,15 +15,17 @@ const koCount = corrected.filter((p) => p.data.lang !== 'en').length;
 const fmt = (d: Date) => d.toISOString().slice(0, 10);
 ---
 <BaseLayout title="정정 기록 — OneQAZ" description="OneQAZ corrections log — every corrected post, with the reason, timeline, and safeguards. We do not silently rewrite history.">
+  <link rel="alternate" hreflang="ko" href="https://blog.oneqaz.com/corrections/" slot="head" />
+  <link rel="alternate" hreflang="en" href="https://blog.oneqaz.com/en/corrections/" slot="head" />
+  <link rel="alternate" hreflang="x-default" href="https://blog.oneqaz.com/en/corrections/" slot="head" />
   <article class="container post">
-    <p class="eyebrow">corrections</p>
+    <p class="eyebrow">corrections <a class="lt" href="/en/corrections/">EN</a></p>
     <h1>정정 기록</h1>
     <p class="muted lede">
       OneQAZ 는 검증 가능한 타임스탬프 기록을 지향합니다. 오류를 발견하면 <strong>숨기거나 조용히
       덮어쓰지 않고</strong>, 같은 URL 에서 정정 고지와 함께 재발행하고 수정 시각(dateModified)을
       남기며, 이 페이지에 사유를 공개합니다.
-      <span class="en">OneQAZ never silently rewrites history — corrected posts keep their URL,
-      carry a visible notice and dateModified, and are listed here with the reason.</span>
+      <span class="en">English version: <a href="/en/corrections/">blog.oneqaz.com/en/corrections</a></span>
     </p>
 
     <h2>사건 보고서: 2026-07 시뮬레이션 데이터 결함</h2>
@@ -58,16 +60,6 @@ const fmt = (d: Date) => d.toISOString().slice(0, 10);
       SHA-256 해시체인으로 봉인되어 있어(주간 트랙레코드에 앵커 공개) 사후 수정은 체인 불일치로
       드러납니다.
     </p>
-    <p class="en">
-      <strong>English summary.</strong> Between 2026-07-08 and 07-15, a signal-persistence fault
-      caused simulated entries to be recorded at stale prices, producing impossible returns
-      (±10–35%) in roughly 79% of that window's ledger. Affected journals and one weekly track
-      record were corrected in place (same URL, visible notice, dateModified). A second-pass
-      correction fixed our own first-pass mistake (a rolling 7-day view caused undercounted
-      republications), and a full audit of all 71 published trade posts found zero further
-      defects. Publish-time sanity guards now block freeze-loop and stale-price signatures.
-    </p>
-
     <h2>정정된 글 목록 <span class="count">({koCount}건 · 자동 생성)</span></h2>
     <p class="muted small">frontmatter 의 수정 시각(updated)이 있는 글이 자동으로 등재됩니다. 원문 URL 은 변하지 않습니다.</p>
     <ul class="list">
@@ -96,4 +88,5 @@ const fmt = (d: Date) => d.toISOString().slice(0, 10);
   .list { list-style: none; margin-left: 0; }
   .list li { border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); padding: 8px 0; }
   .list a { color: var(--amber); }
+  .lt { margin-left: 10px; font-size: 11px; padding: 2px 10px; border: 1px solid var(--border); border-radius: 999px; color: var(--text-muted); letter-spacing: .5px; }
 </style>

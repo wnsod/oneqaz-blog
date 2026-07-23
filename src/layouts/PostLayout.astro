@@ -29,7 +29,8 @@ const updatedLabel = updated ? updated.toISOString().slice(0, 10) : null;
 // 과거 글 frontmatter altUrl 은 슬래시 없음 — trailingSlash always 체계에 맞게 정규화(301 방지).
 const altNorm = altUrl ? (altUrl.endsWith('/') ? altUrl : altUrl + '/') : null;
 const altHref = altNorm ? new URL(altNorm, Astro.site).href : null;
-const xDefault = lang === 'ko' ? canonical : altHref; // KO is the default language
+// x-default = EN (2026-07-23): 글로벌 AI/검색 독자층이 1순위 — 언어 미매칭 사용자에겐 영어판.
+const xDefault = lang === 'en' ? canonical : altHref;
 const toggleLabel = altLang === 'en' ? 'EN' : '한국어';
 
 // JSON-LD in initial HTML — what AI crawlers actually read.

@@ -1,0 +1,102 @@
+---
+// Corrections log (EN — primary for the global audience; KO twin at /corrections/).
+// Policy + incident report + auto-generated list of corrected EN posts (frontmatter `updated`).
+// Trust principle: corrections are never hidden — same URL, visible notice, dateModified, listed here.
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const cols = ['track-record', 'market', 'spotlight', 'journal'] as const;
+let corrected: any[] = [];
+for (const c of cols) {
+  const e = await getCollection(c, ({ data }) => !data.draft && data.updated);
+  corrected.push(...e.map((x) => ({ ...x, _collection: c })));
+}
+corrected.sort((a, b) => (b.data.date.valueOf() - a.data.date.valueOf()));
+const enPosts = corrected.filter((p) => p.data.lang === 'en');
+const fmt = (d: Date) => d.toISOString().slice(0, 10);
+---
+<BaseLayout title="Corrections — OneQAZ" description="OneQAZ corrections log — every corrected post, with the reason, timeline, and safeguards. We do not silently rewrite history." lang="en">
+  <link rel="alternate" hreflang="en" href="https://blog.oneqaz.com/en/corrections/" slot="head" />
+  <link rel="alternate" hreflang="ko" href="https://blog.oneqaz.com/corrections/" slot="head" />
+  <link rel="alternate" hreflang="x-default" href="https://blog.oneqaz.com/en/corrections/" slot="head" />
+  <article class="container post">
+    <p class="eyebrow">corrections <a class="lt" href="/corrections/">한국어</a></p>
+    <h1>Corrections</h1>
+    <p class="muted lede">
+      OneQAZ aims to be a verifiable, timestamped record. When we find an error we
+      <strong>never hide it or silently overwrite it</strong> — the post is republished at the same
+      URL with a visible correction notice and a modification timestamp (dateModified), and the
+      reason is disclosed on this page.
+    </p>
+
+    <h2>Incident report: the 2026-07 simulation-data defect</h2>
+    <p>
+      <strong>What happened.</strong> Between 2026-07-08 and 07-15, a signal-persistence fault in
+      the trading engine caused new simulated entries to be recorded at <strong>stale signal prices
+      from days earlier</strong> instead of live market prices. Exits were still evaluated at
+      real-time prices, so the ledger filled with simulated trades at prices — and returns
+      (±10–35%) — that could not exist in the actual market, and the same fault kept re-buying at
+      identical prices in a loop. Roughly <strong>79% of closed trades in that window</strong> were
+      such artifacts.
+    </p>
+    <p>
+      <strong>Impact on this blog.</strong> Daily journals aggregate the ledger as-is, so the fake
+      trades surfaced in that window's journals (three markets) and one weekly track record.
+      Separately, an internal test symbol (TEST) leaked one row into the 07-07 crypto journal.
+    </p>
+    <p><strong>Response timeline (KST).</strong></p>
+    <ul>
+      <li><strong>07-15 21:00</strong> — four root-cause fixes applied to the engine and restarted
+        (live-price validation on entries, signal-freshness gate, and others).</li>
+      <li><strong>07-16 early AM</strong> — defective trades <strong>quarantined</strong> in the
+        ledger (moved aside, not deleted — auditability preserved).</li>
+      <li><strong>07-16</strong> — affected posts corrected and republished (first pass), each with
+        a top-of-post notice and dateModified.</li>
+      <li><strong>07-16~17</strong> — <strong>second-pass correction</strong>: we found and fixed a
+        defect in our own first pass. The data view used for re-querying only covers a rolling
+        7-day window, so some republished posts covering older windows were rebuilt with zero or
+        partial counts. We re-queried the full-history source and corrected them again with the
+        real figures (e.g. 243 crypto trades on 07-08). That mistake is kept on the record too.</li>
+      <li><strong>07-17</strong> — <strong>full audit of the publication history</strong> (67 daily
+        journals + 4 track records) against the ledger: zero mismatches, zero further defects.</li>
+    </ul>
+    <p>
+      <strong>Preventing recurrence.</strong> ① Two automatic publish-time sanity checks — a
+      repeated-identical-entry-price pattern, or a spike in ultra-short extreme-P&L trades, holds
+      publication and alerts the operator (if upstream data is ever contaminated again, the blog is
+      the last line of defense). ② Non-tradable symbols are excluded automatically. ③ The
+      prediction ledger is sealed by a daily SHA-256 hash chain (anchor published in weekly track
+      records), so any post-hoc edit shows up as a chain mismatch.
+    </p>
+
+    <h2>Corrected posts <span class="count">({enPosts.length} · auto-generated)</span></h2>
+    <p class="muted small">Any post with a correction timestamp (updated) in its frontmatter is
+      listed here automatically. Original URLs never change. Korean-language corrections are listed
+      on the <a href="/corrections/">Korean page</a>.</p>
+    <ul class="list">
+      {enPosts.map((p) => (
+        <li>
+          <a href={`/${p._collection}/${p.slug}/`}>{p.data.title}</a>
+          <span class="muted"> — published {fmt(p.data.date)} · corrected {fmt(p.data.updated)}</span>
+        </li>
+      ))}
+    </ul>
+  </article>
+</BaseLayout>
+
+<style>
+  .post { padding: 56px 24px 80px; }
+  h1 { font-size: clamp(26px, 4vw, 38px); font-weight: 700; color: var(--text); margin: 8px 0 14px; }
+  h2 { font-size: 21px; font-weight: 600; margin: 40px 0 14px; color: var(--text); }
+  .lede { font-size: 14px; line-height: 1.8; max-width: 640px; }
+  p, li { font-size: 14px; line-height: 1.8; color: var(--text); }
+  p { margin: 0 0 16px; }
+  ul { margin: 0 0 16px 22px; }
+  li { margin: 6px 0; }
+  .count { font-size: 13px; font-weight: 400; color: var(--text-muted); }
+  .small { font-size: 12px; }
+  .list { list-style: none; margin-left: 0; }
+  .list li { border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); padding: 8px 0; }
+  .list a { color: var(--amber); }
+  .lt { margin-left: 10px; font-size: 11px; padding: 2px 10px; border: 1px solid var(--border); border-radius: 999px; color: var(--text-muted); letter-spacing: .5px; }
+</style>

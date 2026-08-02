@@ -138,3 +138,15 @@
 {"date": "2026-07-31", "market": "kr", "symbol": "002790", "rvol": 2.4, "price_chg": 0.6, "close": 24500.0, "rank": 10}
 {"date": "2026-07-31", "market": "kr", "symbol": "001680", "rvol": 2.3, "price_chg": 4.0, "close": 17910.0, "rank": 11}
 {"date": "2026-07-31", "market": "kr", "symbol": "268280", "rvol": 2.3, "price_chg": 6.6, "close": 121100.0, "rank": 12}
+{"date": "2026-07-31", "market": "us", "symbol": "BAX", "rvol": 3.7, "price_chg": 21.2, "close": 26.75, "rank": 1}
+{"date": "2026-07-31", "market": "us", "symbol": "GRMN", "rvol": 3.4, "price_chg": 21.6, "close": 297.55, "rank": 2}
+{"date": "2026-07-31", "market": "us", "symbol": "IQV", "rvol": 3.3, "price_chg": 16.6, "close": 237.79, "rank": 3}
+{"date": "2026-07-31", "market": "us", "symbol": "FICO", "rvol": 3.0, "price_chg": -9.8, "close": 1139.54, "rank": 4}
+{"date": "2026-07-31", "market": "us", "symbol": "HII", "rvol": 3.0, "price_chg": 18.5, "close": 319.9, "rank": 5}
+{"date": "2026-07-31", "market": "us", "symbol": "MAS", "rvol": 3.0, "price_chg": -6.9, "close": 72.11, "rank": 6}
+{"date": "2026-07-31", "market": "us", "symbol": "INCY", "rvol": 3.0, "price_chg": 6.3, "close": 122.99, "rank": 7}
+{"date": "2026-07-31", "market": "us", "symbol": "SOLV", "rvol": 2.8, "price_chg": 9.6, "close": 86.82, "rank": 8}
+{"date": "2026-07-31", "market": "us", "symbol": "LII", "rvol": 2.8, "price_chg": -21.8, "close": 417.45, "rank": 9}
+{"date": "2026-07-31", "market": "us", "symbol": "HUM", "rvol": 2.7, "price_chg": -7.9, "close": 366.66, "rank": 10}
+{"date": "2026-07-31", "market": "us", "symbol": "MSFT", "rvol": 2.7, "price_chg": 12.1, "close": 451.1, "rank": 11}
+{"date": "2026-07-31", "market": "us", "symbol": "TYL", "rvol": 2.7, "price_chg": 1.7, "close": 323.31, "rank": 12}

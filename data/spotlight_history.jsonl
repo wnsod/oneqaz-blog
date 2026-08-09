@@ -162,3 +162,15 @@
 {"date": "2026-08-07", "market": "kr", "symbol": "278470", "rvol": 2.5, "price_chg": 8.3, "close": 386000.0, "rank": 10}
 {"date": "2026-08-07", "market": "kr", "symbol": "115440", "rvol": 2.4, "price_chg": 10.3, "close": 7610.0, "rank": 11}
 {"date": "2026-08-07", "market": "kr", "symbol": "102940", "rvol": 2.4, "price_chg": -16.7, "close": 15400.0, "rank": 12}
+{"date": "2026-08-07", "market": "us", "symbol": "PLTR", "rvol": 3.8, "price_chg": 18.5, "close": 155.92, "rank": 1}
+{"date": "2026-08-07", "market": "us", "symbol": "DVA", "rvol": 2.8, "price_chg": -23.5, "close": 180.67, "rank": 2}
+{"date": "2026-08-07", "market": "us", "symbol": "HONA", "rvol": 2.7, "price_chg": -25.8, "close": 156.47, "rank": 3}
+{"date": "2026-08-07", "market": "us", "symbol": "APTV", "rvol": 2.6, "price_chg": -19.4, "close": 46.3, "rank": 4}
+{"date": "2026-08-07", "market": "us", "symbol": "ZBRA", "rvol": 2.6, "price_chg": 37.7, "close": 364.24, "rank": 5}
+{"date": "2026-08-07", "market": "us", "symbol": "TTD", "rvol": 2.4, "price_chg": -1.2, "close": 17.67, "rank": 6}
+{"date": "2026-08-07", "market": "us", "symbol": "IT", "rvol": 2.4, "price_chg": 25.3, "close": 184.82, "rank": 7}
+{"date": "2026-08-07", "market": "us", "symbol": "PH", "rvol": 2.4, "price_chg": 8.4, "close": 1069.8, "rank": 8}
+{"date": "2026-08-07", "market": "us", "symbol": "ZTS", "rvol": 2.3, "price_chg": 0.5, "close": 77.27, "rank": 9}
+{"date": "2026-08-07", "market": "us", "symbol": "COR", "rvol": 2.3, "price_chg": 4.5, "close": 325.01, "rank": 10}
+{"date": "2026-08-07", "market": "us", "symbol": "ANET", "rvol": 2.3, "price_chg": 12.6, "close": 192.32, "rank": 11}
+{"date": "2026-08-07", "market": "us", "symbol": "PODD", "rvol": 2.3, "price_chg": -15.6, "close": 139.3, "rank": 12}

@@ -174,3 +174,15 @@
 {"date": "2026-08-07", "market": "us", "symbol": "COR", "rvol": 2.3, "price_chg": 4.5, "close": 325.01, "rank": 10}
 {"date": "2026-08-07", "market": "us", "symbol": "ANET", "rvol": 2.3, "price_chg": 12.6, "close": 192.32, "rank": 11}
 {"date": "2026-08-07", "market": "us", "symbol": "PODD", "rvol": 2.3, "price_chg": -15.6, "close": 139.3, "rank": 12}
+{"date": "2026-08-14", "market": "kr", "symbol": "161890", "rvol": 12.1, "price_chg": 47.6, "close": 136800.0, "rank": 1}
+{"date": "2026-08-14", "market": "kr", "symbol": "192820", "rvol": 6.4, "price_chg": 38.7, "close": 245500.0, "rank": 2}
+{"date": "2026-08-14", "market": "kr", "symbol": "192440", "rvol": 5.3, "price_chg": 3.6, "close": 28900.0, "rank": 3}
+{"date": "2026-08-14", "market": "kr", "symbol": "204270", "rvol": 5.0, "price_chg": 51.5, "close": 18410.0, "rank": 4}
+{"date": "2026-08-14", "market": "kr", "symbol": "088350", "rvol": 4.6, "price_chg": 26.1, "close": 5430.0, "rank": 5}
+{"date": "2026-08-14", "market": "kr", "symbol": "139670", "rvol": 4.4, "price_chg": 17.0, "close": 1741.0, "rank": 6}
+{"date": "2026-08-14", "market": "kr", "symbol": "191420", "rvol": 4.4, "price_chg": 36.2, "close": 8270.0, "rank": 7}
+{"date": "2026-08-14", "market": "kr", "symbol": "263750", "rvol": 4.2, "price_chg": -2.9, "close": 31650.0, "rank": 8}
+{"date": "2026-08-14", "market": "kr", "symbol": "278990", "rvol": 4.1, "price_chg": 12.5, "close": 2700.0, "rank": 9}
+{"date": "2026-08-14", "market": "kr", "symbol": "189860", "rvol": 3.9, "price_chg": 31.8, "close": 4765.0, "rank": 10}
+{"date": "2026-08-14", "market": "kr", "symbol": "035900", "rvol": 3.7, "price_chg": -1.7, "close": 41600.0, "rank": 11}
+{"date": "2026-08-14", "market": "kr", "symbol": "483650", "rvol": 3.7, "price_chg": 3.4, "close": 227500.0, "rank": 12}

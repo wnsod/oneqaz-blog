@@ -3,11 +3,11 @@
  "public_record_start": "2026-06-16",
  "markets": {
   "coin": {
-   "n": 68257,
-   "wins": 26699,
-   "losses": 41558,
+   "n": 68650,
+   "wins": 26868,
+   "losses": 41782,
    "win_rate": 39.1,
-   "avg_pnl": -0.274,
+   "avg_pnl": -0.275,
    "best": 97.12,
    "worst": -36.96,
    "profit_factor": 0.71
@@ -34,15 +34,15 @@
   }
  },
  "total": {
-  "n": 100457,
-  "wins": 37258,
-  "losses": 63199,
+  "n": 100850,
+  "wins": 37427,
+  "losses": 63423,
   "win_rate": 37.1,
   "profit_factor": 0.75
  },
  "first_day": "2026-06-16",
- "last_day": "2026-08-16",
- "days_operating": 62,
+ "last_day": "2026-08-17",
+ "days_operating": 63,
  "curves": {
   "coin": {
    "dates": [
@@ -107,7 +107,8 @@
     "2026-08-13",
     "2026-08-14",
     "2026-08-15",
-    "2026-08-16"
+    "2026-08-16",
+    "2026-08-17"
    ],
    "equity": [
     98.69,
@@ -171,7 +172,8 @@
     71.76,
     71.24,
     71.54,
-    71.4
+    71.38,
+    71.3
    ],
    "benchmark": [
     100.0,
@@ -235,20 +237,21 @@
     91.28,
     89.66,
     90.37,
-    90.5
+    90.53,
+    90.34
    ],
    "bench_label": "BTC",
    "bench_excluded": false,
    "mdd": {
     "max_dd": -28.76,
-    "current_dd": -28.6,
-    "longest_underwater_days": 62
+    "current_dd": -28.7,
+    "longest_underwater_days": 63
    },
    "metrics": {
-    "cum_return": -28.6,
-    "sharpe": -15.31,
-    "sortino": -12.08,
-    "calmar": -3.0
+    "cum_return": -28.7,
+    "sharpe": -15.22,
+    "sortino": -12.03,
+    "calmar": -2.99
    },
    "monthly": [
     {
@@ -261,7 +264,7 @@
     },
     {
      "month": "2026-08",
-     "ret": -3.49
+     "ret": -3.64
     }
    ],
    "bench_monthly": [
@@ -275,7 +278,7 @@
     },
     {
      "month": "2026-08",
-     "ret": -0.76
+     "ret": -0.93
     }
    ],
    "source": "mcp:get_performance_metrics"
@@ -649,5 +652,5 @@
   "public_anchor": "2026-06-16",
   "note": "페이퍼 엔진에는 자본/현금 실계열이 없어(무자본 사이징 배수 체결) 합성 고정 북 모델을 사용. 근거: 2026-06-16 이후 동시 노출(Σ배수) 최대 371 < 400 — 노출이 자본 100%를 넘지 않음. 미사용 슬롯은 현금 0% (cash drag 포함). 정의 단일 소스 = admin.v1_daily_equity."
  },
- "generated_at": "2026-08-16T08:00:36+00:00"
+ "generated_at": "2026-08-16T22:00:31+00:00"
 }

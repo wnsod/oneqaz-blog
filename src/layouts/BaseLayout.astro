@@ -53,6 +53,6 @@ const ogImg = ogImage ? new URL(ogImage, Astro.site).href : new URL('/og/default
   <main>
     <slot />
   </main>
-  <Footer />
+  <Footer lang={lang} />
 </body>
 </html>

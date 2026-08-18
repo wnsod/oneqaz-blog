@@ -1,0 +1,69 @@
+---
+import PostLayout from '../../layouts/PostLayout.astro';
+
+// Weekly ledger integrity anchor — source of truth: last row of vault anchors/prediction_ledger_chain.csv.
+const anchorLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Dataset',
+  name: 'OneQAZ prediction ledger anchor',
+  dateCreated: '2026-08-18T23:07:00+09:00',
+  inLanguage: 'en',
+  'oneqaz:anchor': {
+    type: 'ledger_anchor',
+    anchor_day: '2026-08-16',
+    latest_chain_hash: '03e6e5bb8fcaacf3f8865ce6c38db33e6ec75b524afefbac19274db8220f604d',
+    recipe_version: 1,
+    chain_first_day: '2026-03-22',
+    verify: 'Recompute the chain from raw ledger rows using the recipe returned by MCP get_ledger_integrity, then compare against this hash',
+  },
+};
+---
+<PostLayout
+  title="Ledger Anchor 2026-08-16"
+  description="OneQAZ prediction ledger weekly integrity anchor. Anchor day 2026-08-16, chain hash 03e6e5bb…, OpenTimestamps proof included."
+  date={new Date('2026-08-18T23:07:00+09:00')}
+  category="anchors"
+  lang="en"
+  altUrl="/anchors/2026-08-16/"
+  altLang="ko"
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(anchorLd)} />
+
+  <p>This page is the weekly integrity anchor for the OneQAZ prediction ledger.
+  The hash below is cryptographically linked to the ledger's entire history:
+  if any ledger row is edited or deleted after this page was published, a
+  recomputed chain hash will diverge from this one. The accompanying
+  <code>.ots</code> file proves this hash was timestamped on the Bitcoin
+  blockchain (anyone can verify it at
+  <a href="https://opentimestamps.org" rel="noopener">opentimestamps.org</a>).</p>
+
+  <table>
+    <tbody>
+      <tr><th>anchor_day</th><td><code>2026-08-16</code></td></tr>
+      <tr><th>latest_chain_hash</th><td><code>03e6e5bb8fcaacf3f8865ce6c38db33e6ec75b524afefbac19274db8220f604d</code></td></tr>
+      <tr><th>recipe_version</th><td><code>1</code></td></tr>
+      <tr><th>chain_first_day</th><td><code>2026-03-22</code></td></tr>
+      <tr><th>ledger</th><td><code>mcp_analytics.prediction_ledger_hashes</code></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Proof file downloads</h2>
+  <ul>
+    <li><a href="/anchors/anchor_2026-08-16.txt">anchor_2026-08-16.txt</a> — pinned anchor day + chain hash (the OTS-stamped file)</li>
+    <li><a href="/anchors/anchor_2026-08-16.txt.ots">anchor_2026-08-16.txt.ots</a> — OpenTimestamps Bitcoin timestamp proof</li>
+    <li><a href="/anchors/prediction_ledger_chain_2026-08-16.csv">prediction_ledger_chain_2026-08-16.csv</a> — chain CSV snapshot as of the anchor day (2026-03-22 – 2026-08-16)</li>
+  </ul>
+
+  <h2>How to verify</h2>
+  <ol>
+    <li><strong>Timestamp</strong>: run <code>ots verify anchor_2026-08-16.txt.ots</code>
+      (or use the web verifier at <a href="https://opentimestamps.org" rel="noopener">opentimestamps.org</a>) —
+      confirms via the Bitcoin blockchain that this hash existed around this date.</li>
+    <li><strong>Chain integrity</strong>: recompute the hash chain from raw ledger rows
+      using the recipe returned by the OneQAZ MCP tool <code>get_ledger_integrity</code>,
+      then check that the last row's <code>chain_hash</code> equals
+      <code>03e6e5bb…</code> above.</li>
+    <li><strong>Publication time</strong>: check this page's Wayback Machine archive
+      for a third-party record of when it went public.</li>
+  </ol>
+</PostLayout>

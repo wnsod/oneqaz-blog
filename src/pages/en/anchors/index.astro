@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+// Weekly anchor list — prepend one row per new anchor.
+const anchors = [
+  { day: '2026-08-16', published: '2026-08-18', hash: '03e6e5bb8fcaacf3f8865ce6c38db33e6ec75b524afefbac19274db8220f604d' },
+];
+const TITLE = 'Ledger Anchors';
+const DESC = 'Weekly public anchors of the prediction ledger hash chain — fixed points that let third parties verify ledger immutability.';
+const enHref = new URL(Astro.url.pathname, Astro.site).href;
+const koHref = new URL(Astro.url.pathname.replace(/^\/en/, ''), Astro.site).href;
+---
+<BaseLayout title={`${TITLE} — OneQAZ`} description={DESC} lang="en">
+  <link rel="alternate" hreflang="ko" href={koHref} slot="head" />
+  <link rel="alternate" hreflang="en" href={enHref} slot="head" />
+  <link rel="alternate" hreflang="x-default" href={enHref} slot="head" />
+  <section class="head container-wide">
+    <p class="eyebrow">anchors</p>
+    <h1>{TITLE}</h1>
+    <p class="muted lede">{DESC} Each anchor is timestamped on the Bitcoin blockchain via OpenTimestamps (.ots).</p>
+  </section>
+  <section class="feed container-wide">
+    <ul class="anchor-list">
+      {anchors.map((a) => (
+        <li>
+          <a href={`/anchors/${a.day}-en/`}>Ledger Anchor {a.day}</a>
+          <span class="muted"> — published {a.published} · <code>{a.hash.slice(0, 8)}…</code></span>
+        </li>
+      ))}
+    </ul>
+  </section>
+</BaseLayout>
+<style>
+  .head { padding: 52px 24px 16px; }
+  .head h1 { font-size: clamp(28px,4vw,40px); font-weight:700; margin:10px 0; color:var(--text); }
+  .lede { max-width:560px; font-size:14px; }
+  .feed { padding: 8px 24px 40px; }
+  .anchor-list { list-style:none; margin:0; padding:0; }
+  .anchor-list li { padding:14px 0; border-bottom:1px solid var(--border); font-size:15px; }
+  .anchor-list a { color: var(--amber); }
+  .anchor-list code { font-family: var(--font-mono); font-size:.9em; }
+</style>

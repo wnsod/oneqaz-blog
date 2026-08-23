@@ -210,3 +210,15 @@
 {"date": "2026-08-21", "market": "kr", "symbol": "185490", "rvol": 2.5, "price_chg": 15.4, "close": 1881.0, "rank": 10}
 {"date": "2026-08-21", "market": "kr", "symbol": "129890", "rvol": 2.3, "price_chg": 6.7, "close": 1006.0, "rank": 11}
 {"date": "2026-08-21", "market": "kr", "symbol": "017800", "rvol": 2.2, "price_chg": -1.7, "close": 71000.0, "rank": 12}
+{"date": "2026-08-21", "market": "us", "symbol": "MRNA", "rvol": 110.9, "price_chg": 122.9, "close": 133.32, "rank": 1}
+{"date": "2026-08-21", "market": "us", "symbol": "CHTR", "rvol": 3.6, "price_chg": -3.6, "close": 147.76, "rank": 2}
+{"date": "2026-08-21", "market": "us", "symbol": "EL", "rvol": 3.3, "price_chg": 10.3, "close": 96.15, "rank": 3}
+{"date": "2026-08-21", "market": "us", "symbol": "MRK", "rvol": 3.1, "price_chg": 13.8, "close": 148.99, "rank": 4}
+{"date": "2026-08-21", "market": "us", "symbol": "TRGP", "rvol": 3.0, "price_chg": 13.5, "close": 302.25, "rank": 5}
+{"date": "2026-08-21", "market": "us", "symbol": "NDSN", "rvol": 2.7, "price_chg": 8.4, "close": 334.7, "rank": 6}
+{"date": "2026-08-21", "market": "us", "symbol": "KEYS", "rvol": 2.6, "price_chg": -5.6, "close": 316.51, "rank": 7}
+{"date": "2026-08-21", "market": "us", "symbol": "COIN", "rvol": 2.5, "price_chg": 15.9, "close": 172.35, "rank": 8}
+{"date": "2026-08-21", "market": "us", "symbol": "NUE", "rvol": 2.3, "price_chg": -12.4, "close": 240.48, "rank": 9}
+{"date": "2026-08-21", "market": "us", "symbol": "WMT", "rvol": 2.3, "price_chg": -7.8, "close": 103.84, "rank": 10}
+{"date": "2026-08-21", "market": "us", "symbol": "DE", "rvol": 2.3, "price_chg": 1.9, "close": 620.94, "rank": 11}
+{"date": "2026-08-21", "market": "us", "symbol": "MSI", "rvol": 2.0, "price_chg": 2.5, "close": 473.63, "rank": 12}

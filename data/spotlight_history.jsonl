@@ -222,3 +222,15 @@
 {"date": "2026-08-21", "market": "us", "symbol": "WMT", "rvol": 2.3, "price_chg": -7.8, "close": 103.84, "rank": 10}
 {"date": "2026-08-21", "market": "us", "symbol": "DE", "rvol": 2.3, "price_chg": 1.9, "close": 620.94, "rank": 11}
 {"date": "2026-08-21", "market": "us", "symbol": "MSI", "rvol": 2.0, "price_chg": 2.5, "close": 473.63, "rank": 12}
+{"date": "2026-08-28", "market": "us", "symbol": "CRM", "rvol": 2.9, "price_chg": 32.0, "close": 252.05, "rank": 1}
+{"date": "2026-08-28", "market": "us", "symbol": "SNPS", "rvol": 2.8, "price_chg": 12.5, "close": 464.89, "rank": 2}
+{"date": "2026-08-28", "market": "us", "symbol": "VEEV", "rvol": 2.7, "price_chg": 18.4, "close": 282.13, "rank": 3}
+{"date": "2026-08-28", "market": "us", "symbol": "HPQ", "rvol": 2.4, "price_chg": 0.8, "close": 29.63, "rank": 4}
+{"date": "2026-08-28", "market": "us", "symbol": "SJM", "rvol": 2.4, "price_chg": 11.9, "close": 131.84, "rank": 5}
+{"date": "2026-08-28", "market": "us", "symbol": "HRL", "rvol": 2.3, "price_chg": -11.4, "close": 21.28, "rank": 6}
+{"date": "2026-08-28", "market": "us", "symbol": "BBY", "rvol": 2.2, "price_chg": -2.2, "close": 83.56, "rank": 7}
+{"date": "2026-08-28", "market": "us", "symbol": "INTU", "rvol": 2.1, "price_chg": 3.7, "close": 348.0, "rank": 8}
+{"date": "2026-08-28", "market": "us", "symbol": "CRWD", "rvol": 2.1, "price_chg": 6.6, "close": 227.96, "rank": 9}
+{"date": "2026-08-28", "market": "us", "symbol": "WSM", "rvol": 2.1, "price_chg": -0.8, "close": 238.4, "rank": 10}
+{"date": "2026-08-28", "market": "us", "symbol": "FDS", "rvol": 2.0, "price_chg": 10.0, "close": 304.47, "rank": 11}
+{"date": "2026-08-28", "market": "us", "symbol": "NVDA", "rvol": 2.0, "price_chg": 1.3, "close": 227.98, "rank": 12}

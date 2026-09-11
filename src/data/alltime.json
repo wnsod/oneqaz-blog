@@ -3,11 +3,11 @@
  "public_record_start": "2026-06-16",
  "markets": {
   "coin": {
-   "n": 94032,
-   "wins": 40168,
-   "losses": 53864,
+   "n": 94152,
+   "wins": 40196,
+   "losses": 53956,
    "win_rate": 42.7,
-   "avg_pnl": -0.18,
+   "avg_pnl": -0.182,
    "best": 185.07,
    "worst": -43.8,
    "profit_factor": 0.83
@@ -34,9 +34,9 @@
   }
  },
  "total": {
-  "n": 134111,
-  "wins": 53966,
-  "losses": 80145,
+  "n": 134231,
+  "wins": 53994,
+  "losses": 80237,
   "win_rate": 40.2,
   "profit_factor": 0.82
  },
@@ -223,7 +223,7 @@
     73.77,
     73.85,
     72.71,
-    72.52
+    72.33
    ],
    "benchmark": [
     100.0,
@@ -313,20 +313,20 @@
     108.02,
     108.28,
     107.02,
-    106.69
+    106.53
    ],
    "bench_label": "BTC",
    "bench_excluded": false,
    "mdd": {
     "max_dd": -29.95,
-    "current_dd": -27.48,
+    "current_dd": -27.67,
     "longest_underwater_days": 88
    },
    "metrics": {
-    "cum_return": -27.48,
-    "sharpe": -8.61,
-    "sortino": -9.01,
-    "calmar": -2.46
+    "cum_return": -27.67,
+    "sharpe": -8.68,
+    "sortino": -9.07,
+    "calmar": -2.47
    },
    "monthly": [
     {
@@ -343,7 +343,7 @@
     },
     {
      "month": "2026-09",
-     "ret": -0.07
+     "ret": -0.33
     }
    ],
    "bench_monthly": [
@@ -361,7 +361,7 @@
     },
     {
      "month": "2026-09",
-     "ret": -2.87
+     "ret": -3.01
     }
    ],
    "source": "mcp:get_performance_metrics"
@@ -870,5 +870,5 @@
   "public_anchor": "2026-06-16",
   "note": "페이퍼 엔진에는 자본/현금 실계열이 없어(무자본 사이징 배수 체결) 합성 고정 북 모델을 사용. 근거: 2026-06-16 이후 동시 노출(Σ배수) 최대 371 < 400 — 노출이 자본 100%를 넘지 않음. 미사용 슬롯은 현금 0% (cash drag 포함). 정의 단일 소스 = admin.v1_daily_equity."
  },
- "generated_at": "2026-09-11T08:00:54+00:00"
+ "generated_at": "2026-09-11T12:00:53+00:00"
 }

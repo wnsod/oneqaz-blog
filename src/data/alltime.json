@@ -3,8 +3,8 @@
  "public_record_start": "2026-06-16",
  "markets": {
   "coin": {
-   "n": 94264,
-   "wins": 40291,
+   "n": 94267,
+   "wins": 40294,
    "losses": 53973,
    "win_rate": 42.7,
    "avg_pnl": -0.179,
@@ -34,8 +34,8 @@
   }
  },
  "total": {
-  "n": 134399,
-  "wins": 54111,
+  "n": 134402,
+  "wins": 54114,
   "losses": 80288,
   "win_rate": 40.3,
   "profit_factor": 0.82
@@ -316,7 +316,7 @@
     108.28,
     107.02,
     108.35,
-    106.4
+    106.62
    ],
    "bench_label": "BTC",
    "bench_excluded": false,
@@ -328,7 +328,7 @@
    "metrics": {
     "cum_return": -27.45,
     "sharpe": -8.54,
-    "sortino": -8.95,
+    "sortino": -8.94,
     "calmar": -2.44
    },
    "monthly": [
@@ -346,7 +346,7 @@
     },
     {
      "month": "2026-09",
-     "ret": -0.04
+     "ret": -0.03
     }
    ],
    "bench_monthly": [
@@ -364,7 +364,7 @@
     },
     {
      "month": "2026-09",
-     "ret": -3.13
+     "ret": -2.93
     }
    ],
    "source": "mcp:get_performance_metrics"
@@ -876,5 +876,5 @@
   "public_anchor": "2026-06-16",
   "note": "페이퍼 엔진에는 자본/현금 실계열이 없어(무자본 사이징 배수 체결) 합성 고정 북 모델을 사용. 근거: 2026-06-16 이후 동시 노출(Σ배수) 최대 371 < 400 — 노출이 자본 100%를 넘지 않음. 미사용 슬롯은 현금 0% (cash drag 포함). 정의 단일 소스 = admin.v1_daily_equity."
  },
- "generated_at": "2026-09-11T22:00:59+00:00"
+ "generated_at": "2026-09-12T00:00:36+00:00"
 }

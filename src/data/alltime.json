@@ -3,21 +3,21 @@
  "public_record_start": "2026-06-16",
  "markets": {
   "coin": {
-   "n": 96610,
-   "wins": 41453,
-   "losses": 55157,
+   "n": 96614,
+   "wins": 41456,
+   "losses": 55158,
    "win_rate": 42.9,
-   "avg_pnl": -0.177,
+   "avg_pnl": -0.176,
    "best": 185.07,
    "worst": -43.8,
    "profit_factor": 0.84
   },
   "kr": {
-   "n": 21231,
-   "wins": 8073,
-   "losses": 13158,
+   "n": 21260,
+   "wins": 8087,
+   "losses": 13173,
    "win_rate": 38.0,
-   "avg_pnl": -0.148,
+   "avg_pnl": -0.147,
    "best": 49.22,
    "worst": -48.45,
    "profit_factor": 0.88
@@ -34,9 +34,9 @@
   }
  },
  "total": {
-  "n": 137207,
-  "wins": 55494,
-  "losses": 81713,
+  "n": 137240,
+  "wins": 55511,
+  "losses": 81729,
   "win_rate": 40.4,
   "profit_factor": 0.83
  },
@@ -331,7 +331,7 @@
     108.08,
     105.37,
     104.98,
-    105.82
+    106.66
    ],
    "bench_label": "BTC",
    "bench_excluded": false,
@@ -361,7 +361,7 @@
     },
     {
      "month": "2026-09",
-     "ret": -0.24
+     "ret": -0.23
     }
    ],
    "bench_monthly": [
@@ -379,7 +379,7 @@
     },
     {
      "month": "2026-09",
-     "ret": -3.66
+     "ret": -2.9
     }
    ],
    "source": "mcp:get_performance_metrics"
@@ -450,7 +450,8 @@
     "2026-09-11",
     "2026-09-14",
     "2026-09-15",
-    "2026-09-16"
+    "2026-09-16",
+    "2026-09-17"
    ],
    "equity": [
     100.23,
@@ -517,9 +518,11 @@
     92.76,
     92.82,
     93.0,
+    92.88,
     92.88
    ],
    "benchmark": [
+    null,
     null,
     null,
     null,
@@ -591,13 +594,13 @@
    "mdd": {
     "max_dd": -10.55,
     "current_dd": -7.33,
-    "longest_underwater_days": 64
+    "longest_underwater_days": 65
    },
    "metrics": {
     "cum_return": -7.12,
-    "sharpe": -2.16,
-    "sortino": -2.96,
-    "calmar": -2.36
+    "sharpe": -2.14,
+    "sortino": -2.93,
+    "calmar": -2.33
    },
    "monthly": [
     {
@@ -849,8 +852,8 @@
     101.86,
     101.41,
     100.94,
-    100.94,
-    100.94
+    100.5,
+    100.5
    ],
    "bench_label": "SPY (S&P500 proxy)",
    "bench_excluded": false,
@@ -898,7 +901,7 @@
     },
     {
      "month": "2026-09",
-     "ret": -1.26
+     "ret": -1.69
     }
    ],
    "source": "mcp:get_performance_metrics"
@@ -912,5 +915,5 @@
   "public_anchor": "2026-06-16",
   "note": "페이퍼 엔진에는 자본/현금 실계열이 없어(무자본 사이징 배수 체결) 합성 고정 북 모델을 사용. 근거: 2026-06-16 이후 동시 노출(Σ배수) 최대 371 < 400 — 노출이 자본 100%를 넘지 않음. 미사용 슬롯은 현금 0% (cash drag 포함). 정의 단일 소스 = admin.v1_daily_equity."
  },
- "generated_at": "2026-09-16T22:00:59+00:00"
+ "generated_at": "2026-09-17T08:00:59+00:00"
 }

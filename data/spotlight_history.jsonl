@@ -294,3 +294,10 @@
 {"date": "2026-09-18", "market": "kr", "symbol": "100790", "rvol": 2.4, "price_chg": 20.9, "close": 17460.0, "rank": 10}
 {"date": "2026-09-18", "market": "kr", "symbol": "189300", "rvol": 2.0, "price_chg": 11.1, "close": 69000.0, "rank": 11}
 {"date": "2026-09-18", "market": "kr", "symbol": "000150", "rvol": 1.9, "price_chg": 25.5, "close": 1447000.0, "rank": 12}
+{"date": "2026-09-18", "market": "us", "symbol": "FANG", "rvol": 3.8, "price_chg": -1.4, "close": 196.94, "rank": 1}
+{"date": "2026-09-18", "market": "us", "symbol": "BF-B", "rvol": 2.5, "price_chg": -3.2, "close": 26.235000610351562, "rank": 2}
+{"date": "2026-09-18", "market": "us", "symbol": "CINF", "rvol": 1.8, "price_chg": 0.4, "close": 169.9, "rank": 3}
+{"date": "2026-09-18", "market": "us", "symbol": "PSKY", "rvol": 1.7, "price_chg": -1.7, "close": 10.62, "rank": 4}
+{"date": "2026-09-18", "market": "us", "symbol": "PGR", "rvol": 1.6, "price_chg": 0.6, "close": 216.29, "rank": 5}
+{"date": "2026-09-18", "market": "us", "symbol": "CRWD", "rvol": 1.6, "price_chg": 17.0, "close": 245.7, "rank": 6}
+{"date": "2026-09-18", "market": "us", "symbol": "FERG", "rvol": 1.6, "price_chg": -5.3, "close": 214.26, "rank": 7}

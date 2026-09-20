@@ -3,11 +3,11 @@
  "public_record_start": "2026-06-16",
  "markets": {
   "coin": {
-   "n": 97715,
-   "wins": 41982,
-   "losses": 55733,
+   "n": 98066,
+   "wins": 42203,
+   "losses": 55863,
    "win_rate": 43.0,
-   "avg_pnl": -0.178,
+   "avg_pnl": -0.174,
    "best": 185.07,
    "worst": -43.8,
    "profit_factor": 0.84
@@ -34,15 +34,15 @@
   }
  },
  "total": {
-  "n": 138455,
-  "wins": 56089,
-  "losses": 82366,
-  "win_rate": 40.5,
+  "n": 138806,
+  "wins": 56310,
+  "losses": 82496,
+  "win_rate": 40.6,
   "profit_factor": 0.83
  },
  "first_day": "2026-06-16",
- "last_day": "2026-09-20",
- "days_operating": 97,
+ "last_day": "2026-09-21",
+ "days_operating": 98,
  "curves": {
   "coin": {
    "dates": [
@@ -142,7 +142,8 @@
     "2026-09-17",
     "2026-09-18",
     "2026-09-19",
-    "2026-09-20"
+    "2026-09-20",
+    "2026-09-21"
    ],
    "equity": [
     98.69,
@@ -241,7 +242,8 @@
     72.41,
     72.41,
     72.56,
-    72.12
+    72.04,
+    72.37
    ],
    "benchmark": [
     100.0,
@@ -340,20 +342,21 @@
     106.9,
     112.46,
     113.04,
-    111.73
+    112.06,
+    112.02
    ],
    "bench_label": "BTC",
    "bench_excluded": false,
    "mdd": {
     "max_dd": -29.95,
-    "current_dd": -27.88,
-    "longest_underwater_days": 97
+    "current_dd": -27.63,
+    "longest_underwater_days": 98
    },
    "metrics": {
-    "cum_return": -27.88,
-    "sharpe": -8.22,
-    "sortino": -8.67,
-    "calmar": -2.36
+    "cum_return": -27.63,
+    "sharpe": -8.04,
+    "sortino": -8.52,
+    "calmar": -2.34
    },
    "monthly": [
     {
@@ -370,7 +373,7 @@
     },
     {
      "month": "2026-09",
-     "ret": -0.62
+     "ret": -0.28
     }
    ],
    "bench_monthly": [
@@ -388,7 +391,7 @@
     },
     {
      "month": "2026-09",
-     "ret": 1.72
+     "ret": 1.98
     }
    ],
    "source": "mcp:get_performance_metrics"
@@ -927,5 +930,5 @@
   "public_anchor": "2026-06-16",
   "note": "페이퍼 엔진에는 자본/현금 실계열이 없어(무자본 사이징 배수 체결) 합성 고정 북 모델을 사용. 근거: 2026-06-16 이후 동시 노출(Σ배수) 최대 371 < 400 — 노출이 자본 100%를 넘지 않음. 미사용 슬롯은 현금 0% (cash drag 포함). 정의 단일 소스 = admin.v1_daily_equity."
  },
- "generated_at": "2026-09-20T12:00:57+00:00"
+ "generated_at": "2026-09-20T22:00:27+00:00"
 }

@@ -3,19 +3,19 @@
  "public_record_start": "2026-06-16",
  "markets": {
   "coin": {
-   "n": 102258,
-   "wins": 44694,
-   "losses": 57564,
+   "n": 102497,
+   "wins": 44808,
+   "losses": 57689,
    "win_rate": 43.7,
-   "avg_pnl": -0.147,
+   "avg_pnl": -0.146,
    "best": 185.07,
    "worst": -43.8,
    "profit_factor": 0.87
   },
   "kr": {
-   "n": 21837,
+   "n": 21838,
    "wins": 8322,
-   "losses": 13515,
+   "losses": 13516,
    "win_rate": 38.1,
    "avg_pnl": -0.149,
    "best": 49.22,
@@ -34,9 +34,9 @@
   }
  },
  "total": {
-  "n": 143793,
-  "wins": 59088,
-  "losses": 84705,
+  "n": 144033,
+  "wins": 59202,
+  "losses": 84831,
   "win_rate": 41.1,
   "profit_factor": 0.85
  },
@@ -251,7 +251,7 @@
     73.61,
     73.77,
     73.96,
-    74.31
+    74.32
    ],
    "benchmark": [
     100.0,
@@ -355,18 +355,18 @@
     117.85,
     116.8,
     115.96,
-    116.42
+    116.24
    ],
    "bench_label": "BTC",
    "bench_excluded": false,
    "mdd": {
     "max_dd": -29.95,
-    "current_dd": -25.69,
+    "current_dd": -25.68,
     "longest_underwater_days": 102
    },
    "metrics": {
-    "cum_return": -25.69,
-    "sharpe": -6.92,
+    "cum_return": -25.68,
+    "sharpe": -6.91,
     "sortino": -7.66,
     "calmar": -2.19
    },
@@ -385,7 +385,7 @@
     },
     {
      "month": "2026-09",
-     "ret": 2.39
+     "ret": 2.4
     }
    ],
    "bench_monthly": [
@@ -403,7 +403,7 @@
     },
     {
      "month": "2026-09",
-     "ret": 5.99
+     "ret": 5.82
     }
    ],
    "source": "mcp:get_performance_metrics"
@@ -900,8 +900,8 @@
     101.64,
     null,
     102.33,
-    102.33,
-    102.33
+    102.25,
+    102.25
    ],
    "bench_label": "SPY (S&P500 proxy)",
    "bench_excluded": false,
@@ -949,7 +949,7 @@
     },
     {
      "month": "2026-09",
-     "ret": 0.1
+     "ret": 0.02
     }
    ],
    "source": "mcp:get_performance_metrics"
@@ -963,5 +963,5 @@
   "public_anchor": "2026-06-16",
   "note": "페이퍼 엔진에는 자본/현금 실계열이 없어(무자본 사이징 배수 체결) 합성 고정 북 모델을 사용. 근거: 2026-06-16 이후 동시 노출(Σ배수) 최대 371 < 400 — 노출이 자본 100%를 넘지 않음. 미사용 슬롯은 현금 0% (cash drag 포함). 정의 단일 소스 = admin.v1_daily_equity."
  },
- "generated_at": "2026-09-24T22:00:52+00:00"
+ "generated_at": "2026-09-25T08:00:28+00:00"
 }

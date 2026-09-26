@@ -3,11 +3,11 @@
  "public_record_start": "2026-06-16",
  "markets": {
   "coin": {
-   "n": 102995,
-   "wins": 45148,
-   "losses": 57847,
-   "win_rate": 43.8,
-   "avg_pnl": -0.141,
+   "n": 103229,
+   "wins": 45307,
+   "losses": 57922,
+   "win_rate": 43.9,
+   "avg_pnl": -0.138,
    "best": 185.07,
    "worst": -43.8,
    "profit_factor": 0.87
@@ -34,9 +34,9 @@
   }
  },
  "total": {
-  "n": 144634,
-  "wins": 59588,
-  "losses": 85046,
+  "n": 144868,
+  "wins": 59747,
+  "losses": 85121,
   "win_rate": 41.2,
   "profit_factor": 0.85
  },
@@ -253,7 +253,7 @@
     73.77,
     73.96,
     74.55,
-    74.8
+    75.01
    ],
    "benchmark": [
     100.0,
@@ -358,20 +358,20 @@
     116.8,
     115.96,
     115.28,
-    115.17
+    115.96
    ],
    "bench_label": "BTC",
    "bench_excluded": false,
    "mdd": {
     "max_dd": -29.95,
-    "current_dd": -25.2,
+    "current_dd": -24.99,
     "longest_underwater_days": 103
    },
    "metrics": {
-    "cum_return": -25.2,
-    "sharpe": -6.68,
-    "sortino": -7.45,
-    "calmar": -2.15
+    "cum_return": -24.99,
+    "sharpe": -6.59,
+    "sortino": -7.38,
+    "calmar": -2.13
    },
    "monthly": [
     {
@@ -388,7 +388,7 @@
     },
     {
      "month": "2026-09",
-     "ret": 3.07
+     "ret": 3.37
     }
    ],
    "bench_monthly": [
@@ -406,7 +406,7 @@
     },
     {
      "month": "2026-09",
-     "ret": 4.85
+     "ret": 5.57
     }
    ],
    "source": "mcp:get_performance_metrics"
@@ -906,8 +906,8 @@
     null,
     102.33,
     102.25,
-    102.25,
-    102.25
+    102.8,
+    102.8
    ],
    "bench_label": "SPY (S&P500 proxy)",
    "bench_excluded": false,
@@ -955,7 +955,7 @@
     },
     {
      "month": "2026-09",
-     "ret": 0.02
+     "ret": 0.56
     }
    ],
    "source": "mcp:get_performance_metrics"
@@ -969,5 +969,5 @@
   "public_anchor": "2026-06-16",
   "note": "페이퍼 엔진에는 자본/현금 실계열이 없어(무자본 사이징 배수 체결) 합성 고정 북 모델을 사용. 근거: 2026-06-16 이후 동시 노출(Σ배수) 최대 371 < 400 — 노출이 자본 100%를 넘지 않음. 미사용 슬롯은 현금 0% (cash drag 포함). 정의 단일 소스 = admin.v1_daily_equity."
  },
- "generated_at": "2026-09-26T00:00:35+00:00"
+ "generated_at": "2026-09-26T08:00:29+00:00"
 }

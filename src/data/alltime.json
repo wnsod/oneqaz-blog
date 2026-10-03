@@ -3,11 +3,11 @@
  "public_record_start": "2026-06-16",
  "markets": {
   "coin": {
-   "n": 108373,
-   "wins": 47727,
-   "losses": 60646,
-   "win_rate": 44.0,
-   "avg_pnl": -0.145,
+   "n": 108564,
+   "wins": 47864,
+   "losses": 60700,
+   "win_rate": 44.1,
+   "avg_pnl": -0.142,
    "best": 185.07,
    "worst": -43.8,
    "profit_factor": 0.87
@@ -34,9 +34,9 @@
   }
  },
  "total": {
-  "n": 151768,
-  "wins": 62977,
-  "losses": 88791,
+  "n": 151959,
+  "wins": 63114,
+  "losses": 88845,
   "win_rate": 41.5,
   "profit_factor": 0.86
  },
@@ -267,7 +267,7 @@
     74.44,
     74.11,
     74.4,
-    73.59
+    73.82
    ],
    "benchmark": [
     100.0,
@@ -379,20 +379,20 @@
     115.34,
     116.18,
     117.54,
-    116.64
+    116.7
    ],
    "bench_label": "BTC",
    "bench_excluded": false,
    "mdd": {
     "max_dd": -29.95,
-    "current_dd": -26.41,
+    "current_dd": -26.18,
     "longest_underwater_days": 110
    },
    "metrics": {
-    "cum_return": -26.41,
-    "sharpe": -6.49,
-    "sortino": -7.21,
-    "calmar": -2.13
+    "cum_return": -26.18,
+    "sharpe": -6.43,
+    "sortino": -7.17,
+    "calmar": -2.12
    },
    "monthly": [
     {
@@ -413,7 +413,7 @@
     },
     {
      "month": "2026-10",
-     "ret": -1.15
+     "ret": -0.83
     }
    ],
    "bench_monthly": [
@@ -435,7 +435,7 @@
     },
     {
      "month": "2026-10",
-     "ret": 1.13
+     "ret": 1.18
     }
    ],
    "source": "mcp:get_performance_metrics"
@@ -972,8 +972,8 @@
     101.85,
     101.64,
     101.82,
-    101.82,
-    101.82
+    102.57,
+    102.57
    ],
    "bench_label": "SPY (S&P500 proxy)",
    "bench_excluded": false,
@@ -1029,7 +1029,7 @@
     },
     {
      "month": "2026-10",
-     "ret": 0.18
+     "ret": 0.92
     }
    ],
    "source": "mcp:get_performance_metrics"
@@ -1043,5 +1043,5 @@
   "public_anchor": "2026-06-16",
   "note": "페이퍼 엔진에는 자본/현금 실계열이 없어(무자본 사이징 배수 체결) 합성 고정 북 모델을 사용. 근거: 2026-06-16 이후 동시 노출(Σ배수) 최대 371 < 400 — 노출이 자본 100%를 넘지 않음. 미사용 슬롯은 현금 0% (cash drag 포함). 정의 단일 소스 = admin.v1_daily_equity."
  },
- "generated_at": "2026-10-03T00:00:28+00:00"
+ "generated_at": "2026-10-03T08:00:30+00:00"
 }

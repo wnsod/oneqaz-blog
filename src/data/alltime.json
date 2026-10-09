@@ -3,14 +3,14 @@
  "public_record_start": "2026-06-16",
  "markets": {
   "coin": {
-   "n": 112893,
-   "wins": 49682,
-   "losses": 63211,
-   "win_rate": 44.0,
-   "avg_pnl": -0.157,
+   "n": 113244,
+   "wins": 49959,
+   "losses": 63285,
+   "win_rate": 44.1,
+   "avg_pnl": -0.151,
    "best": 185.07,
    "worst": -43.8,
-   "profit_factor": 0.86
+   "profit_factor": 0.87
   },
   "kr": {
    "n": 23883,
@@ -34,10 +34,10 @@
   }
  },
  "total": {
-  "n": 158091,
-  "wins": 65771,
-  "losses": 92320,
-  "win_rate": 41.6,
+  "n": 158442,
+  "wins": 66048,
+  "losses": 92394,
+  "win_rate": 41.7,
   "profit_factor": 0.85
  },
  "first_day": "2026-06-16",
@@ -279,7 +279,7 @@
     74.18,
     72.38,
     72.57,
-    71.65
+    72.27
    ],
    "benchmark": [
     100.0,
@@ -397,20 +397,20 @@
     118.31,
     114.58,
     114.26,
-    113.54
+    114.45
    ],
    "bench_label": "BTC",
    "bench_excluded": false,
    "mdd": {
     "max_dd": -29.95,
-    "current_dd": -28.35,
+    "current_dd": -27.73,
     "longest_underwater_days": 116
    },
    "metrics": {
-    "cum_return": -28.35,
-    "sharpe": -6.59,
-    "sortino": -7.22,
-    "calmar": -2.17
+    "cum_return": -27.73,
+    "sharpe": -6.46,
+    "sortino": -7.12,
+    "calmar": -2.14
    },
    "monthly": [
     {
@@ -431,7 +431,7 @@
     },
     {
      "month": "2026-10",
-     "ret": -3.75
+     "ret": -2.92
     }
    ],
    "bench_monthly": [
@@ -453,7 +453,7 @@
     },
     {
      "month": "2026-10",
-     "ret": -1.56
+     "ret": -0.77
     }
    ],
    "source": "mcp:get_performance_metrics"
@@ -1014,8 +1014,8 @@
     103.27,
     103.83,
     103.58,
-    103.58,
-    103.58
+    103.15,
+    103.15
    ],
    "bench_label": "SPY (S&P500 proxy)",
    "bench_excluded": false,
@@ -1071,7 +1071,7 @@
     },
     {
      "month": "2026-10",
-     "ret": 1.91
+     "ret": 1.48
     }
    ],
    "source": "mcp:get_performance_metrics"
@@ -1085,5 +1085,5 @@
   "public_anchor": "2026-06-16",
   "note": "페이퍼 엔진에는 자본/현금 실계열이 없어(무자본 사이징 배수 체결) 합성 고정 북 모델을 사용. 근거: 2026-06-16 이후 동시 노출(Σ배수) 최대 371 < 400 — 노출이 자본 100%를 넘지 않음. 미사용 슬롯은 현금 0% (cash drag 포함). 정의 단일 소스 = admin.v1_daily_equity."
  },
- "generated_at": "2026-10-08T22:00:55+00:00"
+ "generated_at": "2026-10-09T08:00:33+00:00"
 }

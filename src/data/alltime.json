@@ -3,11 +3,11 @@
  "public_record_start": "2026-06-16",
  "markets": {
   "coin": {
-   "n": 113876,
-   "wins": 50338,
-   "losses": 63538,
-   "win_rate": 44.2,
-   "avg_pnl": -0.146,
+   "n": 114236,
+   "wins": 50551,
+   "losses": 63685,
+   "win_rate": 44.3,
+   "avg_pnl": -0.144,
    "best": 185.07,
    "worst": -43.8,
    "profit_factor": 0.87
@@ -34,9 +34,9 @@
   }
  },
  "total": {
-  "n": 159309,
-  "wins": 66574,
-  "losses": 92735,
+  "n": 159669,
+  "wins": 66787,
+  "losses": 92882,
   "win_rate": 41.8,
   "profit_factor": 0.86
  },
@@ -281,7 +281,7 @@
     72.38,
     72.57,
     72.35,
-    72.68
+    72.86
    ],
    "benchmark": [
     100.0,
@@ -400,19 +400,19 @@
     114.58,
     114.26,
     115.14,
-    114.54
+    114.41
    ],
    "bench_label": "BTC",
    "bench_excluded": false,
    "mdd": {
     "max_dd": -29.95,
-    "current_dd": -27.32,
+    "current_dd": -27.14,
     "longest_underwater_days": 117
    },
    "metrics": {
-    "cum_return": -27.32,
-    "sharpe": -6.3,
-    "sortino": -6.96,
+    "cum_return": -27.14,
+    "sharpe": -6.23,
+    "sortino": -6.91,
     "calmar": -2.1
    },
    "monthly": [
@@ -434,7 +434,7 @@
     },
     {
      "month": "2026-10",
-     "ret": -2.37
+     "ret": -2.13
     }
    ],
    "bench_monthly": [
@@ -456,7 +456,7 @@
     },
     {
      "month": "2026-10",
-     "ret": -0.69
+     "ret": -0.81
     }
    ],
    "source": "mcp:get_performance_metrics"
@@ -1020,8 +1020,8 @@
     103.83,
     103.58,
     103.15,
-    103.15,
-    103.15
+    103.76,
+    103.76
    ],
    "bench_label": "SPY (S&P500 proxy)",
    "bench_excluded": false,
@@ -1077,7 +1077,7 @@
     },
     {
      "month": "2026-10",
-     "ret": 1.48
+     "ret": 2.09
     }
    ],
    "source": "mcp:get_performance_metrics"
@@ -1091,5 +1091,5 @@
   "public_anchor": "2026-06-16",
   "note": "페이퍼 엔진에는 자본/현금 실계열이 없어(무자본 사이징 배수 체결) 합성 고정 북 모델을 사용. 근거: 2026-06-16 이후 동시 노출(Σ배수) 최대 371 < 400 — 노출이 자본 100%를 넘지 않음. 미사용 슬롯은 현금 0% (cash drag 포함). 정의 단일 소스 = admin.v1_daily_equity."
  },
- "generated_at": "2026-10-10T00:00:33+00:00"
+ "generated_at": "2026-10-10T08:00:40+00:00"
 }

@@ -357,3 +357,15 @@
 {"date": "2026-10-08", "market": "kr", "symbol": "131970", "rvol": 3.2, "price_chg": 35.9, "close": 123300.0, "rank": 10}
 {"date": "2026-10-08", "market": "kr", "symbol": "137310", "rvol": 3.2, "price_chg": 6.1, "close": 6480.0, "rank": 11}
 {"date": "2026-10-08", "market": "kr", "symbol": "373220", "rvol": 3.0, "price_chg": 10.7, "close": 403000.0, "rank": 12}
+{"date": "2026-10-09", "market": "us", "symbol": "BRK-B", "rvol": 73.9, "price_chg": 2.4, "close": 515.4, "rank": 1}
+{"date": "2026-10-09", "market": "us", "symbol": "TWLO", "rvol": 26.2, "price_chg": 0.8, "close": 289.22, "rank": 2}
+{"date": "2026-10-09", "market": "us", "symbol": "VYLR", "rvol": 13.1, "price_chg": 7.3, "close": 73.22, "rank": 3}
+{"date": "2026-10-09", "market": "us", "symbol": "BF-B", "rvol": 5.0, "price_chg": 1.3, "close": 26.38, "rank": 4}
+{"date": "2026-10-09", "market": "us", "symbol": "SKYD", "rvol": 4.0, "price_chg": -10.8, "close": 9.165, "rank": 5}
+{"date": "2026-10-09", "market": "us", "symbol": "WBD", "rvol": 2.9, "price_chg": 0.2, "close": 30.95, "rank": 6}
+{"date": "2026-10-09", "market": "us", "symbol": "SBUX", "rvol": 2.3, "price_chg": -4.7, "close": 90.76, "rank": 7}
+{"date": "2026-10-09", "market": "us", "symbol": "HUM", "rvol": 1.9, "price_chg": 10.8, "close": 431.7979, "rank": 8}
+{"date": "2026-10-09", "market": "us", "symbol": "STZ", "rvol": 1.9, "price_chg": 8.6, "close": 122.66, "rank": 9}
+{"date": "2026-10-09", "market": "us", "symbol": "CCI", "rvol": 1.8, "price_chg": 18.7, "close": 79.65, "rank": 10}
+{"date": "2026-10-09", "market": "us", "symbol": "VRSN", "rvol": 1.7, "price_chg": 7.6, "close": 303.62, "rank": 11}
+{"date": "2026-10-09", "market": "us", "symbol": "PLTR", "rvol": 1.7, "price_chg": 11.5, "close": 209.07, "rank": 12}

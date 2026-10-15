@@ -1,59 +1,84 @@
 ---
-const cats = [
-  { href: '/track-record/', label: 'Track Record' },
-  { href: '/market/', label: 'Market' },
-  { href: '/spotlight/', label: 'Spotlight' },
-  { href: '/journal/', label: 'Journal' },
-];
+// OneQAZ 공통 상단 메뉴 — oneqaz.com·api.oneqaz.com 과 같은 항목·순서·라벨(2026-10-15 통일, 사용자 요청).
+// 원본 = landing/index.html 의 oqz:chrome-header. 블로그는 경로가 곧 언어라 라벨·EN/KO 를 빌드 타임에 정한다.
+// 블로그 자체 섹션(트랙 레코드·시황·스포트라이트·매매일지·소개)은 공통 메뉴 밑 두 번째 줄(blog-subnav)에 둔다.
+import { isEnPath, altPathOf } from './siteLang';
+
 const path = Astro.url.pathname;
-// 영어 페이지 판정: /en/ 프리픽스(상설·목록) 또는 슬러그 -en(글).
-const isPost = /^\/(journal|market|spotlight|track-record)\/20\d{2}-[^/]+\/$/.test(path);
-const isEn = path === '/en/' || path.startsWith('/en/') || (isPost && /-en\/$/.test(path));
-// EN 측에서는 내비도 /en/ 안에서 돌게 유지 — 영어로 들어온 독자가 영어로 계속 탐색.
+const isEn = isEnPath(path);
+const lang = isEn ? 'en' : 'ko';
+const alt = altPathOf(path);
+const q = `?lang=${lang}`;
+const site = (hash: string) => `https://oneqaz.com/${q}#${hash}`;
+const blogHome = isEn ? '/en/' : '/';
 const pfx = isEn ? '/en' : '';
 
-// KO↔EN 쌍둥이 경로(빌드 타임 계산). 글은 슬러그 ±-en, 나머지는 /en/ 프리픽스.
-// About(영어 단일 페이지)·tags(KO 전용)는 쌍이 없어 토글 미표시.
-const EN_TWIN = [
-  /^\/(\d+\/)?$/,                                          // 홈 + 페이지네이션
-  /^\/(journal|market|spotlight|track-record)\/(\d+\/)?$/, // 카테고리 목록
-  /^\/track-record\/all-time\/$/,
-  /^\/(methodology|corrections)\/$/,
-];
-let altPath: string | null = null;
-if (isPost) {
-  altPath = isEn ? path.replace(/-en\/$/, '/') : path.replace(/\/$/, '-en/');
-} else if (path.startsWith('/en/')) {
-  altPath = path.replace(/^\/en/, '') || '/';
-} else if (EN_TWIN.some((re) => re.test(path))) {
-  altPath = '/en' + path;
-}
----
-<header>
-  <div class="container-wide bar">
-    <a href={isEn ? '/en/' : '/'} class="brand">
-      <img src="/logo.png" alt="OneQAZ" width="26" height="26" />
-      <span>OneQAZ</span>
-    </a>
-    <nav>
-      {cats.map((c) => (
-        <a href={pfx + c.href} class={path.startsWith(pfx + c.href) ? 'active' : ''}>{c.label}</a>
-      ))}
-      <a href="https://oneqaz.com" class="home">oneqaz.com &#8599;</a>
-      {altPath && <a href={altPath} class="lang" hreflang={isEn ? 'ko' : 'en'}>{isEn ? '한국어' : 'EN'}</a>}
-    </nav>
-  </div>
-</header>
+const T = isEn
+  ? { agents: 'Agents', flow: 'How it works', verify: 'Verify', connect: 'Connect', status: 'Status', daily: 'Daily Reads', menu: 'Menu', sections: 'Daily Reads' }
+  : { agents: '에이전트', flow: '작동 방식', verify: '검증', connect: '연결', status: '상태', daily: '데일리 리포트', menu: '메뉴', sections: '데일리 리포트' };
 
-<style>
-  header { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
-  .bar { display:flex; align-items:center; justify-content:space-between; gap:16px; padding-top:12px; padding-bottom:12px; }
-  .brand { display:flex; align-items:center; gap:9px; font-weight:600; letter-spacing:3px; text-transform:uppercase; font-size:14px; color: var(--amber); }
-  nav { display:flex; align-items:center; gap:18px; font-size:12px; letter-spacing:1.2px; text-transform:uppercase; font-weight:500; }
-  nav a { color: var(--text-muted); transition: color .2s; }
-  nav a:hover, nav a.active { color: var(--amber); }
-  nav a.home { color: var(--text-muted); opacity:.7; }
-  nav a.lang { padding: 3px 11px; border: 1px solid var(--border); border-radius: 999px; text-transform: none; letter-spacing: .5px; }
-  nav a.lang:hover { border-color: var(--amber); color: var(--amber); }
-  @media (max-width:560px){ nav { gap:11px; font-size:10px; } .brand span { display:none; } }
-</style>
+// 다른 언어 버튼: 같은 페이지의 쌍둥이 경로, 없으면 그 언어 홈.
+const enHref = isEn ? null : (alt ?? '/en/');
+const koHref = isEn ? (alt ?? '/') : null;
+
+const cats = [
+  { href: '/track-record/', en: 'Track Record', ko: '트랙 레코드' },
+  { href: '/market/', en: 'Market', ko: '시황' },
+  { href: '/spotlight/', en: 'Spotlight', ko: '스포트라이트' },
+  { href: '/journal/', en: 'Journal', ko: '매매일지' },
+];
+// EN 글은 /en/ 없이 /market/…-en/ 에 있으므로 두 형태를 모두 본다.
+const isCurrent = (href: string) => path.startsWith(pfx + href) || path.startsWith(href);
+---
+<header class="oqz-header" id="oqzHeader">
+  <a class="oqz-brand" href={`https://oneqaz.com/${q}`}><img src="https://oneqaz.com/images/opt/logo-128.webp" alt="" width="26" height="28" /><span>OneQAZ</span></a>
+  <button class="oqz-menu-btn" type="button" aria-expanded="false" aria-controls="oqzMenu"><span class="oqz-menu-icon" aria-hidden="true"></span><span class="oqz-sr">{T.menu}</span></button>
+  <nav class="oqz-menu" id="oqzMenu" aria-label="OneQAZ">
+    <a href={site('team')}>{T.agents}</a>
+    <a href={site('flow')}>{T.flow}</a>
+    <a href={site('verify')}>{T.verify}</a>
+    <a href={site('connect')}>{T.connect}</a>
+    <a href={site('status')}>{T.status}</a>
+    <a class="oqz-cta" href={blogHome} aria-current="page">{T.daily}</a>
+    <div class="oqz-lang" role="group" aria-label="Language">
+      {isEn ? <span class="active" aria-current="true">EN</span> : <a href={enHref} hreflang="en" lang="en">EN</a>}
+      {isEn ? <a href={koHref} hreflang="ko" lang="ko">KO</a> : <span class="active" aria-current="true">KO</span>}
+    </div>
+  </nav>
+</header>
+<nav class="blog-subnav" aria-label={T.sections}>
+  <div class="container-wide">
+    <span class="label">{T.sections}</span>
+    {cats.map((c) => (
+      <a href={pfx + c.href} aria-current={isCurrent(c.href) ? 'page' : undefined}>{isEn ? c.en : c.ko}</a>
+    ))}
+    <a href="/about/" aria-current={path === '/about/' ? 'page' : undefined}>{isEn ? 'About' : '소개'}</a>
+  </div>
+</nav>
+
+<script is:inline>
+  // 모바일 메뉴 — oneqaz.com 의 oqz:chrome-js 와 같은 동작(열기·닫기·Esc·바깥 클릭·링크 선택 시 닫기).
+  (function () {
+    var header = document.getElementById('oqzHeader');
+    if (!header) return;
+    var btn = header.querySelector('.oqz-menu-btn');
+    function setOpen(open) {
+      header.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    btn.addEventListener('click', function (e) { e.stopPropagation(); setOpen(!header.classList.contains('open')); });
+    document.addEventListener('click', function (e) { if (!header.contains(e.target)) setOpen(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+    window.addEventListener('resize', function () { if (window.innerWidth > 860) setOpen(false); });
+    header.querySelector('.oqz-menu').addEventListener('click', function (e) {
+      if (e.target.closest && e.target.closest('a')) setOpen(false);
+    });
+    // 언어를 고르면 기억해 둔다(oneqaz.com 과 같은 키) — 같은 출처 안에서만 유효하다.
+    var langs = header.querySelectorAll('.oqz-lang a');
+    for (var i = 0; i < langs.length; i++) {
+      langs[i].addEventListener('click', function () {
+        try { localStorage.setItem('oqz-lang', this.getAttribute('hreflang')); } catch (err) {}
+      });
+    }
+  })();
+</script>

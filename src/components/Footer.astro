@@ -1,30 +1,76 @@
 ---
+// OneQAZ 공통 하단 메뉴 — oneqaz.com·api.oneqaz.com 과 같은 4열(2026-10-15 통일, 사용자 요청).
+// 원본 = landing/index.html 의 oqz:chrome-footer. 언어는 경로로 정한다(종전 lang prop 은 일부 페이지가 넘기지 않았다).
+import { isEnPath } from './siteLang';
+
 export interface Props {
   lang?: 'ko' | 'en';
 }
-const { lang = 'ko' } = Astro.props;
-const year = 2026;
----
-<footer>
-  <div class="container-wide inner">
-    <div class="links">
-      <a href="https://oneqaz.com">oneqaz.com</a>
-      <a href="https://github.com/wnsod/oneqaz-trading-mcp">GitHub</a>
-      <a href="/about/">About</a>
-      <a href="/en/methodology/">Methodology</a>
-      <a href="/en/track-record/all-time/">All-time Record</a>
-      <a href="/en/corrections/">Corrections</a>
-      <a href={lang === 'en' ? '/en/anchors/' : '/anchors/'}>{lang === 'en' ? 'Ledger Anchors' : '원장 앵커'}</a>
-    </div>
-    <p class="copy muted">&copy; {year} OneQAZ. Research information only — not investment advice.</p>
-  </div>
-</footer>
+const path = Astro.url.pathname;
+const isEn = isEnPath(path);
+const lang = isEn ? 'en' : 'ko';
+const q = `?lang=${lang}`;
+const pfx = isEn ? '/en' : '';
 
-<style>
-  footer { border-top: 1px solid var(--border); margin-top: 64px; }
-  .inner { padding: 36px 24px 48px; text-align:center; }
-  .links { display:flex; justify-content:center; gap:24px; flex-wrap:wrap; margin-bottom:16px; font-size:12px; letter-spacing:1px; }
-  .links a { color: var(--text-muted); transition: color .2s; }
-  .links a:hover { color: var(--amber); }
-  .copy { font-size: 11px; }
-</style>
+const cols = [
+  {
+    h: isEn ? 'Product' : '제품',
+    links: [
+      { href: `https://oneqaz.com/${q}#connect`, label: isEn ? 'Connect via MCP' : 'MCP로 연결' },
+      { href: `https://api.oneqaz.com/pricing${q}`, label: isEn ? 'Pricing & limits' : '요금·호출 한도' },
+      { href: `https://api.oneqaz.com/keys${q}`, label: isEn ? 'API keys' : 'API 키' },
+      { href: `https://oneqaz.com/${q}#status`, label: isEn ? 'System status' : '시스템 상태' },
+    ],
+  },
+  {
+    h: isEn ? 'Evidence' : '근거',
+    links: [
+      { href: `${pfx}/track-record/all-time/`, label: isEn ? 'All-time record' : '전체 기간 성적' },
+      { href: `${pfx}/methodology/`, label: isEn ? 'Methodology' : '방법론' },
+      { href: `${pfx}/corrections/`, label: isEn ? 'Corrections' : '정정 기록' },
+      { href: `${pfx}/anchors/`, label: isEn ? 'Ledger anchors' : '원장 앵커' },
+    ],
+  },
+  {
+    h: isEn ? 'Read & watch' : '읽기·보기',
+    links: [
+      { href: isEn ? '/en/' : '/', label: isEn ? 'Daily Reads' : '데일리 리포트' },
+      { href: isEn ? '/en/rss.xml' : '/rss.xml', label: 'RSS' },
+      { href: 'https://www.youtube.com/@OneQAZ2026/live', label: isEn ? 'YouTube live ↗' : '유튜브 라이브 ↗', ext: true },
+    ],
+  },
+  {
+    h: isEn ? 'Developers & legal' : '개발자·약관',
+    links: [
+      { href: 'https://github.com/oneqaz-trading/oneqaz-trading-mcp', label: 'GitHub ↗', ext: true },
+      { href: 'https://pypi.org/project/oneqaz-trading-mcp/', label: 'PyPI ↗', ext: true },
+      { href: `https://oneqaz.com/privacy${q}`, label: isEn ? 'Privacy' : '개인정보처리방침' },
+      { href: `https://oneqaz.com/terms${q}`, label: isEn ? 'Terms' : '이용약관' },
+      { href: 'mailto:contact@oneqaz.com', label: isEn ? 'Contact' : '문의' },
+    ],
+  },
+];
+const current = (href: string) => (href.startsWith('/') && href === path ? 'page' : undefined);
+---
+<footer class="oqz-footer">
+  <div class="oqz-footer-grid">
+    {cols.map((c) => (
+      <div>
+        <p class="oqz-footer-h">{c.h}</p>
+        <ul>
+          {c.links.map((l) => (
+            <li>
+              {l.ext
+                ? <a href={l.href} target="_blank" rel="noopener">{l.label}</a>
+                : <a href={l.href} aria-current={current(l.href)}>{l.label}</a>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+  <p class="oqz-footer-disc">{isEn
+    ? 'Research information only — not investment advice. OneQAZ outputs are paper-trading research signals (simulated fills, no fees or taxes); past simulated performance does not predict future real-money returns.'
+    : '연구용 정보이며 투자 자문이 아닙니다. OneQAZ의 산출물은 가상매매 기반 연구 시그널(시뮬레이션 체결, 수수료·세금 미반영)이며, 과거 시뮬레이션 성과는 미래의 실계좌 수익을 보장하지 않습니다.'}</p>
+  <p class="oqz-footer-copy">&copy; 2026 OneQAZ. All rights reserved.</p>
+</footer>

@@ -1,0 +1,31 @@
+---
+// GitHub Pages 가 없는 경로마다 이 한 파일을 보여준다 — 경로를 빌드 타임에 알 수 없어 본문을 두 언어로 둔다.
+// oneqaz.com 404 와 같은 구성(공통 헤더·푸터 + 갈 곳 4개).
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Page not found — OneQAZ" description="This page does not exist on blog.oneqaz.com.">
+  <meta name="robots" content="noindex" slot="head" />
+  <section class="container nf">
+    <p class="eyebrow">404</p>
+    <h1>페이지를 찾을 수 없습니다 <span class="muted">/ This page doesn't exist</span></h1>
+    <p class="muted">주소가 바뀌었거나 잘못 입력된 것 같습니다. 위 메뉴에서 이동하거나 아래에서 바로 시작하세요.</p>
+    <p class="muted" lang="en">The link may be old or mistyped. Use the menu above, or start here:</p>
+    <div class="nf-links">
+      <a class="primary" href="/">데일리 리포트</a>
+      <a href="/en/" lang="en">Daily Reads (EN)</a>
+      <a href="https://oneqaz.com/">OneQAZ</a>
+      <a href="https://oneqaz.com/#connect">MCP로 연결 · Connect</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .nf { padding-top: 72px; padding-bottom: 24px; }
+  .nf h1 { font-size: clamp(26px, 4vw, 36px); line-height: 1.3; margin: 8px 0 14px; }
+  .nf h1 .muted { font-weight: 400; font-size: .7em; }
+  .nf p { margin-bottom: 6px; }
+  .nf-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .nf-links a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border: 1px solid var(--border); border-radius: 8px; color: var(--text-muted); font-size: 13px; transition: color .2s, border-color .2s; }
+  .nf-links a:hover { color: var(--amber); border-color: var(--amber); }
+  .nf-links a.primary { background: var(--amber); border-color: var(--amber); color: var(--bg); font-weight: 600; }
+</style>

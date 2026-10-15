@@ -17,6 +17,7 @@
   --red:         #d9534f;
   --blue:        #6b9fc9;
   --scrollbar-thumb: rgba(255,255,255,0.1);
+  --nav-bg:      rgba(28,28,36,0.9);
   --font-sans: 'Outfit', 'Noto Sans KR', system-ui, -apple-system, sans-serif;
   --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   --radius-md: 6px;
@@ -38,6 +39,7 @@
     --border:     #cdc7bc;
     --hover:      rgba(0,0,0,0.03);
     --scrollbar-thumb: rgba(0,0,0,0.15);
+    --nav-bg:     rgba(242,239,233,0.9);
   }
 }
 
@@ -48,6 +50,14 @@ a{color:inherit;text-decoration:none}
 ::selection{background:var(--amber);color:var(--bg)}
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-thumb{background:var(--scrollbar-thumb);border-radius:2px}
+
+/* Scanline + vignette overlays — same as oneqaz.com (landing oqz:tokens block). Purely visual, never intercept input. */
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.06) 2px,rgba(0,0,0,0.06) 4px)}
+body::before{content:'';position:fixed;inset:-10%;pointer-events:none;z-index:9998;background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,0.18) 100%);clip-path:polygon(50% 0%,93.3% 25%,93.3% 75%,50% 100%,6.7% 75%,6.7% 25%)}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]) body::after{opacity:0.3}
+  :root:not([data-theme="dark"]) body::before{opacity:0.08}
+}
 
 .container{max-width:760px;width:100%;margin:0 auto;padding:0 24px}
 .container-wide{max-width:1080px;width:100%;margin:0 auto;padding:0 24px}

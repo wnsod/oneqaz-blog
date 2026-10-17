@@ -1,11 +1,8 @@
 {
-  "anchor_day": "2026-10-10",
-  "chain_hash": "31b38552b2c102fb9ab27bc0d99f2cac8256657713e20dcf1ee6277ac6637877",
-  "url": "https://blog.oneqaz.com/anchors/2026-10-10/",
-  "url_en": "https://blog.oneqaz.com/anchors/2026-10-10-en/",
-  "wayback": [
-    "https://web.archive.org/web/20261013213007/https://blog.oneqaz.com/anchors/2026-10-10/",
-    "https://web.archive.org/web/20261013213022/https://blog.oneqaz.com/anchors/2026-10-10-en/"
-  ],
-  "published_at": "2026-10-12T21:30:01Z"
+  "anchor_day": "2026-10-15",
+  "chain_hash": "0416a5a96776c301a4303be3c257693e201a21592fb03941c93b5963b3cc6ccb",
+  "url": "https://blog.oneqaz.com/anchors/2026-10-15/",
+  "url_en": "https://blog.oneqaz.com/anchors/2026-10-15-en/",
+  "wayback": [],
+  "published_at": "2026-10-17T21:30:01Z"
 }

@@ -3,6 +3,9 @@
   "chain_hash": "c79ad8d6dbf86d305ac91a6f5291e5ef7a1ad739863d163f7907006a63386b1b",
   "url": "https://blog.oneqaz.com/anchors/2026-10-23/",
   "url_en": "https://blog.oneqaz.com/anchors/2026-10-23-en/",
-  "wayback": [],
+  "wayback": [
+    "https://web.archive.org/web/20261026213003/https://blog.oneqaz.com/anchors/2026-10-23/",
+    "https://web.archive.org/web/20261026213023/https://blog.oneqaz.com/anchors/2026-10-23-en/"
+  ],
   "published_at": "2026-10-25T21:30:01Z"
 }

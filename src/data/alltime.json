@@ -3,11 +3,11 @@
  "public_record_start": "2026-06-16",
  "markets": {
   "coin": {
-   "n": 133473,
-   "wins": 58825,
-   "losses": 74648,
+   "n": 133781,
+   "wins": 58978,
+   "losses": 74803,
    "win_rate": 44.1,
-   "avg_pnl": -0.195,
+   "avg_pnl": -0.194,
    "best": 185.07,
    "worst": -43.8,
    "profit_factor": 0.84
@@ -34,15 +34,15 @@
   }
  },
  "total": {
-  "n": 190325,
-  "wins": 79906,
-  "losses": 110419,
+  "n": 190633,
+  "wins": 80059,
+  "losses": 110574,
   "win_rate": 42.0,
   "profit_factor": 0.82
  },
  "first_day": "2026-06-16",
- "last_day": "2026-10-31",
- "days_operating": 138,
+ "last_day": "2026-11-01",
+ "days_operating": 139,
  "curves": {
   "coin": {
    "dates": [
@@ -183,7 +183,8 @@
     "2026-10-28",
     "2026-10-29",
     "2026-10-30",
-    "2026-10-31"
+    "2026-10-31",
+    "2026-11-01"
    ],
    "equity": [
     98.69,
@@ -323,7 +324,8 @@
     66.13,
     65.67,
     64.26,
-    64.6
+    64.63,
+    64.63
    ],
    "benchmark": [
     100.0,
@@ -463,20 +465,21 @@
     109.72,
     110.24,
     105.47,
-    105.97
+    105.65,
+    105.91
    ],
    "bench_label": "BTC",
    "bench_excluded": false,
    "mdd": {
     "max_dd": -35.74,
-    "current_dd": -35.4,
-    "longest_underwater_days": 138
+    "current_dd": -35.37,
+    "longest_underwater_days": 139
    },
    "metrics": {
-    "cum_return": -35.4,
-    "sharpe": -7.09,
-    "sortino": -7.57,
-    "calmar": -1.92
+    "cum_return": -35.37,
+    "sharpe": -7.05,
+    "sortino": -7.54,
+    "calmar": -1.91
    },
    "monthly": [
     {
@@ -497,7 +500,11 @@
     },
     {
      "month": "2026-10",
-     "ret": -13.22
+     "ret": -13.18
+    },
+    {
+     "month": "2026-11",
+     "ret": 0.0
     }
    ],
    "bench_monthly": [
@@ -519,7 +526,11 @@
     },
     {
      "month": "2026-10",
-     "ret": -8.12
+     "ret": -8.4
+    },
+    {
+     "month": "2026-11",
+     "ret": 0.24
     }
    ],
    "source": "mcp:get_performance_metrics"
@@ -1253,5 +1264,5 @@
   "public_anchor": "2026-06-16",
   "note": "페이퍼 엔진에는 자본/현금 실계열이 없어(무자본 사이징 배수 체결) 합성 고정 북 모델을 사용. 근거: 2026-06-16 이후 동시 노출(Σ배수) 최대 371 < 400 — 노출이 자본 100%를 넘지 않음. 미사용 슬롯은 현금 0% (cash drag 포함). 정의 단일 소스 = admin.v1_daily_equity."
  },
- "generated_at": "2026-10-31T12:01:01+00:00"
+ "generated_at": "2026-10-31T22:30:28+00:00"
 }

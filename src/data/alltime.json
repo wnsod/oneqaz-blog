@@ -3,11 +3,11 @@
  "public_record_start": "2026-06-16",
  "markets": {
   "coin": {
-   "n": 134152,
-   "wins": 59142,
-   "losses": 75010,
-   "win_rate": 44.1,
-   "avg_pnl": -0.194,
+   "n": 134451,
+   "wins": 59212,
+   "losses": 75239,
+   "win_rate": 44.0,
+   "avg_pnl": -0.197,
    "best": 185.07,
    "worst": -43.8,
    "profit_factor": 0.84
@@ -34,15 +34,15 @@
   }
  },
  "total": {
-  "n": 191004,
-  "wins": 80223,
-  "losses": 110781,
+  "n": 191303,
+  "wins": 80293,
+  "losses": 111010,
   "win_rate": 42.0,
   "profit_factor": 0.82
  },
  "first_day": "2026-06-16",
- "last_day": "2026-11-01",
- "days_operating": 139,
+ "last_day": "2026-11-02",
+ "days_operating": 140,
  "curves": {
   "coin": {
    "dates": [
@@ -184,7 +184,8 @@
     "2026-10-29",
     "2026-10-30",
     "2026-10-31",
-    "2026-11-01"
+    "2026-11-01",
+    "2026-11-02"
    ],
    "equity": [
     98.69,
@@ -325,7 +326,8 @@
     65.67,
     64.26,
     64.63,
-    64.6
+    64.55,
+    64.26
    ],
    "benchmark": [
     100.0,
@@ -466,19 +468,20 @@
     110.24,
     105.47,
     105.65,
-    105.92
+    105.97,
+    105.69
    ],
    "bench_label": "BTC",
    "bench_excluded": false,
    "mdd": {
     "max_dd": -35.74,
-    "current_dd": -35.4,
-    "longest_underwater_days": 139
+    "current_dd": -35.74,
+    "longest_underwater_days": 140
    },
    "metrics": {
-    "cum_return": -35.4,
-    "sharpe": -7.06,
-    "sortino": -7.54,
+    "cum_return": -35.74,
+    "sharpe": -7.12,
+    "sortino": -7.6,
     "calmar": -1.91
    },
    "monthly": [
@@ -504,7 +507,7 @@
     },
     {
      "month": "2026-11",
-     "ret": -0.06
+     "ret": -0.57
     }
    ],
    "bench_monthly": [
@@ -530,7 +533,7 @@
     },
     {
      "month": "2026-11",
-     "ret": 0.25
+     "ret": 0.03
     }
    ],
    "source": "mcp:get_performance_metrics"
@@ -1264,5 +1267,5 @@
   "public_anchor": "2026-06-16",
   "note": "페이퍼 엔진에는 자본/현금 실계열이 없어(무자본 사이징 배수 체결) 합성 고정 북 모델을 사용. 근거: 2026-06-16 이후 동시 노출(Σ배수) 최대 371 < 400 — 노출이 자본 100%를 넘지 않음. 미사용 슬롯은 현금 0% (cash drag 포함). 정의 단일 소스 = admin.v1_daily_equity."
  },
- "generated_at": "2026-11-01T12:00:53+00:00"
+ "generated_at": "2026-11-01T23:00:32+00:00"
 }

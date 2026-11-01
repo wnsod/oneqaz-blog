@@ -428,3 +428,15 @@
 {"date": "2026-10-30", "market": "kr", "symbol": "032830", "rvol": 2.3, "price_chg": 13.4, "close": 270500.0, "rank": 10}
 {"date": "2026-10-30", "market": "kr", "symbol": "328130", "rvol": 2.1, "price_chg": 32.5, "close": 15690.0, "rank": 11}
 {"date": "2026-10-30", "market": "kr", "symbol": "008770", "rvol": 2.1, "price_chg": -7.7, "close": 34600.0, "rank": 12}
+{"date": "2026-10-30", "market": "us", "symbol": "BRK-B", "rvol": 65.4, "price_chg": 2.0, "close": 542.6625, "rank": 1}
+{"date": "2026-10-30", "market": "us", "symbol": "BF-B", "rvol": 5.5, "price_chg": 1.7, "close": 28.69, "rank": 2}
+{"date": "2026-10-30", "market": "us", "symbol": "CVNA", "rvol": 2.9, "price_chg": 16.3, "close": 68.27, "rank": 3}
+{"date": "2026-10-30", "market": "us", "symbol": "GPN", "rvol": 2.8, "price_chg": 14.5, "close": 96.85, "rank": 4}
+{"date": "2026-10-30", "market": "us", "symbol": "GOOGL", "rvol": 2.7, "price_chg": -18.7, "close": 279.7, "rank": 5}
+{"date": "2026-10-30", "market": "us", "symbol": "GOOG", "rvol": 2.5, "price_chg": -18.2, "close": 278.31, "rank": 6}
+{"date": "2026-10-30", "market": "us", "symbol": "EG", "rvol": 2.5, "price_chg": 5.3, "close": 411.25, "rank": 7}
+{"date": "2026-10-30", "market": "us", "symbol": "NCLH", "rvol": 2.5, "price_chg": 15.4, "close": 17.58, "rank": 8}
+{"date": "2026-10-30", "market": "us", "symbol": "BSX", "rvol": 2.3, "price_chg": -6.8, "close": 41.975, "rank": 9}
+{"date": "2026-10-30", "market": "us", "symbol": "TXT", "rvol": 2.3, "price_chg": 12.5, "close": 85.705, "rank": 10}
+{"date": "2026-10-30", "market": "us", "symbol": "VRT", "rvol": 2.3, "price_chg": 12.9, "close": 232.5722, "rank": 11}
+{"date": "2026-10-30", "market": "us", "symbol": "ORCL", "rvol": 2.2, "price_chg": 0.9, "close": 130.7485, "rank": 12}
